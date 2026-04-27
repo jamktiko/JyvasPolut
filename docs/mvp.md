@@ -6,10 +6,7 @@
 - Kuvien selaus nuolilla(karuselli) modaalissa
 - Kohteiden merkkaaminen "käydyksi" ja mahdollisesti laittamaan favoriteksi
 
-
 ## Mahdolliset laajennukset:
 - Kommenttikenttä, johon voi laittaa omia kokemuksia reitistä.
 - Mahdollisesti kenttä, jossa on info-isku vastuullisesta retkeilystä.
 - About sivu eri reitille (reititys).
-- Reitin keston laskeminen .json tiedostossa tarjotun reittipituuden mukaan
-- Reitin mitta "drag" 1 - 10 km -filtteri toimii reittien minmax arvonen mukaan 
