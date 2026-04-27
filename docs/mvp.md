@@ -11,3 +11,5 @@
 - Kommenttikenttä, johon voi laittaa omia kokemuksia reitistä.
 - Mahdollisesti kenttä, jossa on info-isku vastuullisesta retkeilystä.
 - About sivu eri reitille (reititys).
+- Kortissa näkyvä "kesto / h" lasketaan reitin pituuden mukaan keskikävelynopeuden mukaan
+- Filtteri "drag-slider" toimii .json tiedostossa olevien reittien min (km) sekä max (km) mukaan
