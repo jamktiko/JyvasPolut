@@ -1,0 +1,92 @@
+[
+	{
+		"name": "Haapasaaren luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Haukanniemen luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Jääskelän luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Kangasvuoren luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Laajavuoren luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Nyrölän retkeilypolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Sippulanniemen luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Tourujoen luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	},
+	{
+		"name": "Touruvuoren luontopolku",
+		"description": "",
+		"trailLength": 2.3,
+		"centreLength": 1,
+		"difficulty": "",
+		"publicTransport": "",
+		"property": "",
+		"images": [""]
+	}
+]
