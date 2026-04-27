@@ -5,8 +5,11 @@
 - Kartta, jossa näkyy kaikki sivulla esitellyt kohteet täppänä (mapbox vaatii access token)
 - Kuvien selaus nuolilla(karuselli) modaalissa
 - Kohteiden merkkaaminen "käydyksi" ja mahdollisesti laittamaan favoriteksi
+- Luontopolun tietoja ovat: nimi, pituus, ominaisuus (järvi, vuori, näköala), vaikeusaste, julkinen liikenne, etäisyys keskustasta, description
 
 ## Mahdolliset laajennukset:
 - Kommenttikenttä, johon voi laittaa omia kokemuksia reitistä.
 - Mahdollisesti kenttä, jossa on info-isku vastuullisesta retkeilystä.
 - About sivu eri reitille (reititys).
+- Kortissa näkyvä "kesto / h" lasketaan reitin pituuden mukaan keskikävelynopeuden mukaan
+- Filtteri "drag-slider" toimii .json tiedostossa olevien reittien min (km) sekä max (km) mukaan
