@@ -2,14 +2,14 @@
 	interface Props {
 		title: string;
 		desc: string;
-		kuva: string[];
+		imgs: string[];
 	}
 
-	let { title, kuva, desc }: Props = $props();
+	let { title, imgs, desc }: Props = $props();
 </script>
 
 <div>
-	<img src={kuva[0]} alt={title} />
+	<img src={imgs[0]} alt={title} />
 	<div>
 		<h2>{title}</h2>
 		<p>{desc}</p>
