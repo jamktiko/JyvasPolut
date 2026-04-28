@@ -7,5 +7,5 @@ export interface ItrailTypes {
 	publicTransport: string;
 	property: string;
 	fireplace: boolean;
-	images: string[];
+	images: string[] | null;
 }

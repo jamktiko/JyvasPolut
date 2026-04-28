@@ -3,14 +3,19 @@
 		title: string;
 		desc: string;
 		difficulty: string;
-		imgs: string[];
+		imgs: string[] | null;
 	}
 
 	let { title, desc, difficulty, imgs }: Props = $props();
 </script>
 
 <div>
-	<img src={imgs[0]} alt={title} />
+	{#if imgs}
+		<img src={imgs[0]} alt={title} />
+	{:else}
+		<div>🌳</div>
+	{/if}
+
 	<div>
 		<h2>{title}</h2>
 		<p>{desc}</p>
