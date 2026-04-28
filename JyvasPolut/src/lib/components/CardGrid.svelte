@@ -5,8 +5,10 @@
 
 	import { onMount } from 'svelte';
 
+	// trailCards has the data from naturetrail.json
 	let trailCards: ItrailTypes[] = $state([]);
 
+	// selected is the current selected natureTrail
 	let selected = $state<ItrailTypes | null>(null);
 
 	function open(item: ItrailTypes) {
@@ -17,6 +19,7 @@
 		selected = null;
 	}
 
+	// OnMount fetches the data from naturetrail.json on component load and sets it to trailCards
 	onMount(async () => {
 		const response = await fetch('/data/naturetrail.json');
 
@@ -28,8 +31,10 @@
 	});
 </script>
 
+<!-- This shows before the data has been correctly fetched -->
 {#await trailCards}
 	<div>Loading....</div>
+	<!-- This shows after the data has been successfully -->
 {:then responseData}
 	<div class="grid">
 		{#each responseData as trailCard, i (i)}
