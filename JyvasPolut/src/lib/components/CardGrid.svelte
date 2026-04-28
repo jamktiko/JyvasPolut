@@ -43,9 +43,10 @@
 	//---------------------------
 </script>
 
+<!-- This shows before the data has been successfully fetched-->
 {#await filtered}
 	<div>Loading....</div>
-	<!-- This shows after the data has been successfully -->
+	<!-- This shows after the data has been successfully fetched-->
 {:then responseData}
 	<div class="grid">
 		{#each responseData as trailCard (trailCard.name)}
@@ -59,9 +60,13 @@
 			</button>
 		{/each}
 	</div>
+
+	<!-- FullCard shows once a card has been selected -->
 	{#if selected}
 		<FullCard {...selected} hideProduct={close} />
 	{/if}
+
+	<!-- This shows when the data fetch has been unsuccessful -->
 {:catch error}
 	<div class="error">
 		{error.message}

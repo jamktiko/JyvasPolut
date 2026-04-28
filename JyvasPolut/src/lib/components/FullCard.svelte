@@ -65,11 +65,13 @@
 
 	<div class="moreinfo">
 		<div class="image">
-			{#if nykyinenKuva}<!-- If images in the naturetrail.json are not null -->
+			<!-- If images in the naturetrail.json are not null -->
+			{#if nykyinenKuva}
 				<button onclick={selaaKuviaTaakse}>&lt</button>
 				<img src={nykyinenKuva} alt={name} height="200px" width="300px" />
 				<button onclick={selaaKuviaEteen}>&gt;</button>
-			{:else}<!-- Else it shows an alternative emoji -->
+				<!-- Else it shows an alternative emoji -->
+			{:else}
 				<div class="placeholderimg">🌳</div>
 			{/if}
 		</div>
