@@ -1,3 +1,11 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+body {
+    background: linear-gradient(to right, #0F172A, #022C22);
+}
+p {
+    color: white;
+    padding: 1.5rem;
+}
