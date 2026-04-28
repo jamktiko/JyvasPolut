@@ -11,9 +11,11 @@
 
 <!-- Card container -->
 <div>
-	{#if imgs}<!-- If images in the naturetrail.json are not null -->
+	<!-- If images in the naturetrail.json are not null -->
+	{#if imgs}
 		<img src={imgs[0]} alt={title} />
-	{:else}<!-- Else it shows an alternative emoji -->
+		<!-- Else it shows an alternative emoji -->
+	{:else}
 		<div>🌳</div>
 	{/if}
 
