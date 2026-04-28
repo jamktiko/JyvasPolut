@@ -2,10 +2,11 @@
 	interface Props {
 		title: string;
 		desc: string;
+		difficulty: string;
 		imgs: string[];
 	}
 
-	let { title, imgs, desc }: Props = $props();
+	let { title, desc, difficulty, imgs }: Props = $props();
 </script>
 
 <div>
@@ -13,5 +14,9 @@
 	<div>
 		<h2>{title}</h2>
 		<p>{desc}</p>
+		<div>
+			<p>{difficulty}</p>
+			<button>Lue lisää</button>
+		</div>
 	</div>
 </div>

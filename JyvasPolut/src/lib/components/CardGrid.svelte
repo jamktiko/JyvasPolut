@@ -22,7 +22,12 @@
 {:then responseData}
 	<div class="grid">
 		{#each responseData as trailCard, i (i)}
-			<Card title={trailCard.name} desc={trailCard.description} imgs={trailCard.images} />
+			<Card
+				title={trailCard.name}
+				desc={trailCard.description}
+				difficulty={trailCard.difficulty}
+				imgs={trailCard.images}
+			/>
 		{/each}
 	</div>
 {:catch error}
