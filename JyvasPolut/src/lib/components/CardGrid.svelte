@@ -1,15 +1,17 @@
 <script lang="ts">
-	import Card from './Card.svelte';
+	import Card from '$lib/components/Card.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
 
 	import { trailLength } from '$lib/Length.svelte';
 
-	import FullCard from './FullCard.svelte';
+	import FullCard from '$lib/components/FullCard.svelte';
 
 	import { onMount } from 'svelte';
 
+	// trailCards has the data from naturetrail.json
 	let trailCards: ItrailTypes[] = $state([]);
 
+	// selected is the current selected natureTrail
 	let selected = $state<ItrailTypes | null>(null);
 
 	function open(item: ItrailTypes) {
@@ -20,6 +22,7 @@
 		selected = null;
 	}
 
+	// OnMount fetches the data from naturetrail.json on component load and sets it to trailCards
 	onMount(async () => {
 		const response = await fetch('/data/naturetrail.json');
 
@@ -40,8 +43,10 @@
 	//---------------------------
 </script>
 
+<!-- This shows before the data has been successfully fetched-->
 {#await filtered}
 	<div>Loading....</div>
+	<!-- This shows after the data has been successfully fetched-->
 {:then responseData}
 	<div class="grid">
 		{#each responseData as trailCard (trailCard.name)}
@@ -55,9 +60,13 @@
 			</button>
 		{/each}
 	</div>
+
+	<!-- FullCard shows once a card has been selected -->
 	{#if selected}
 		<FullCard {...selected} hideProduct={close} />
 	{/if}
+
+	<!-- This shows when the data fetch has been unsuccessful -->
 {:catch error}
 	<div class="error">
 		{error.message}

@@ -12,6 +12,7 @@
 <div class="card">
 	{#if imgs}
 		<img src={imgs[0]} alt={title} />
+		<!-- Else it shows an alternative emoji -->
 	{:else}
 		<div>🌳</div>
 	{/if}
