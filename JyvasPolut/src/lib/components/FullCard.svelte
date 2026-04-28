@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Modal from '$lib/components/Modal.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import ScrollButton from './ScrollButton.svelte';
 
 	interface Props {
 		name: string;
@@ -66,9 +68,9 @@
 	<div class="moreinfo">
 		<div class="image">
 			{#if nykyinenKuva}<!-- If images in the naturetrail.json are not null -->
-				<button onclick={selaaKuviaTaakse}>&lt</button>
+				<ScrollButton onclick={selaaKuviaTaakse} text="&lt" />
 				<img src={nykyinenKuva} alt={name} height="200px" width="300px" />
-				<button onclick={selaaKuviaEteen}>&gt;</button>
+				<ScrollButton onclick={selaaKuviaEteen} text="&gt" />
 			{:else}<!-- Else it shows an alternative emoji -->
 				<div class="placeholderimg">🌳</div>
 			{/if}
@@ -90,6 +92,6 @@
 	</div>
 
 	{#snippet footer()}
-		<button onclick={hideProduct}>Sulje</button>
+		<Button text="sulje" onclick={hideProduct} />
 	{/snippet}
 </Modal>
