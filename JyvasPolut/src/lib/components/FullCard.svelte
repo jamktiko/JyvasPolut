@@ -67,7 +67,8 @@
 	}
 </script>
 
-<Modal>
+<!-- This gives Modal.svelte "hideProduct" props as "close" -->
+<Modal close={hideProduct}>
 	{#snippet header()}
 		<h1>{name}</h1>
 	{/snippet}

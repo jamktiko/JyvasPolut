@@ -4,16 +4,28 @@
 		header?: Snippet;
 		children: Snippet;
 		footer?: Snippet;
+		close?: () => void;
 	}
 
-	let { header, children, footer = $bindable() }: Props = $props();
+	let { header, children, footer, close }: Props = $props();
 
 	import { fly } from 'svelte/transition';
+
+	function handleClick(e: MouseEvent) {
+		e.stopPropagation();
+	}
 </script>
 
-<div class="backdrop"></div>
+<!-- virheilmotusten poisto -->
+<!-- svelte-ignore a11y_consider_explicit_label -->
+<button onclick={() => close?.()}>
+	<div class="backdrop"></div>
+</button>
 
-<div class="modal" transition:fly={{ y: -300, delay: 50, duration: 500 }}>
+<!-- virheilmotusten poisto -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="modal" transition:fly={{ y: -300, delay: 50, duration: 500 }} onclick={handleClick}>
 	<header>
 		{@render header?.()}
 	</header>
