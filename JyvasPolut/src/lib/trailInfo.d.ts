@@ -5,13 +5,13 @@ export interface ItrailTypes {
 	centreTime: string[];
 	difficulty: string;
 	publicTransport: string[];
-	mountain: boolean;
+	mountain: '✅' | '❌';
 	bodyOfWater: BodyOfWater;
-	fireplace: boolean;
+	fireplace: '✅' | '❌';
 	images: string[] | null;
 }
 
 export interface BodyOfWater {
-	exist: boolean;
+	exist: '✅' | '❌';
 	type?: string;
 }

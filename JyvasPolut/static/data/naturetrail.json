@@ -6,12 +6,12 @@
 		"centreTime": ["Autolla 40min", "Linkillä 36min"],
 		"difficulty": "Kevyt",
 		"publicTransport": ["Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"],
-		"mountain": false,
+		"mountain": "❌",
 		"bodyOfWater": {
-			"exist": true,
+			"exist": "✅",
 			"type": "Järvi"
 		},
-		"fireplace": true,
+		"fireplace": "✅",
 		"images": [
 			"/images/haapasaari/haapasaari1.png",
 			"/images/haapasaari/haapasaari2.png",
@@ -29,12 +29,12 @@
 			"Linkkilinja: S3 | Pysäkki: Kortesuo 2",
 			"Linkkilinja: S4 | Pysäkki: Kortesuo 2"
 		],
-		"mountain": false,
+		"mountain": "❌",
 		"bodyOfWater": {
-			"exist": true,
+			"exist": "✅",
 			"type": "Järvi"
 		},
-		"fireplace": true,
+		"fireplace": "✅",
 		"images": [
 			"/images/haukanniemi/haukanniemi1.png",
 			"/images/haukanniemi/haukanniemi2.png",
@@ -49,12 +49,12 @@
 		"centreTime": ["Autolla 56min", "Linkillä 51min"],
 		"difficulty": "Rasittava",
 		"publicTransport": ["Linkkilinja: 38 | Pysäkki: Jääskelä E"],
-		"mountain": false,
+		"mountain": "❌",
 		"bodyOfWater": {
-			"exist": true,
+			"exist": "✅",
 			"type": "Järvi"
 		},
-		"fireplace": true,
+		"fireplace": "✅",
 		"images": [
 			"/images/jaaskela/jaaskela1.png",
 			"/images/jaaskela/jaaskela2.png",
@@ -73,12 +73,12 @@
 			"Linkkilinja: 12 | Pysäkki: Marjapolku 2",
 			"Linkkilinja: 14 | Pysäkki: Marjapolku 2"
 		],
-		"mountain": false,
+		"mountain": "❌",
 		"bodyOfWater": {
-			"exist": true,
+			"exist": "✅",
 			"type": "lampi"
 		},
-		"fireplace": true,
+		"fireplace": "✅",
 		"images": [
 			"/images/kangasvuori/kangasvuori1.png",
 			"/images/kangasvuori/kangasvuori2.png",
@@ -97,11 +97,11 @@
 			"Linkkilinja: 9 | Pysäkki: Laajavuori 2",
 			"Linkkilinja: 39 | Pysäkki: Laajavuori 2"
 		],
-		"mountain": true,
+		"mountain": "✅",
 		"bodyOfWater": {
-			"exist": false
+			"exist": "❌"
 		},
-		"fireplace": true,
+		"fireplace": "✅",
 		"images": [
 			"/images/laajavuori/laajavuori1.png",
 			"/images/laajavuori/laajavuori2.png",
@@ -120,12 +120,12 @@
 			"Linkkilinja: 32 | Pysäkki: Nyrölä P",
 			"Linkkilinja: 36, 34 | Pysäkki: Jatkola E"
 		],
-		"mountain": false,
+		"mountain": "❌",
 		"bodyOfWater": {
-			"exist": true,
+			"exist": "✅",
 			"type": "Järvi"
 		},
-		"fireplace": true,
+		"fireplace": "✅",
 		"images": [
 			"/images/nyrola/nyrola1.png",
 			"/images/nyrola/nyrola2.png",
@@ -140,12 +140,12 @@
 		"centreTime": ["Autolla 33min", "Linkillä 21min"],
 		"difficulty": "Rasittava",
 		"publicTransport": ["Linkkilinja: S3 | Pysäkki: Kissankello 2"],
-		"mountain": false,
+		"mountain": "❌",
 		"bodyOfWater": {
-			"exist": true,
-			"type": "Järvi"
+			"exist": "✅",
+			"type": "Suo"
 		},
-		"fireplace": true,
+		"fireplace": "✅",
 		"images": [
 			"/images/sippulanniemi/sippulanniemi1.png",
 			"/images/sippulanniemi/sippulanniemi2.png",
@@ -164,12 +164,12 @@
 			"Linkkilinja 37 | Pysäkki Vanha hautausmaa 2",
 			"Linkkilinja 31 | Pysäkki Vanha hautausmaa 2"
 		],
-		"mountain": false,
+		"mountain": "❌",
 		"bodyOfWater": {
-			"exist": true,
+			"exist": "✅",
 			"type": "Joki"
 		},
-		"fireplace": false,
+		"fireplace": "❌",
 		"images": [
 			"/images/tourujoki/tourujoki1.png",
 			"/images/tourujoki/tourujoki2.png",
@@ -188,11 +188,11 @@
 			"Linkkilinja: 36 | Pysäkki: Palokan terveyskeskus 2",
 			"Linkkilinja: S5 | Pysäkki: Palokan terveyskeskus 1"
 		],
-		"mountain": true,
+		"mountain": "✅",
 		"bodyOfWater": {
-			"exist": false
+			"exist": "❌"
 		},
-		"fireplace": false,
+		"fireplace": "❌",
 		"images": [
 			"/images/touruvuori/touruvuori1.png",
 			"/images/touruvuori/touruvuori2.png",

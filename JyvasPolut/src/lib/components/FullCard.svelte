@@ -10,15 +10,15 @@
 		centreTime: string[];
 		difficulty: string;
 		publicTransport: string[];
-		mountain: boolean;
+		mountain: '✅' | '❌';
 		bodyOfWater: BodyOfWater;
-		fireplace: boolean;
+		fireplace: '✅' | '❌';
 		images: string[] | null;
 		hideProduct: () => void;
 	}
 
 	export interface BodyOfWater {
-		exist: boolean;
+		exist: '✅' | '❌';
 		type?: string;
 	}
 
@@ -92,22 +92,12 @@
 			<hr />
 			<p>Haastavuustaso: {difficulty}</p>
 			<p>Pituus: {trailLength}km</p>
-			{#if mountain}
-				<p>Vuori: ✅</p>
-			{:else}
-				<p>Vuori: ❌</p>
-			{/if}
-			{#if bodyOfWater.exist}
-				<p>Vesistö: ✅</p>
+			<p>Vuori: {mountain}</p>
+			<p>Vesistö: {bodyOfWater.exist}</p>
+			{#if bodyOfWater.exist === '✅'}
 				<p>Vesistötyyppi: {bodyOfWater.type}</p>
-			{:else}
-				<p>Vesistö: ❌</p>
 			{/if}
-			{#if fireplace}
-				<p>Tulenteko paikka: ✅</p>
-			{:else}
-				<p>Tulenteko paikka: ❌</p>
-			{/if}
+			<p>Tulenteko paikka: {fireplace}</p>
 
 			<h2>Etäisyys ja kulku keskustasta</h2>
 			<hr />
