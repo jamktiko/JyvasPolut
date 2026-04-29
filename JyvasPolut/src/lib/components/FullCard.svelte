@@ -93,7 +93,10 @@
 		</div>
 	</div>
 
+
 	{#snippet footer()}
 		<Button text="sulje" onclick={hideProduct} />
 	{/snippet}
 </Modal>
+
+
