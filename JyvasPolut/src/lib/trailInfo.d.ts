@@ -5,7 +5,13 @@ export interface ItrailTypes {
 	centreTime: string;
 	difficulty: string;
 	publicTransport: string;
-	property: string;
+	mountain: boolean;
+	bodyOfWater: BodyOfWater;
 	fireplace: boolean;
 	images: string[] | null;
+}
+
+export interface BodyOfWater {
+	exist: boolean;
+	type?: string;
 }

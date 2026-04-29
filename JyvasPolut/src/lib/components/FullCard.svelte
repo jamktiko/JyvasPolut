@@ -10,10 +10,16 @@
 		centreTime: string;
 		difficulty: string;
 		publicTransport: string;
-		property: string;
+		mountain: boolean;
+		bodyOfWater: BodyOfWater;
 		fireplace: boolean;
 		images: string[] | null;
 		hideProduct: () => void;
+	}
+
+	export interface BodyOfWater {
+		exist: boolean;
+		type?: string;
 	}
 
 	let {
@@ -23,7 +29,8 @@
 		centreTime,
 		difficulty,
 		publicTransport,
-		property,
+		mountain,
+		bodyOfWater,
 		fireplace,
 		images,
 		hideProduct
@@ -82,7 +89,17 @@
 			<p>{description}</p>
 			<p>{difficulty}</p>
 			<p>{trailLength}km</p>
-			<p>{property}</p>
+			{#if mountain}
+				<p>Vuori: Kyllä</p>
+			{:else}
+				<p>Vuori: Ei</p>
+			{/if}
+			{#if bodyOfWater.exist}
+				<p>Vesistö: Kyllä</p>
+				<p>Vesistötyyppi: {bodyOfWater.type}</p>
+			{:else}
+				<p>Vesistö: Ei</p>
+			{/if}
 			{#if fireplace}
 				<p>Tulenteko paikka✅</p>
 			{:else}
@@ -93,10 +110,7 @@
 		</div>
 	</div>
 
-
 	{#snippet footer()}
 		<Button text="sulje" onclick={hideProduct} />
 	{/snippet}
 </Modal>
-
-
