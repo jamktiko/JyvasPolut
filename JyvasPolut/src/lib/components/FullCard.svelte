@@ -7,9 +7,9 @@
 		name: string;
 		description: string;
 		trailLength: number;
-		centreTime: string;
+		centreTime: string[];
 		difficulty: string;
-		publicTransport: string;
+		publicTransport: string[];
 		mountain: boolean;
 		bodyOfWater: BodyOfWater;
 		fireplace: boolean;
@@ -22,13 +22,13 @@
 		type?: string;
 	}
 
-	// publicTransport,
 	let {
 		name,
 		description,
 		trailLength,
 		centreTime,
 		difficulty,
+		publicTransport,
 		mountain,
 		bodyOfWater,
 		fireplace,
@@ -108,15 +108,19 @@
 			{:else}
 				<p>Tulenteko paikka: ❌</p>
 			{/if}
+
 			<h2>Etäisyys ja kulku keskustasta</h2>
 			<hr />
-			<p>{centreTime}</p>
-			<!-- <p>{publicTransport}</p> -->
-			<p>Linkki</p>
+
+			{#each centreTime as time (time)}
+				<p>{time}</p>
+			{/each}
+
+			<p>Linkki:</p>
 			<ul>
-				<li>Linkkilinja: 12 | Pysäkki: Vanha hautausmaa 2</li>
-				<li>Linkkilinja: S5 | Pysäkki: Tourunsilta 2</li>
-				<li>Linkkilinja: S1 | Pysäkki: Tourunsilta 2</li>
+				{#each publicTransport as pubTrans (pubTrans)}
+					<li>{pubTrans}</li>
+				{/each}
 			</ul>
 		</div>
 	</div>

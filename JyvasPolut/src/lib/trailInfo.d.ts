@@ -2,9 +2,9 @@ export interface ItrailTypes {
 	name: string;
 	description: string;
 	trailLength: number;
-	centreTime: string;
+	centreTime: string[];
 	difficulty: string;
-	publicTransport: string;
+	publicTransport: string[];
 	mountain: boolean;
 	bodyOfWater: BodyOfWater;
 	fireplace: boolean;

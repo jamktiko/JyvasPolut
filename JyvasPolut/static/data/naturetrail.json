@@ -3,9 +3,9 @@
 		"name": "Iso-Haapasaaren luontopolku",
 		"description": "Haapasaari on runsaan kilometrin pituinen kapea saari Vaajakosken Haapaniemen kyljessä.",
 		"trailLength": 2.7,
-		"centreTime": "Autolla 40 min",
+		"centreTime": ["Autolla 40min", "Linkillä 36min"],
 		"difficulty": "Kevyt",
-		"publicTransport": "Linkkilinja(t) S1, pysäkki Haapaniemi päätepysäkki",
+		"publicTransport": ["Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"],
 		"mountain": false,
 		"bodyOfWater": {
 			"exist": true,
@@ -23,9 +23,12 @@
 		"name": "Haukanniemen luontopolku",
 		"description": "Polku kulkee Haukanniemen kärjessä olevalle esteettömälle puolikodalle ja takaisin samaa reittiä.",
 		"trailLength": 2.4,
-		"centreTime": "Autolla 16 min",
+		"centreTime": ["Autolla 16min", "Linkillä 22min"],
 		"difficulty": "Kevyt",
-		"publicTransport": "Linkkilinja(t) S3 | S4, pysäkki Kortesuo 2",
+		"publicTransport": [
+			"Linkkilinja: S3 | Pysäkki: Kortesuo 2",
+			"Linkkilinja: S4 | Pysäkki: Kortesuo 2"
+		],
 		"mountain": false,
 		"bodyOfWater": {
 			"exist": true,
@@ -43,9 +46,9 @@
 		"name": "Jääskelän luontopolku",
 		"description": "Jääskelän luontopolku vie kulkijan maisemiin, joissa rehevät lehtoalueet vaihtelevat karujen avokallioiden ja mäntykankaiden kanssa.",
 		"trailLength": 5,
-		"centreTime": "Autolla 56 min",
+		"centreTime": ["Autolla 56min", "Linkillä 51min"],
 		"difficulty": "Rasittava",
-		"publicTransport": "Linkkilinja(t) 38, pysäkki Jääskelä E",
+		"publicTransport": ["Linkkilinja: 38 | Pysäkki: Jääskelä E"],
 		"mountain": false,
 		"bodyOfWater": {
 			"exist": true,
@@ -63,9 +66,13 @@
 		"name": "Kangasvuoren luontopolku",
 		"description": "Kangasvuoren luontopolku sijoittuu kaupungin itäisimpään laitaan Kangasvuoren ja Huhtasuon asuinalueiden tuntumaan.",
 		"trailLength": 3,
-		"centreTime": "Autolla 20 min",
+		"centreTime": ["Autolla 20min", "Linkillä 19min"],
 		"difficulty": "Rasittava",
-		"publicTransport": "Linkkilinja(t) S5 | 12 | 14, pysäkki Marjapolku 2",
+		"publicTransport": [
+			"Linkkilinja: S5 | Pysäkki: Marjapolku 2",
+			"Linkkilinja: 12 | Pysäkki: Marjapolku 2",
+			"Linkkilinja: 14 | Pysäkki: Marjapolku 2"
+		],
 		"mountain": false,
 		"bodyOfWater": {
 			"exist": true,
@@ -83,9 +90,13 @@
 		"name": "Laajavuoren luontopolku",
 		"description": "Laajavuoren luontopolku sijaitsee Laajavuoren ulkoilualueella ja kiertää vaihtelevassa metsämaastossa.",
 		"trailLength": 4,
-		"centreTime": "Autolla 25 min",
+		"centreTime": ["Autolla 25min", "Linkillä 22min"],
 		"difficulty": "Raskas",
-		"publicTransport": "Linkkilinja(t) S5 | 9 | 39, pysäkki Laajavuori 2",
+		"publicTransport": [
+			"Linkkilinja: S5 | Pysäkki: Laajavuori 2",
+			"Linkkilinja: 9 | Pysäkki: Laajavuori 2",
+			"Linkkilinja: 39 | Pysäkki: Laajavuori 2"
+		],
 		"mountain": true,
 		"bodyOfWater": {
 			"exist": false
@@ -102,9 +113,13 @@
 		"name": "Nyrölän retkeilypolku",
 		"description": "Nyrölän retkeilypolku kulkee vaihtelevassa metsämaastossa sekä Iso-Musta-järven rannan rämesuolla.",
 		"trailLength": 3.6,
-		"centreTime": "1h 10min julkisilla | 28min autolla",
+		"centreTime": ["Autolla 28min", "Linkillä 57min"],
 		"difficulty": "Rasittava",
-		"publicTransport": "Linkkilinjat(t) S5 | 36 | 32 | 22M, pysäkki Keskusta 2, laituri 2 | Urhonkatu 1",
+		"publicTransport": [
+			"Linkkilinja: 22M, 34 | Pysäkki: Jatkola E",
+			"Linkkilinja: 32 | Pysäkki: Nyrölä P",
+			"Linkkilinja: 36, 34 | Pysäkki: Jatkola E"
+		],
 		"mountain": false,
 		"bodyOfWater": {
 			"exist": true,
@@ -122,9 +137,9 @@
 		"name": "Sippulanniemen luontopolku",
 		"description": "Jyväskylän lähellä sijaitseva helppo ja lyhyt luontoreitti, joka kulkee metsäisessä maastossa ja tarjoaa rauhallisen kaupunkiluontokokemuksen aivan asutuksen tuntumassa.",
 		"trailLength": 4,
-		"centreTime": "Autolla 33 min",
+		"centreTime": ["Autolla 33min", "Linkillä 21min"],
 		"difficulty": "Rasittava",
-		"publicTransport": "Linkkilinjat(t) S3, pysäkki Kissankello 2",
+		"publicTransport": ["Linkkilinja: S3 | Pysäkki: Kissankello 2"],
 		"mountain": false,
 		"bodyOfWater": {
 			"exist": true,
@@ -142,9 +157,13 @@
 		"name": "Tourujoen luontopolku",
 		"description": "Polku sijoittuu Tourujokilaakson luonnonsuojelualueelle.",
 		"trailLength": 0.7,
-		"centreTime": "Jalan 10 min",
+		"centreTime": ["Jalan 10min", "Linkillä 7min"],
 		"difficulty": "Kevyt",
-		"publicTransport": "Linkkilinja(t) 12, pysäkki Vanha hautausmaa 2 || S5 | S1, pysäkki Tourunsilta 2",
+		"publicTransport": [
+			"Linkkilinja 23 | Pysäkki Vanha hautausmaa 2",
+			"Linkkilinja 37 | Pysäkki Vanha hautausmaa 2",
+			"Linkkilinja 31 | Pysäkki Vanha hautausmaa 2"
+		],
 		"mountain": false,
 		"bodyOfWater": {
 			"exist": true,
@@ -162,9 +181,13 @@
 		"name": "Touruvuoren luontopolku",
 		"description": "Luontopolku esittelee alueen metsä-, kallio- ja suoluontoa ja nousee Touruvuoren laelle, mistä avautuu upea maisema.",
 		"trailLength": 3,
-		"centreTime": "40min julkisilla | 16min autolla",
+		"centreTime": ["Autolla 16min", "Linkillä 34min"],
 		"difficulty": "Raskas",
-		"publicTransport": "Linkkilinja(t) 26 | S6 | 22 | S5, pysäkki Keskusta 2, laituri 2 | Urhonkatu 1",
+		"publicTransport": [
+			"Linkkilinja: S6 | Pysäkki: Palokan terveyskeskus 2",
+			"Linkkilinja: 36 | Pysäkki: Palokan terveyskeskus 2",
+			"Linkkilinja: S5 | Pysäkki: Palokan terveyskeskus 1"
+		],
 		"mountain": true,
 		"bodyOfWater": {
 			"exist": false
