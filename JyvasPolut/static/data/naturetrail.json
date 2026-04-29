@@ -140,7 +140,7 @@
 	},
 	{
 		"name": "Tourujoen luontopolku",
-		"description": "Polku sijoittuu Tourujokilaakson luonnonsuojelualueelle. Jokilaakson lehdon ja lehtokorven kasvillisuus on kaupungin ja maakunnankin oloissa poikkeuksellista. Muualta kaupungista tavoittamaton lehtopalsami kasvaa rehevänä polun varressa.",
+		"description": "Polku sijoittuu Tourujokilaakson luonnonsuojelualueelle.",
 		"trailLength": 0.7,
 		"centreTime": "Jalan 10 min",
 		"difficulty": "Kevyt",
@@ -160,7 +160,7 @@
 	},
 	{
 		"name": "Touruvuoren luontopolku",
-		"description": "Luontopolku esittelee alueen metsä-, kallio- ja suoluontoa ja nousee Touruvuoren laelle, mistä avautuu upea maisema.Polku on maastoltaan haastava ja kulkee monin paikoin kallio- ja kivikkopohjalla sekä jyrkästi viettävässä maastossa.",
+		"description": "Luontopolku esittelee alueen metsä-, kallio- ja suoluontoa ja nousee Touruvuoren laelle, mistä avautuu upea maisema.",
 		"trailLength": 3,
 		"centreTime": "40min julkisilla | 16min autolla",
 		"difficulty": "Raskas",

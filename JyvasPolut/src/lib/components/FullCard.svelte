@@ -22,13 +22,13 @@
 		type?: string;
 	}
 
+	// publicTransport,
 	let {
 		name,
 		description,
 		trailLength,
 		centreTime,
 		difficulty,
-		publicTransport,
 		mountain,
 		bodyOfWater,
 		fireplace,
@@ -87,26 +87,36 @@
 		<div class="details">
 			<!-- These are all the details naturetrail has -->
 			<p>{description}</p>
-			<p>{difficulty}</p>
-			<p>{trailLength}km</p>
+			<h2>Ominaisuudet</h2>
+			<hr />
+			<p>Haastavuustaso: {difficulty}</p>
+			<p>Pituus: {trailLength}km</p>
 			{#if mountain}
-				<p>Vuori: Kyllä</p>
+				<p>Vuori: ✅</p>
 			{:else}
-				<p>Vuori: Ei</p>
+				<p>Vuori: ❌</p>
 			{/if}
 			{#if bodyOfWater.exist}
-				<p>Vesistö: Kyllä</p>
+				<p>Vesistö: ✅</p>
 				<p>Vesistötyyppi: {bodyOfWater.type}</p>
 			{:else}
-				<p>Vesistö: Ei</p>
+				<p>Vesistö: ❌</p>
 			{/if}
 			{#if fireplace}
-				<p>Tulenteko paikka✅</p>
+				<p>Tulenteko paikka: ✅</p>
 			{:else}
-				<p>Tulenteko paikka❌</p>
+				<p>Tulenteko paikka: ❌</p>
 			{/if}
+			<h2>Etäisyys ja kulku keskustasta</h2>
+			<hr />
 			<p>{centreTime}</p>
-			<p>{publicTransport}</p>
+			<!-- <p>{publicTransport}</p> -->
+			<p>Linkki</p>
+			<ul>
+				<li>Linkkilinja: 12 | Pysäkki: Vanha hautausmaa 2</li>
+				<li>Linkkilinja: S5 | Pysäkki: Tourunsilta 2</li>
+				<li>Linkkilinja: S1 | Pysäkki: Tourunsilta 2</li>
+			</ul>
 		</div>
 	</div>
 
