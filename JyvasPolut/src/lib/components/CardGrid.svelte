@@ -79,6 +79,6 @@
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 1.5rem;
 		margin-top: 1rem;
-		padding: 2rem;
+		padding: 3rem;
 	}
 </style>
