@@ -36,33 +36,25 @@
 		hideProduct
 	}: Props = $props();
 
-	// kuvaIndex tells the current index the image is at
-	let kuvaIndex = $state(0);
+	// i tells the current index the image is at
+	let i = $state(0);
 	// nykyinenKuva equals the current image
 	// or if naturetrail.json doesn't have images, it sets it at null
-	let nykyinenKuva: string | null = $derived(images ? images[kuvaIndex] : null);
+	let currentImg: string | null = $derived(images ? images[i] : null);
 
-	// selaaKuviaEteen function changes the kuvaIndex up so the image changes to the next one
-	// or on the last one it goest to the start
-	function selaaKuviaEteen() {
-		if (images && images.length > 0) {
-			if (kuvaIndex < images?.length - 1) {
-				kuvaIndex++;
-			} else {
-				kuvaIndex = 0;
-			}
+	// switchImgToNext function changes the index up so the image changes to the next one
+	// or on the last one it goes to the start
+	function switchImgToNext() {
+		if (images) {
+			i = i < images.length - 1 ? i + 1 : 0;
 		}
 	}
 
-	// selaaKuviaTaakse function changes the kuvaIndex down so the image changes to the previous one
+	// switchImgToPrev function changes the index down so the image changes to the previous one
 	// or on the first one it goes to the end
-	function selaaKuviaTaakse() {
-		if (images && images.length > 0) {
-			if (kuvaIndex > 0) {
-				kuvaIndex--;
-			} else {
-				kuvaIndex = images.length - 1;
-			}
+	function switchImgToPrev() {
+		if (images) {
+			i = i > 0 ? i - 1 : images.length - 1;
 		}
 	}
 </script>
@@ -76,10 +68,10 @@
 	<div class="moreinfo">
 		<div class="image">
 			<!-- If images in the naturetrail.json are not null -->
-			{#if nykyinenKuva}
-				<ScrollButton onclick={selaaKuviaTaakse} text="&lt" />
-				<img src={nykyinenKuva} alt={name} height="200px" width="300px" />
-				<ScrollButton onclick={selaaKuviaEteen} text="&gt" />
+			{#if currentImg}
+				<ScrollButton onclick={switchImgToPrev} text="&lt" />
+				<img src={currentImg} alt={name} height="200px" width="300px" />
+				<ScrollButton onclick={switchImgToNext} text="&gt" />
 				<!-- Else it shows an alternative emoji -->
 			{:else}
 				<div class="placeholderimg">🌳</div>
