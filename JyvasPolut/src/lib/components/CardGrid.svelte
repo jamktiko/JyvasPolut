@@ -11,6 +11,14 @@
 	// trailCards has the data from naturetrail.json
 	let trailCards: ItrailTypes[] = $state([]);
 
+	// ECS-näppäimestä modalin sulkeminen
+	function handleWindowKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			close();
+		}
+	}
+	// ECS-näppäimestä modalin sulkeminen
+
 	// selected is the current selected natureTrail
 	let selected = $state<ItrailTypes | null>(null);
 
@@ -24,6 +32,10 @@
 
 	// OnMount fetches the data from naturetrail.json on component load and sets it to trailCards
 	onMount(async () => {
+		// ECS-näppäimestä modalin sulkeminen
+		window.addEventListener('keydown', handleWindowKeyDown);
+		// ECS-näppäimestä modalin sulkeminen, keydown = 'escape' on painettu
+
 		const response = await fetch('/data/naturetrail.json');
 
 		if (!response.ok) {
