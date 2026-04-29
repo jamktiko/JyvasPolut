@@ -2,10 +2,16 @@ export interface ItrailTypes {
 	name: string;
 	description: string;
 	trailLength: number;
-	centreTime: string;
+	centreTime: string[];
 	difficulty: string;
-	publicTransport: string;
-	property: string;
-	fireplace: boolean;
+	publicTransport: string[];
+	mountain: '✅' | '❌';
+	bodyOfWater: BodyOfWater;
+	fireplace: '✅' | '❌';
 	images: string[] | null;
+}
+
+export interface BodyOfWater {
+	exist: '✅' | '❌';
+	type?: string;
 }

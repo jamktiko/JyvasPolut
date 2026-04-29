@@ -1,13 +1,17 @@
 [
 	{
 		"name": "Iso-Haapasaaren luontopolku",
-		"description": "Haapasaari on runsaan kilometrin pituinen kapea saari Vaajakosken Haapaniemen kyljessä. Saaren korkein kohta on reilut 25 metriä Päijänteen pinnan yläpuolella. 2,7 kilometrin pituinen luontopolku kiertää saaren lehtomaisia rantoja ja lehtipuuvaltaisia metsiä sekä nousee saaren korkeimmalle kohdalle kallioiseen männikköön.",
+		"description": "Haapasaari on runsaan kilometrin pituinen kapea saari Vaajakosken Haapaniemen kyljessä.",
 		"trailLength": 2.7,
-		"centreTime": "40 min",
-		"difficulty": "Helppo",
-		"publicTransport": "Linkkilinja(t) S1, pysäkki Haapaniemi päätepysäkki",
-		"property": "Järvi",
-		"fireplace": true,
+		"centreTime": ["Autolla 40min", "Linkillä 36min"],
+		"difficulty": "Kevyt",
+		"publicTransport": ["Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"],
+		"mountain": "❌",
+		"bodyOfWater": {
+			"exist": "✅",
+			"type": "Järvi"
+		},
+		"fireplace": "✅",
 		"images": [
 			"/images/haapasaari/haapasaari1.png",
 			"/images/haapasaari/haapasaari2.png",
@@ -17,13 +21,20 @@
 	},
 	{
 		"name": "Haukanniemen luontopolku",
-		"description": "Polku kulkee Haukanniemen kärjessä olevalle esteettömälle puolikodalle ja takaisin samaa reittiä. Reitin varrella on pelto- ja järvimaisemaa sekä lehtoa ja havumetsää. Lyhdekadun pysäköintialueelta on Haukanniemen kärkeen 1,2 kilometriä. Polun varrella on penkkejä levähtämiseen noin sadan metrin välein. Polun kokonaispituus on 2,4 kilometriä. Osa luontopolusta on vaativaa esteetöntä reittiä, joka on vaihtoehtoinen reitti nuotiopaikalta takaisin esteettömälle paluureitille tultaessa.",
+		"description": "Polku kulkee Haukanniemen kärjessä olevalle esteettömälle puolikodalle ja takaisin samaa reittiä.",
 		"trailLength": 2.4,
-		"centreTime": "Autolla 16 min",
-		"difficulty": "Helppo",
-		"publicTransport": "Linkkilinja(t) S3 | S4, pysäkki Kortesuo 2",
-		"property": "Järvi",
-		"fireplace": true,
+		"centreTime": ["Autolla 16min", "Linkillä 22min"],
+		"difficulty": "Kevyt",
+		"publicTransport": [
+			"Linkkilinja: S3 | Pysäkki: Kortesuo 2",
+			"Linkkilinja: S4 | Pysäkki: Kortesuo 2"
+		],
+		"mountain": "❌",
+		"bodyOfWater": {
+			"exist": "✅",
+			"type": "Järvi"
+		},
+		"fireplace": "✅",
 		"images": [
 			"/images/haukanniemi/haukanniemi1.png",
 			"/images/haukanniemi/haukanniemi2.png",
@@ -33,13 +44,17 @@
 	},
 	{
 		"name": "Jääskelän luontopolku",
-		"description": "Jääskelän luontopolku vie kulkijan maisemiin, joissa rehevät lehtoalueet vaihtelevat karujen avokallioiden ja mäntykankaiden kanssa. Luontopolku on 5 kilometriä pitkä ja polun varrella voi ihailla myös Pohjois-Päijänteelle avautuvia maisemia. Polku nousee Sammalistonkallion päälle.",
+		"description": "Jääskelän luontopolku vie kulkijan maisemiin, joissa rehevät lehtoalueet vaihtelevat karujen avokallioiden ja mäntykankaiden kanssa.",
 		"trailLength": 5,
-		"centreTime": "Autolla 56 min",
-		"difficulty": "Keskivaikea",
-		"publicTransport": "Linkkilinja(t) 38, pysäkki Jääskelä E",
-		"property": "Järvi",
-		"fireplace": true,
+		"centreTime": ["Autolla 56min", "Linkillä 51min"],
+		"difficulty": "Rasittava",
+		"publicTransport": ["Linkkilinja: 38 | Pysäkki: Jääskelä E"],
+		"mountain": "❌",
+		"bodyOfWater": {
+			"exist": "✅",
+			"type": "Järvi"
+		},
+		"fireplace": "✅",
 		"images": [
 			"/images/jaaskela/jaaskela1.png",
 			"/images/jaaskela/jaaskela2.png",
@@ -49,13 +64,21 @@
 	},
 	{
 		"name": "Kangasvuoren luontopolku",
-		"description": "Kangasvuoren luontopolku sijoittuu kaupungin itäisimpään laitaan Kangasvuoren ja Huhtasuon asuinalueiden tuntumaan. Kolmen kilometrin pituinen luontopolku kiertää nimensä mukaisesti Kangasvuoren metsämaastoja. Metsämaisemiin tuo vaihtelua Vuorilampi rantoineen.",
+		"description": "Kangasvuoren luontopolku sijoittuu kaupungin itäisimpään laitaan Kangasvuoren ja Huhtasuon asuinalueiden tuntumaan.",
 		"trailLength": 3,
-		"centreTime": "Autolla 20 min",
-		"difficulty": "Keskivaikea",
-		"publicTransport": "Linkkilinja(t) S5 | 12 | 14, pysäkki Marjapolku 2",
-		"property": "Lampi",
-		"fireplace": true,
+		"centreTime": ["Autolla 20min", "Linkillä 19min"],
+		"difficulty": "Rasittava",
+		"publicTransport": [
+			"Linkkilinja: S5 | Pysäkki: Marjapolku 2",
+			"Linkkilinja: 12 | Pysäkki: Marjapolku 2",
+			"Linkkilinja: 14 | Pysäkki: Marjapolku 2"
+		],
+		"mountain": "❌",
+		"bodyOfWater": {
+			"exist": "✅",
+			"type": "lampi"
+		},
+		"fireplace": "✅",
 		"images": [
 			"/images/kangasvuori/kangasvuori1.png",
 			"/images/kangasvuori/kangasvuori2.png",
@@ -65,13 +88,20 @@
 	},
 	{
 		"name": "Laajavuoren luontopolku",
-		"description": "Laajavuoren luontopolku sijaitsee Laajavuoren ulkoilualueella ja kiertää vaihtelevassa metsämaastossa. Noin neljän kilometrin pituinen polku kulkee suurelta osin kuusivaltaisissa metsissä, joihin vaihtelua tuovat mm. kalliot ja pienet suot. Polku kunnostettiin vuonna 2016 ja ohjattiin kulkemaan laskettelureittien länsipuolelta aiempaa viihtyisämpää ja turvallisempaa reittiä pitkin.",
+		"description": "Laajavuoren luontopolku sijaitsee Laajavuoren ulkoilualueella ja kiertää vaihtelevassa metsämaastossa.",
 		"trailLength": 4,
-		"centreTime": "Autolla 25 min",
-		"difficulty": "Keskivaikea",
-		"publicTransport": "Linkkilinja(t) S5 | 9 | 39, pysäkki Laajavuori 2",
-		"property": "Näköala",
-		"fireplace": true,
+		"centreTime": ["Autolla 25min", "Linkillä 22min"],
+		"difficulty": "Raskas",
+		"publicTransport": [
+			"Linkkilinja: S5 | Pysäkki: Laajavuori 2",
+			"Linkkilinja: 9 | Pysäkki: Laajavuori 2",
+			"Linkkilinja: 39 | Pysäkki: Laajavuori 2"
+		],
+		"mountain": "✅",
+		"bodyOfWater": {
+			"exist": "❌"
+		},
+		"fireplace": "✅",
 		"images": [
 			"/images/laajavuori/laajavuori1.png",
 			"/images/laajavuori/laajavuori2.png",
@@ -81,45 +111,65 @@
 	},
 	{
 		"name": "Nyrölän retkeilypolku",
-		"description": "Nyrölän retkeilypolku kulkee vaihtelevassa metsämaastossa sekä Iso-Musta-järven rannan rämesuolla. Retkeilypolun varrella on myös Saparon tekolampi. Retkeilypolun pituus on 3,6 kilometriä ja polku huipentuu laavusaareen, jonne pääsee vetolossilla yli Iso-Mustan tummien vesien.",
+		"description": "Nyrölän retkeilypolku kulkee vaihtelevassa metsämaastossa sekä Iso-Musta-järven rannan rämesuolla.",
 		"trailLength": 3.6,
-		"centreTime": "1h 10min julkisilla | 28min autolla",
-		"difficulty": "Keskivaikea",
-		"publicTransport": "Linkkilinjat(t) S5 | 36 | 32 | 22M, pysäkki Keskusta 2, laituri 2 | Urhonkatu 1",
-		"property": "Järvi",
-		"fireplace": true,
+		"centreTime": ["Autolla 28min", "Linkillä 57min"],
+		"difficulty": "Rasittava",
+		"publicTransport": [
+			"Linkkilinja: 22M, 34 | Pysäkki: Jatkola E",
+			"Linkkilinja: 32 | Pysäkki: Nyrölä P",
+			"Linkkilinja: 36, 34 | Pysäkki: Jatkola E"
+		],
+		"mountain": "❌",
+		"bodyOfWater": {
+			"exist": "✅",
+			"type": "Järvi"
+		},
+		"fireplace": "✅",
 		"images": [
-			"https://retkipaikka.fi/wp-content/uploads/2021/09/Nyrola17.jpg",
-			"https://visitjyvaskyla.fi/wp-content/uploads/2020/11/2991-Nyrolan_luontopolku_Keski-Suomen_ELYmuokattu.jpg",
-			"https://notskilla.blogi.net/blogpictures/P9156106.jpg?img=img2048&hash=a053a",
-			"https://notskilla.blogi.net/blogpictures/P9156130.jpg?img=img2048&hash=d7b81"
+			"/images/nyrola/nyrola1.png",
+			"/images/nyrola/nyrola2.png",
+			"/images/nyrola/nyrola3.png",
+			"/images/nyrola/nyrola4.png"
 		]
 	},
 	{
 		"name": "Sippulanniemen luontopolku",
 		"description": "Jyväskylän lähellä sijaitseva helppo ja lyhyt luontoreitti, joka kulkee metsäisessä maastossa ja tarjoaa rauhallisen kaupunkiluontokokemuksen aivan asutuksen tuntumassa.",
 		"trailLength": 4,
-		"centreTime": "Autolla 33 min",
-		"difficulty": "Keskivaikea",
-		"publicTransport": "Linkkilinjat(t) S3, pysäkki Kissankello 2",
-		"property": "Järvi",
-		"fireplace": true,
+		"centreTime": ["Autolla 33min", "Linkillä 21min"],
+		"difficulty": "Rasittava",
+		"publicTransport": ["Linkkilinja: S3 | Pysäkki: Kissankello 2"],
+		"mountain": "❌",
+		"bodyOfWater": {
+			"exist": "✅",
+			"type": "Suo"
+		},
+		"fireplace": "✅",
 		"images": [
-			"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Sippulanniemi_nature_trail_2.jpg/1280px-Sippulanniemi_nature_trail_2.jpg",
-			"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEih3D92dYM-SOktx3klgOmdvik8vOR-D9XltF2QcFliVU8ktfJEyi6LbC0dgzwTqxh5D8vIVgebOZrClsMpHqboDvpg5tNapyHXm_8OWaIXvv11P6hwh2XiGzDgnyp2N2mwyUKNAQo7MeI/s1600-rw/Sippulanniemi-luontopolku-kallioita.jpg",
-			"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhW1ifBZLgUtC7hNL5QSykFQhwPDFhmmzZkKQ9Ti5PT5OqEYsRm_j_vkiblQBIzRpspm1Wdi9qe2e7orVw2EZ65wXQXjtzCXXzh8KyJa2esUfsBITyTk8hY0p-0k3ISFNooVPGq_ZDrZ04/s1600-rw/Harhapolku-Sippulanniemi.jpg",
-			"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIT8CCF-PdRtfuJHy5XIdPDTfXRtS-kKd1NmKl3xyCOzNszv7WNQVj-UxRo4enXEITF9tfl0rRx4Nxu2ltFT3pLWgGWRcnK5-EPca-8Wwk4-4z6Hjol86cN3RT-zquOAn_o0dycoOKjak/s1600-rw/Sippulanniemen-luontopolku-opasteviitta.jpg"
+			"/images/sippulanniemi/sippulanniemi1.png",
+			"/images/sippulanniemi/sippulanniemi2.png",
+			"/images/sippulanniemi/sippulanniemi3.png",
+			"/images/sippulanniemi/sippulanniemi4.png"
 		]
 	},
 	{
 		"name": "Tourujoen luontopolku",
-		"description": "Polku sijoittuu Tourujokilaakson luonnonsuojelualueelle. Jokilaakson lehdon ja lehtokorven kasvillisuus on kaupungin ja maakunnankin oloissa poikkeuksellista. Muualta kaupungista tavoittamaton lehtopalsami kasvaa rehevänä polun varressa. Vehreä joenvarsilehto sijaitsee aivan kaupungin keskellä ja tarjoaa virkistystä kiireisellekin kulkijalle. Polun voi kiertää ulkoilukengin. Yhdeksän opastaulun avulla kulkija  tutustuu mm. lehtokas­veihin, vesiensuojeluun sekä alueen kulttuurihistoriaan",
+		"description": "Polku sijoittuu Tourujokilaakson luonnonsuojelualueelle.",
 		"trailLength": 0.7,
-		"centreTime": "Jalan 10 min",
-		"difficulty": "Helppo",
-		"publicTransport": "Linkkilinja(t) 12, pysäkki Vanha hautausmaa 2 || S5 | S1, pysäkki Tourunsilta 2",
-		"property": "Joki",
-		"fireplace": false,
+		"centreTime": ["Jalan 10min", "Linkillä 7min"],
+		"difficulty": "Kevyt",
+		"publicTransport": [
+			"Linkkilinja 23 | Pysäkki Vanha hautausmaa 2",
+			"Linkkilinja 37 | Pysäkki Vanha hautausmaa 2",
+			"Linkkilinja 31 | Pysäkki Vanha hautausmaa 2"
+		],
+		"mountain": "❌",
+		"bodyOfWater": {
+			"exist": "✅",
+			"type": "Joki"
+		},
+		"fireplace": "❌",
 		"images": [
 			"/images/tourujoki/tourujoki1.png",
 			"/images/tourujoki/tourujoki2.png",
@@ -129,18 +179,25 @@
 	},
 	{
 		"name": "Touruvuoren luontopolku",
-		"description": "Luontopolku esittelee alueen metsä-, kallio- ja suoluontoa ja nousee Touruvuoren laelle, mistä avautuu upea maisema.Polku on maastoltaan haastava ja kulkee monin paikoin kallio- ja kivikkopohjalla sekä jyrkästi viettävässä maastossa.",
+		"description": "Luontopolku esittelee alueen metsä-, kallio- ja suoluontoa ja nousee Touruvuoren laelle, mistä avautuu upea maisema.",
 		"trailLength": 3,
-		"centreTime": "40min julkisilla | 16min autolla",
-		"difficulty": "Keskivaikea",
-		"publicTransport": "Linkkilinja(t) 26 | S6 | 22 | S5, pysäkki Keskusta 2, laituri 2 | Urhonkatu 1",
-		"property": "Vuori",
-		"fireplace": false,
+		"centreTime": ["Autolla 16min", "Linkillä 34min"],
+		"difficulty": "Raskas",
+		"publicTransport": [
+			"Linkkilinja: S6 | Pysäkki: Palokan terveyskeskus 2",
+			"Linkkilinja: 36 | Pysäkki: Palokan terveyskeskus 2",
+			"Linkkilinja: S5 | Pysäkki: Palokan terveyskeskus 1"
+		],
+		"mountain": "✅",
+		"bodyOfWater": {
+			"exist": "❌"
+		},
+		"fireplace": "❌",
 		"images": [
-			"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0pX23YdFKSo5TaDkBdI0Z-ZF8wxv2MHjlY3MczDkFwLHgdg6JyrPJkryksp9cCSh82APVv0GyPTr2nGgPlDwC6ZuzgcP6l_Y00n6t-ZsL6MgP-2hcXDBNBUf5nrxnakMH_Cm0jWc53XU/s1600/Touruvuoren-luontopolku-lahtopaikka.jpg",
-			"https://visitjyvaskyla.fi/wp-content/uploads/2020/11/3019-Talkoovuorten-Miehinkaisen_luontopolku_Keski-Suomen_ELY_2muokattu-480x320.jpg",
-			"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_sl9MltTuPwaXst1vEvcZvJ6qSt7U5ym7wQfASAiRmfLKDdC2U4SDprZLd60GiadUkGORfpavBHyVdMYfR566mngIb8mUhmvZ0Y4OvivVoHUs0Y9M6oXzgdpTXgAqqxGPqNEpLFqIgaM/s1600/Touruvuoren_luontopolku_sammalmetsa.jpg",
-			"https://visitjyvaskyla.fi/wp-content/uploads/2020/11/2982-Touruvuoren_luontopolku__kuvaaja_heikki_sihvonen_muokattu.jpg"
+			"/images/touruvuori/touruvuori1.png",
+			"/images/touruvuori/touruvuori2.png",
+			"/images/touruvuori/touruvuori3.png",
+			"/images/touruvuori/touruvuori4.png"
 		]
 	}
 ]

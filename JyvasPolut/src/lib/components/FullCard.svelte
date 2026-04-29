@@ -7,13 +7,19 @@
 		name: string;
 		description: string;
 		trailLength: number;
-		centreTime: string;
+		centreTime: string[];
 		difficulty: string;
-		publicTransport: string;
-		property: string;
-		fireplace: boolean;
+		publicTransport: string[];
+		mountain: '✅' | '❌';
+		bodyOfWater: BodyOfWater;
+		fireplace: '✅' | '❌';
 		images: string[] | null;
 		hideProduct: () => void;
+	}
+
+	export interface BodyOfWater {
+		exist: '✅' | '❌';
+		type?: string;
 	}
 
 	let {
@@ -23,7 +29,8 @@
 		centreTime,
 		difficulty,
 		publicTransport,
-		property,
+		mountain,
+		bodyOfWater,
 		fireplace,
 		images,
 		hideProduct
@@ -88,16 +95,30 @@
 		<div class="details">
 			<!-- These are all the details naturetrail has -->
 			<p>{description}</p>
-			<p>{difficulty}</p>
-			<p>{trailLength}km</p>
-			<p>{property}</p>
-			{#if fireplace}
-				<p>Tulenteko paikka✅</p>
-			{:else}
-				<p>Tulenteko paikka❌</p>
+			<h2>Ominaisuudet</h2>
+			<hr />
+			<p>Haastavuustaso: {difficulty}</p>
+			<p>Pituus: {trailLength}km</p>
+			<p>Vuori: {mountain}</p>
+			<p>Vesistö: {bodyOfWater.exist}</p>
+			{#if bodyOfWater.exist === '✅'}
+				<p>Vesistötyyppi: {bodyOfWater.type}</p>
 			{/if}
-			<p>{centreTime}</p>
-			<p>{publicTransport}</p>
+			<p>Tulenteko paikka: {fireplace}</p>
+
+			<h2>Etäisyys ja kulku keskustasta</h2>
+			<hr />
+
+			{#each centreTime as time (time)}
+				<p>{time}</p>
+			{/each}
+
+			<p>Linkki:</p>
+			<ul>
+				{#each publicTransport as pubTrans (pubTrans)}
+					<li>{pubTrans}</li>
+				{/each}
+			</ul>
 		</div>
 	</div>
 
