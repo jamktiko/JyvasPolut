@@ -6,7 +6,7 @@
 		footer?: Snippet;
 	}
 
-	let { header, children, footer }: Props = $props();
+	let { header, children, footer = $bindable() }: Props = $props();
 
 	import { fly } from 'svelte/transition';
 </script>
@@ -47,6 +47,6 @@
 		border-radius: 5px;
 		z-index: 100;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-		background: linear-gradient(to right, #064E3B, #0B0B1E);
+		background: linear-gradient(to right, #064e3b, #0b0b1e);
 	}
 </style>
