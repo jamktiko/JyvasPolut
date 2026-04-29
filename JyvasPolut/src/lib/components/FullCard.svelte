@@ -70,14 +70,21 @@
 		<div class="image">
 			<!-- If images in the naturetrail.json are not null -->
 			{#if nykyinenKuva}
-				<ScrollButton onclick={selaaKuviaTaakse} text="&lt" />
+				<ScrollButton class="buttonLeft" onclick={selaaKuviaTaakse}>
+					<img class="scrollImg" src="/images/vektoreita/arrow_left.svg" alt="kuva" />
+				</ScrollButton>
+
 				<img src={nykyinenKuva} alt={name} height="200px" width="300px" />
-				<ScrollButton onclick={selaaKuviaEteen} text="&gt" />
+
+				<ScrollButton class="buttonRight" onclick={selaaKuviaEteen}>
+					<img class="scrollImg" src="/images/vektoreita/arrow_right.svg" alt="kuva" />
+				</ScrollButton>
 				<!-- Else it shows an alternative emoji -->
 			{:else}
 				<div class="placeholderimg">🌳</div>
 			{/if}
 		</div>
+
 		<div class="details">
 			<!-- These are all the details naturetrail has -->
 			<p>{description}</p>
@@ -98,3 +105,16 @@
 		<Button text="sulje" onclick={hideProduct} />
 	{/snippet}
 </Modal>
+
+<style>
+	/* @@@@@@ Nämä vaikuttavat Korttien kuvien kokoon / asetteluun @@@@@@ */
+	.scrollImg {
+		width: 40px;
+		height: 40px;
+	}
+	.image {
+		position: relative;
+		display: inline-block;
+	}
+	/* @@@@@@ Nämä vaikuttavat Korttien kuvien kokoon / asetteluun @@@@@@ */
+</style>
