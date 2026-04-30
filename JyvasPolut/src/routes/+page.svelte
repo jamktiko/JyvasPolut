@@ -1,10 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
 	import CardGrid from '$lib/components/CardGrid.svelte';
-	import LengthFilter from '$lib/components/LengthFilter.svelte';
-	let teksti = 'asdasd';
+	import Filter from '$lib/components/Filter.svelte';
 </script>
 
-<LengthFilter />
-<Button text={teksti} onclick={() => console.log('naps')} />
+<Filter />
 <CardGrid />

@@ -2,7 +2,7 @@
 	import Card from '$lib/components/Card.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
 
-	import { trailLength } from '$lib/Length.svelte';
+	import { filterInfo } from '$lib/filterInfo.svelte';
 
 	import FullCard from '$lib/components/FullCard.svelte';
 
@@ -48,7 +48,14 @@
 	//---------------------------
 	//---------------------------
 	//---------------------------
-	let filtered = $derived(trailCards.filter((r) => r.trailLength >= trailLength.specificLength));
+	let filteredData: ItrailTypes[] = $state([]);
+	let filtered = $derived(filteredData);
+
+	if (filterInfo.allItems) {
+		filteredData = trailCards;
+	} else {
+		filtered = trailCards.filter((r) => r.trailLength >= filterInfo.specificLength);
+	}
 
 	//---------------------------
 	//---------------------------
