@@ -130,4 +130,11 @@
 		display: inline-block;
 	}
 	/* @@@@@@ Nämä vaikuttavat Korttien kuvien kokoon / asetteluun @@@@@@ */
+	h1 {
+		font-size: 3rem;
+		padding: 1rem;
+		color: white;
+ 		text-shadow: 0 0 10px white;
+}
+	
 </style>

@@ -54,10 +54,12 @@
 	h2 {
 		color: white;
 		font-size: 1.75rem;
+		padding-top: 1rem;
 	}
 	p {
 		font-size: 0.875rem;
 		color: #e2e8f0;
+		text-align:center;
 	}
 	.btn {
 		width: 5rem;
