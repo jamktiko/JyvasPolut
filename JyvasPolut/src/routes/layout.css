@@ -8,4 +8,6 @@ body {
 p {
     color: white;
     padding: 1.5rem;
+    font-size: 1.25rem;
+    margin-left: 2rem;
 }

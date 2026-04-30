@@ -56,7 +56,7 @@
 		width: 80%;
 		max-height: 80vh;
 		background: white;
-		border-radius: 5px;
+		border-radius: 25px;
 		z-index: 100;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 		background: linear-gradient(to right, #064e3b, #0b0b1e);
