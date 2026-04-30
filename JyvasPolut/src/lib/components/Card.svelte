@@ -31,15 +31,28 @@
 <style>
 	.card {
 		background: linear-gradient(to right, #064e3b, #0b0b1e);
+		position: relative;
 		border-radius: 50px;
 		border: 1px solid rgba(255, 255, 255, 0.2);
 		box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.25);
 		padding: 10px;
-		padding-bottom: 1.5rem;
+		padding-bottom: 4rem;
 		transition:
 			transform 0.2s ease,
 			box-shadow 0.2s ease;
 	}
+	.footer {
+	position: absolute;
+	bottom: 1rem;
+	left: 0;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+	
 
 	.card:hover {
 		transform: scale(1.03);
@@ -55,11 +68,13 @@
 		color: white;
 		font-size: 1.75rem;
 		padding-top: 1rem;
+		font-weight: bold;
 	}
 	p {
 		font-size: 0.875rem;
 		color: #e2e8f0;
 		text-align:center;
+		margin: 0;
 	}
 	.btn {
 		width: 5rem;
