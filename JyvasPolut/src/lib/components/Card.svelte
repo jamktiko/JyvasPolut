@@ -40,6 +40,7 @@
 		transition:
 			transform 0.2s ease,
 			box-shadow 0.2s ease;
+		height: 475px;
 	}
 	.footer {
 	position: absolute;
@@ -98,5 +99,7 @@
 
 	.btn:hover {
 		background-color: #082f2d;
+	}
+	.footer {
 	}
 </style>

@@ -1,6 +1,7 @@
 export interface ItrailTypes {
 	name: string;
 	description: string;
+	description2: string;
 	trailLength: number;
 	centreTime: string[];
 	difficulty: string;
