@@ -60,7 +60,7 @@
 	p {
 		font-size: 0.875rem;
 		color: #e2e8f0;
-		text-align:center;
+		text-align: center;
 	}
 	.btn {
 		width: 5rem;
@@ -84,7 +84,5 @@
 
 	.btn:hover {
 		background-color: #082f2d;
-	}
-	.footer {
 	}
 </style>
