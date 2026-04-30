@@ -28,13 +28,20 @@
 		position: absolute;
 		top: 45%;
 		left: 0;
-		box-shadow: 0 0 15px white;
+		box-shadow:
+			1px 1px 10px rgb(255, 255, 255) inset,
+			0em 0 10px rgb(255, 255, 255);
 		border-radius: 50%;
 	}
 	.buttonRight {
 		position: absolute;
 		top: 45%;
 		right: 0;
+		box-shadow:
+			1px 1px 8px white inset,
+			0em 0 5px rgb(255, 255, 255);
+
+		border-radius: 55%;
 	}
 	/* @@@@@@ Nämä tyylit vaikuttavat kuvien scroll buttoneihin @@@@@@ */ /* @@@@@@ Nämä tyylit vaikuttavat kuvien scroll buttoneihin @@@@@@ */
 </style>

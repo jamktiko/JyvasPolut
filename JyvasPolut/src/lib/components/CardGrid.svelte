@@ -65,7 +65,7 @@
 			<button onclick={() => open(trailCard)}>
 				<Card
 					title={trailCard.name}
-					desc={trailCard.description}
+					desc={trailCard.description2}
 					difficulty={trailCard.difficulty}
 					imgs={trailCard.images}
 				/>

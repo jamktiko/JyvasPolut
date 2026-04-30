@@ -6,6 +6,7 @@
 	interface Props {
 		name: string;
 		description: string;
+
 		trailLength: number;
 		centreTime: string[];
 		difficulty: string;
@@ -25,6 +26,7 @@
 	let {
 		name,
 		description,
+
 		trailLength,
 		centreTime,
 		difficulty,

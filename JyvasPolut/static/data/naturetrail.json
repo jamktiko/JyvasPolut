@@ -2,10 +2,16 @@
 	{
 		"name": "Iso-Haapasaaren luontopolku",
 		"description": "Haapasaari on runsaan kilometrin pituinen kapea saari Vaajakosken Haapaniemen kyljessä.",
+		"description2": "Haapasaaressa pääset tuntemaan Päijänteen raikkaan tuulahduksen.",
 		"trailLength": 2.7,
-		"centreTime": ["Autolla 40min", "Linkillä 36min"],
+		"centreTime": [
+			"Autolla 40min",
+			"Linkillä 36min"
+		],
 		"difficulty": "Kevyt",
-		"publicTransport": ["Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"],
+		"publicTransport": [
+			"Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"
+		],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -22,8 +28,12 @@
 	{
 		"name": "Haukanniemen luontopolku",
 		"description": "Polku kulkee Haukanniemen kärjessä olevalle esteettömälle puolikodalle ja takaisin samaa reittiä.",
+		"description2": "Helppokulkuinen reitti sopii kaikille.",
 		"trailLength": 2.4,
-		"centreTime": ["Autolla 16min", "Linkillä 22min"],
+		"centreTime": [
+			"Autolla 16min",
+			"Linkillä 22min"
+		],
 		"difficulty": "Kevyt",
 		"publicTransport": [
 			"Linkkilinja: S3 | Pysäkki: Kortesuo 2",
@@ -45,10 +55,16 @@
 	{
 		"name": "Jääskelän luontopolku",
 		"description": "Jääskelän luontopolku vie kulkijan maisemiin, joissa rehevät lehtoalueet vaihtelevat karujen avokallioiden ja mäntykankaiden kanssa.",
+		"description2": "Komeita avokallioita sekä reheviä lehtoja.",
 		"trailLength": 5,
-		"centreTime": ["Autolla 56min", "Linkillä 51min"],
+		"centreTime": [
+			"Autolla 56min",
+			"Linkillä 51min"
+		],
 		"difficulty": "Rasittava",
-		"publicTransport": ["Linkkilinja: 38 | Pysäkki: Jääskelä E"],
+		"publicTransport": [
+			"Linkkilinja: 38 | Pysäkki: Jääskelä E"
+		],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -65,8 +81,12 @@
 	{
 		"name": "Kangasvuoren luontopolku",
 		"description": "Kangasvuoren luontopolku sijoittuu kaupungin itäisimpään laitaan Kangasvuoren ja Huhtasuon asuinalueiden tuntumaan.",
+		"description2": "Upea laavu pienen lammen äärellä.",
 		"trailLength": 3,
-		"centreTime": ["Autolla 20min", "Linkillä 19min"],
+		"centreTime": [
+			"Autolla 20min",
+			"Linkillä 19min"
+		],
 		"difficulty": "Rasittava",
 		"publicTransport": [
 			"Linkkilinja: S5 | Pysäkki: Marjapolku 2",
@@ -89,8 +109,12 @@
 	{
 		"name": "Laajavuoren luontopolku",
 		"description": "Laajavuoren luontopolku sijaitsee Laajavuoren ulkoilualueella ja kiertää vaihtelevassa metsämaastossa.",
+		"description2": "Virkistävää vaihtelua vieressä kulkevalle pururadalle!",
 		"trailLength": 4,
-		"centreTime": ["Autolla 25min", "Linkillä 22min"],
+		"centreTime": [
+			"Autolla 25min",
+			"Linkillä 22min"
+		],
 		"difficulty": "Raskas",
 		"publicTransport": [
 			"Linkkilinja: S5 | Pysäkki: Laajavuori 2",
@@ -110,10 +134,14 @@
 		]
 	},
 	{
-		"name": "Nyrölän retkeilypolku",
+		"name": "Nyrölän luontopolku",
 		"description": "Nyrölän retkeilypolku kulkee vaihtelevassa metsämaastossa sekä Iso-Musta-järven rannan rämesuolla.",
+		"description2": "Lossilla laavusaareen.",
 		"trailLength": 3.6,
-		"centreTime": ["Autolla 28min", "Linkillä 57min"],
+		"centreTime": [
+			"Autolla 28min",
+			"Linkillä 57min"
+		],
 		"difficulty": "Rasittava",
 		"publicTransport": [
 			"Linkkilinja: 22M, 34 | Pysäkki: Jatkola E",
@@ -136,10 +164,16 @@
 	{
 		"name": "Sippulanniemen luontopolku",
 		"description": "Jyväskylän lähellä sijaitseva helppo ja lyhyt luontoreitti, joka kulkee metsäisessä maastossa ja tarjoaa rauhallisen kaupunkiluontokokemuksen aivan asutuksen tuntumassa.",
+		"description2": "Reitin varrella kuulet suuren lintulajien kirjon.",
 		"trailLength": 4,
-		"centreTime": ["Autolla 33min", "Linkillä 21min"],
+		"centreTime": [
+			"Autolla 33min",
+			"Linkillä 21min"
+		],
 		"difficulty": "Rasittava",
-		"publicTransport": ["Linkkilinja: S3 | Pysäkki: Kissankello 2"],
+		"publicTransport": [
+			"Linkkilinja: S3 | Pysäkki: Kissankello 2"
+		],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -156,8 +190,12 @@
 	{
 		"name": "Tourujoen luontopolku",
 		"description": "Polku sijoittuu Tourujokilaakson luonnonsuojelualueelle.",
+		"description2": "Tarkkaile jokea, saatat nähdä Koskikaran sukeltelemassa.",
 		"trailLength": 0.7,
-		"centreTime": ["Jalan 10min", "Linkillä 7min"],
+		"centreTime": [
+			"Jalan 10min",
+			"Linkillä 7min"
+		],
 		"difficulty": "Kevyt",
 		"publicTransport": [
 			"Linkkilinja 23 | Pysäkki Vanha hautausmaa 2",
@@ -180,8 +218,12 @@
 	{
 		"name": "Touruvuoren luontopolku",
 		"description": "Luontopolku esittelee alueen metsä-, kallio- ja suoluontoa ja nousee Touruvuoren laelle, mistä avautuu upea maisema.",
+		"description2": "Nousu on rankempi, kuin miltä näyttää.",
 		"trailLength": 3,
-		"centreTime": ["Autolla 16min", "Linkillä 34min"],
+		"centreTime": [
+			"Autolla 16min",
+			"Linkillä 34min"
+		],
 		"difficulty": "Raskas",
 		"publicTransport": [
 			"Linkkilinja: S6 | Pysäkki: Palokan terveyskeskus 2",
