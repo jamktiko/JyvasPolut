@@ -11,7 +11,7 @@
 	// import { onMount } from 'svelte';
 
 	// trailCards has the data from naturetrail.json
-	let trailCards: ItrailTypes[] = $state([]);
+	// let trailCards: ItrailTypes[] = $state([]);
 
 	// ECS-näppäimestä modalin sulkeminen
 	function handleWindowKeyDown(event: KeyboardEvent) {
@@ -48,49 +48,36 @@
 			throw new Error('Cannot fetch the data');
 		}
 
-		trailCards = await response.json();
+		let trailCards: ItrailTypes[] = await response.json();
 
 		if (filterText) {
-			if (filterText === 'pituus') {
-				return await trailCards.filter((f) => f.trailLength === filterInfo.specificLength);
-			}
 			if (filterText === 'mountain') {
-				return await trailCards.filter((f) => f.mountain === '✅');
+				return await trailCards.filter(
+					(f) => f.mountain === '✅' && f.trailLength >= filterInfo.specificLength
+				);
 			}
 			if (filterText === 'bodyOfWater') {
-				return await trailCards.filter((f) => f.bodyOfWater.exist === '✅');
+				return await trailCards.filter(
+					(f) => f.bodyOfWater.exist === '✅' && f.trailLength >= filterInfo.specificLength
+				);
 			}
 			if (filterText === 'fireplace') {
-				return await trailCards.filter((f) => f.fireplace === '✅');
+				return await trailCards.filter(
+					(f) => f.fireplace === '✅' && f.trailLength >= filterInfo.specificLength
+				);
 			}
 			if (filterText === 'difficulty') {
-				return await trailCards.filter((f) => f.difficulty === difficulty);
+				return await trailCards.filter(
+					(f) => f.difficulty === difficulty && f.trailLength >= filterInfo.specificLength
+				);
 			}
 		}
-		return await trailCards;
+		return await trailCards.filter((f) => f.trailLength >= 0.5);
 	};
-	let printTrail = $state(getTrails());
-	//---------------------------
-	//---------------------------
-	//---------------------------
-	//---------------------------
-	// let filteredData: ItrailTypes[] = $state([]);
-	// let filtered = $derived(filteredData);
-
-	// if (filterInfo.allItems) {
-	// 	filteredData = trail;
-	// } else {
-	// 	filtered = trail.filter((r) => r.trailLength >= filterInfo.specificLength);
-	// }
-
-	//---------------------------
-	//---------------------------
-	//---------------------------
-	$inspect(printTrail);
+	let printTrail = $state<Promise<ItrailTypes[]>>(getTrails());
 </script>
 
 <Filter {getTrails} {printTrail} />
-{$inspect(printTrail)}
 <!-- This shows before the data has been successfully fetched-->
 {#await printTrail}
 	<div>Loading....</div>
