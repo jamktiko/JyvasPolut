@@ -6,7 +6,9 @@
 
 	import FullCard from '$lib/components/FullCard.svelte';
 
-	import { onMount } from 'svelte';
+	import Filter from './Filter.svelte';
+
+	// import { onMount } from 'svelte';
 
 	// trailCards has the data from naturetrail.json
 	let trailCards: ItrailTypes[] = $state([]);
@@ -31,7 +33,11 @@
 	}
 
 	// OnMount fetches the data from naturetrail.json on component load and sets it to trailCards
-	onMount(async () => {
+	// onMount(async () =>
+	export const getTrails = async (
+		filterText?: string,
+		difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
+	): Promise<ItrailTypes[]> => {
 		// ECS-näppäimestä modalin sulkeminen
 		window.addEventListener('keydown', handleWindowKeyDown);
 		// ECS-näppäimestä modalin sulkeminen, keydown = 'escape' on painettu
@@ -43,27 +49,50 @@
 		}
 
 		trailCards = await response.json();
-	});
-	//---------------------------
-	//---------------------------
-	//---------------------------
-	//---------------------------
-	let filteredData: ItrailTypes[] = $state([]);
-	let filtered = $derived(filteredData);
 
-	if (filterInfo.allItems) {
-		filteredData = trailCards;
-	} else {
-		filtered = trailCards.filter((r) => r.trailLength >= filterInfo.specificLength);
-	}
+		if (filterText) {
+			if (filterText === 'pituus') {
+				return await trailCards.filter((f) => f.trailLength === filterInfo.specificLength);
+			}
+			if (filterText === 'mountain') {
+				return await trailCards.filter((f) => f.mountain === '✅');
+			}
+			if (filterText === 'bodyOfWater') {
+				return await trailCards.filter((f) => f.bodyOfWater.exist === '✅');
+			}
+			if (filterText === 'fireplace') {
+				return await trailCards.filter((f) => f.fireplace === '✅');
+			}
+			if (filterText === 'difficulty') {
+				return await trailCards.filter((f) => f.difficulty === difficulty);
+			}
+		}
+		return await trailCards;
+	};
+	let printTrail = $state(getTrails());
+	//---------------------------
+	//---------------------------
+	//---------------------------
+	//---------------------------
+	// let filteredData: ItrailTypes[] = $state([]);
+	// let filtered = $derived(filteredData);
+
+	// if (filterInfo.allItems) {
+	// 	filteredData = trail;
+	// } else {
+	// 	filtered = trail.filter((r) => r.trailLength >= filterInfo.specificLength);
+	// }
 
 	//---------------------------
 	//---------------------------
 	//---------------------------
+	$inspect(printTrail);
 </script>
 
+<Filter {getTrails} />
+{$inspect(printTrail)}
 <!-- This shows before the data has been successfully fetched-->
-{#await filtered}
+{#await printTrail}
 	<div>Loading....</div>
 	<!-- This shows after the data has been successfully fetched-->
 {:then responseData}

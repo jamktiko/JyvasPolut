@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { filterInfo } from '$lib/filterInfo.svelte';
 	import Button from './Button.svelte';
+	import type { ItrailTypes } from '$lib/trailInfo';
 
-	function nullFilters() {
-		filterInfo.allItems = false;
-		filterInfo.difficulty = null;
-		filterInfo.mountain = false;
-		filterInfo.bodyOfWater = false;
-		filterInfo.fire = false;
-		filterInfo.specificLength = 0.5;
+	interface Props {
+		getTrails: (
+			filterText?: string,
+			difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
+		) => Promise<ItrailTypes[]>;
+		printTrail: Promise<ItrailTypes[]>;
 	}
+	let { getTrails, printTrail }: Props = $props();
 </script>
 
 <!-------------------------------------------------------------------->
@@ -20,15 +21,14 @@
 <!-------------------------------------------------------------------->
 
 <div class="filter-section">
-	<Button text="Kaikki" onclick={() => (nullFilters(), (filterInfo.allItems = true))}></Button>
-	<Button text="Kevyt" onclick={() => (nullFilters(), (filterInfo.difficulty = 'Kevyt'))}></Button>
-	<Button text="Rasittava" onclick={() => (nullFilters(), (filterInfo.difficulty = 'Rasittava'))}
+	<Button text="Kaikki" onclick={() => (printTrail = getTrails())}></Button>
+	<Button text="Kevyt" onclick={() => (printTrail = getTrails('difficulty', 'Kevyt'))}></Button>
+	<Button text="Rasittava" onclick={() => (printTrail = getTrails('difficulty', 'Rasittava'))}
 	></Button>
-	<Button text="Raskas" onclick={() => (nullFilters(), (filterInfo.difficulty = 'Raskas'))}
-	></Button>
-	<Button text="Vuori" onclick={() => (nullFilters(), (filterInfo.mountain = true))}></Button>
-	<Button text="Vesistö" onclick={() => (nullFilters(), (filterInfo.bodyOfWater = true))}></Button>
-	<Button text="Tuli" onclick={() => (nullFilters(), (filterInfo.fire = true))}></Button>
+	<Button text="Raskas" onclick={() => (printTrail = getTrails('difficulty', 'Raskas'))}></Button>
+	<Button text="Vuori" onclick={() => (printTrail = getTrails('mountain'))}></Button>
+	<Button text="Vesistö" onclick={() => (printTrail = getTrails('bodyOfWater'))}></Button>
+	<Button text="Tuli" onclick={() => (printTrail = getTrails('fireplace'))}></Button>
 	<h2>Reitin pituus -filtteri</h2>
 	<div class="slider-container">
 		<label class="slider-label">
