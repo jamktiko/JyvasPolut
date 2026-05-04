@@ -136,7 +136,9 @@
 		font-size: 3rem;
 		padding: 1rem;
 		color: white;
- 		text-shadow: 0 0 10px white;
-}
-	
+		text-shadow: 0 0 10px white;
+	}
+	.moreinfo {
+		overflow-y: auto;
+	}
 </style>
