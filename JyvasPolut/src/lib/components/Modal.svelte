@@ -1,5 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+
 	interface Props {
 		header?: Snippet;
 		children: Snippet;
@@ -9,7 +12,17 @@
 
 	let { header, children, footer, close }: Props = $props();
 
-	import { fly } from 'svelte/transition';
+	// Scrollaus vain modaliin, ei taustaan
+	onMount(() => {
+		const original = document.body.style.overflow;
+
+		document.body.style.overflow = 'hidden';
+
+		return () => {
+			document.body.style.overflow = original;
+		};
+	});
+	// Scrollaus vain modaliin ei taustaan
 
 	function handleClick(e: MouseEvent) {
 		e.stopPropagation();
@@ -56,9 +69,14 @@
 		width: 80%;
 		max-height: 80vh;
 		background: white;
-		border-radius: 5px;
+		border-radius: 25px;
 		z-index: 100;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 		background: linear-gradient(to right, #064e3b, #0b0b1e);
+		/* overflow takaa ettei contentti valu yli modalista, display:flex; sekä Flex-direction:column mahdollistavat scrollauksen */
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		/*overflow takaa ettei contentti valu yli modalista  */
 	}
 </style>

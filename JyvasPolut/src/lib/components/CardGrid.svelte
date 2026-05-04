@@ -89,7 +89,7 @@
 	$inspect(printTrail);
 </script>
 
-<Filter {getTrails} />
+<Filter {getTrails} {printTrail} />
 {$inspect(printTrail)}
 <!-- This shows before the data has been successfully fetched-->
 {#await printTrail}
@@ -101,7 +101,7 @@
 			<button onclick={() => open(trailCard)}>
 				<Card
 					title={trailCard.name}
-					desc={trailCard.description}
+					desc={trailCard.description2}
 					difficulty={trailCard.difficulty}
 					imgs={trailCard.images}
 				/>

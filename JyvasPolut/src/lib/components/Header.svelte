@@ -10,22 +10,36 @@
 
 <style>
 	header {
-		background:linear-gradient(177deg, #0F172A 11.59%, #113139 49.92%, #134E4A 90.43%);
+		background: linear-gradient(177deg, #0F172A 11.59%, #113139 49.92%, #134E4A 90.43%);
 		padding: 1rem 2rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
-		text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
-		font-family: Inter;
-		box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+		font-family: Inter, system-ui, sans-serif;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+		height: 120px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	header::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: radial-gradient(ellipse at 20% 50%, rgba(19, 78, 74, 0.3) 0%, transparent 50%),
+			radial-gradient(ellipse at 80% 50%, rgba(17, 49, 57, 0.3) 0%, transparent 50%);
+		pointer-events: none;
 	}
 	.tree {
 		font-size: 2rem;
 	}
 	h1 {
 		margin: 0;
-		font-size: 2rem;
+		font-size: 3rem;
 		color: white;
 		font-weight: bold;
 		stroke: 1px black;

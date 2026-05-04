@@ -6,6 +6,7 @@
 	interface Props {
 		name: string;
 		description: string;
+
 		trailLength: number;
 		centreTime: string[];
 		difficulty: string;
@@ -25,6 +26,7 @@
 	let {
 		name,
 		description,
+
 		trailLength,
 		centreTime,
 		difficulty,
@@ -128,6 +130,27 @@
 	.image {
 		position: relative;
 		display: inline-block;
+		border: 2px solid white;
+		border-radius: 20px;
 	}
+	.image img {
+	display: block;
+	border-radius: 20px;
+}
 	/* @@@@@@ Nämä vaikuttavat Korttien kuvien kokoon / asetteluun @@@@@@ */
+	h1 {
+		font-size: 3rem;
+		padding: 1rem;
+		color: white;
+		text-shadow: 0 0 10px white;
+	}
+	h2 {
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+	.moreinfo {
+		overflow-y: auto;
+		padding-left: 2rem;
+	}
+	
 </style>

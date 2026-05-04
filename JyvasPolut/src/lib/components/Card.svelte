@@ -22,7 +22,17 @@
 		<h2>{title}</h2>
 		<p>{desc}</p>
 		<div class="footer">
-			<p>{difficulty}</p>
+
+			{#if difficulty === 'Kevyt'}
+				<p class="kevyt">{difficulty}</p>
+				{:else if difficulty === 'Rasittava'}
+					<p class="rasittava">{difficulty}</p>
+				{:else if difficulty === 'Raskas'}
+					<p class="raskas">{difficulty}</p>
+				{/if}
+		
+
+
 			<button class="btn">Lue lisää</button>
 		</div>
 	</div>
@@ -31,14 +41,27 @@
 <style>
 	.card {
 		background: linear-gradient(to right, #064e3b, #0b0b1e);
+		position: relative;
 		border-radius: 50px;
 		border: 1px solid rgba(255, 255, 255, 0.2);
 		box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.25);
 		padding: 10px;
-		padding-bottom: 1.5rem;
+		padding-bottom: 4rem;
 		transition:
 			transform 0.2s ease,
 			box-shadow 0.2s ease;
+		height: 475px;
+	}
+	.footer {
+		position: absolute;
+		bottom: 1rem;
+		left: 0;
+		width: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
 	}
 
 	.card:hover {
@@ -54,10 +77,17 @@
 	h2 {
 		color: white;
 		font-size: 1.75rem;
+		padding-top: 1rem;
+		font-weight: bold;
 	}
 	p {
-		font-size: 0.875rem;
+		font-size: 1rem;
 		color: #e2e8f0;
+		text-align: center;
+		margin: 0;
+	
+		font-style: italic;
+
 	}
 	.btn {
 		width: 5rem;
@@ -67,8 +97,8 @@
 		border-radius: 50px;
 		border: 1px solid black;
 		color: #f1f5f9;
-		font-size: 0.6rem;
-		font-weight: 700;
+		font-size: 0.7rem;
+		font-weight: bold;
 		font-family: Inter, sans-serif;
 
 		display: inline-flex;
@@ -81,5 +111,17 @@
 
 	.btn:hover {
 		background-color: #082f2d;
+	}
+	.kevyt {
+		color: rgb(143, 189, 143);
+		font-weight: bold;
+	}
+	.rasittava{
+		color:orange;
+		font-weight:bold;
+	}
+	.raskas {
+		color: orangered;
+		font-weight: bold;
 	}
 </style>
