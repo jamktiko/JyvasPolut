@@ -137,6 +137,11 @@
 		padding: 1rem;
 		color: white;
  		text-shadow: 0 0 10px white;
+	
+}
+h2 {
+	font-weight: bold;
+	font-size: 1.5rem;
 }
 	
 </style>

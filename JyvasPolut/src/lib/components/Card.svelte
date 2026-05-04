@@ -71,7 +71,7 @@
 		font-weight: bold;
 	}
 	p {
-		font-size: 0.875rem;
+		font-size: 1rem;
 		color: #e2e8f0;
 		text-align: center;
 		margin: 0;

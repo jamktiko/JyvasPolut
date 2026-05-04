@@ -10,7 +10,7 @@
 <!-------------------------------------------------------------------->
 
 <div class="filter-section">
-	<h2>Reitin pituus -suodatin</h2>
+	<h2>Reitin pituus</h2>
 	<div class="slider-container">
 		<label class="slider-label">
 			<input
