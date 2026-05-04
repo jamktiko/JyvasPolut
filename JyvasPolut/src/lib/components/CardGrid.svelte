@@ -74,10 +74,10 @@
 		}
 		return await trailCards.filter((f) => f.trailLength >= 0.5);
 	};
-	let printTrail = $state<Promise<ItrailTypes[]>>(getTrails());
+	let printTrail = $state(getTrails());
 </script>
 
-<Filter {getTrails} {printTrail} />
+<Filter {getTrails} bind:printTrail />
 <!-- This shows before the data has been successfully fetched-->
 {#await printTrail}
 	<div>Loading....</div>
