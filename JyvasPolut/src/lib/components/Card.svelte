@@ -22,7 +22,17 @@
 		<h2>{title}</h2>
 		<p>{desc}</p>
 		<div class="footer">
-			<p>{difficulty}</p>
+
+			{#if difficulty === 'Kevyt'}
+				<p class="kevyt">{difficulty}</p>
+				{:else if difficulty === 'Rasittava'}
+					<p class="rasittava">{difficulty}</p>
+				{:else if difficulty === 'Raskas'}
+					<p class="raskas">{difficulty}</p>
+				{/if}
+		
+
+
 			<button class="btn">Lue lisää</button>
 		</div>
 	</div>
@@ -75,6 +85,9 @@
 		color: #e2e8f0;
 		text-align: center;
 		margin: 0;
+	
+		font-style: italic;
+
 	}
 	.btn {
 		width: 5rem;
@@ -84,8 +97,8 @@
 		border-radius: 50px;
 		border: 1px solid black;
 		color: #f1f5f9;
-		font-size: 0.6rem;
-		font-weight: 700;
+		font-size: 0.7rem;
+		font-weight: bold;
 		font-family: Inter, sans-serif;
 
 		display: inline-flex;
@@ -98,5 +111,17 @@
 
 	.btn:hover {
 		background-color: #082f2d;
+	}
+	.kevyt {
+		color: rgb(143, 189, 143);
+		font-weight: bold;
+	}
+	.rasittava{
+		color:orange;
+		font-weight:bold;
+	}
+	.raskas {
+		color: orangered;
+		font-weight: bold;
 	}
 </style>
