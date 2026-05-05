@@ -32,8 +32,9 @@
 		selected = null;
 	}
 
-	// OnMount fetches the data from naturetrail.json on component load and sets it to trailCards
-	// onMount(async () =>
+	// getTrails fetches the data from naturetrail.json when the function is called
+	// getTrails can also have the data filtered.
+	// when a button is pressed, it returns the filtered data
 	export const getTrails = async (
 		filterText?: string,
 		difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
@@ -72,7 +73,7 @@
 				);
 			}
 		}
-		return await trailCards.filter((f) => f.trailLength >= 0.5);
+		return await trailCards;
 	};
 	let printTrail = $state(getTrails());
 </script>
