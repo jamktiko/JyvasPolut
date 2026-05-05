@@ -18,22 +18,14 @@
 		gap: 0.5rem;
 		font-family: Inter, system-ui, sans-serif;
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-		height: 120px;
+		height: 100px;
 		position: relative;
 		overflow: hidden;
+		position: sticky;
+		top: 0;
+		z-index: 999;
 	}
 
-	header::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: radial-gradient(ellipse at 20% 50%, rgba(19, 78, 74, 0.3) 0%, transparent 50%),
-			radial-gradient(ellipse at 80% 50%, rgba(17, 49, 57, 0.3) 0%, transparent 50%);
-		pointer-events: none;
-	}
 	.tree {
 		font-size: 2rem;
 	}
