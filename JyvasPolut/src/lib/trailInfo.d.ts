@@ -10,6 +10,7 @@ export interface ItrailTypes {
 	bodyOfWater: BodyOfWater;
 	fireplace: '✅' | '❌';
 	images: string[] | null;
+	favorite: boolean;
 }
 
 export interface BodyOfWater {

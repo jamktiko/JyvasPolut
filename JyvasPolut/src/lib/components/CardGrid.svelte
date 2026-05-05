@@ -72,6 +72,11 @@
 					(f) => f.difficulty === difficulty && f.trailLength >= filterInfo.specificLength
 				);
 			}
+			if (filterText === 'favorite') {
+				return await trailCards.filter(
+					(f) => f.favorite === true && f.trailLength >= filterInfo.specificLength
+				);
+			}
 		}
 		return await trailCards;
 	};
@@ -92,6 +97,7 @@
 					desc={trailCard.description2}
 					difficulty={trailCard.difficulty}
 					imgs={trailCard.images}
+					bind:fav={trailCard.favorite}
 				/>
 			</button>
 		{/each}

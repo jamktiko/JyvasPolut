@@ -29,6 +29,7 @@
 	<Button text="Vuori" onclick={() => (printTrail = getTrails('mountain'))}></Button>
 	<Button text="Vesistö" onclick={() => (printTrail = getTrails('bodyOfWater'))}></Button>
 	<Button text="Tuli" onclick={() => (printTrail = getTrails('fireplace'))}></Button>
+	<Button text="Favorite" onclick={() => (printTrail = getTrails('favorite'))}></Button>
 	<h2>Reitin pituus</h2>
 	<div class="slider-container">
 		<label class="slider-label">
