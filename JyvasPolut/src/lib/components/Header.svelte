@@ -13,6 +13,7 @@
 		<a class:is-active={page.url.pathname === '/'} href={resolve('/')}>Etusivu</a> /
 		<a class:is-active={page.url.pathname === '/about-us'} href={resolve('/about-us')}>About Us</a>
 	</nav>
+	<!-- reititys -->
 </header>
 
 <style>
