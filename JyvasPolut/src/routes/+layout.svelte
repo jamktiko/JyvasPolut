@@ -10,8 +10,4 @@
 
 <Header />
 
-<p class="px-4 py-2">Suodata polkuja:</p>
-
-
-
 {@render children()}

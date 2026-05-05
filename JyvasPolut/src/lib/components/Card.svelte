@@ -50,7 +50,7 @@
 		transition:
 			transform 0.2s ease,
 			box-shadow 0.2s ease;
-		height: 475px;
+		height: 425px;
 	}
 	.footer {
 		position: absolute;
@@ -73,7 +73,10 @@
 		height: 150px;
 		object-fit: cover;
 		border-radius: 40px;
+		box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
 	}
+	
+
 	h2 {
 		color: white;
 		font-size: 1.75rem;
@@ -104,6 +107,7 @@
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 
 		cursor: pointer;
 		transition: background 0.2s ease;

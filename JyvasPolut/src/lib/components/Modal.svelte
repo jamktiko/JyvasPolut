@@ -58,7 +58,7 @@
 		width: 100%;
 		height: 100vh;
 		background: rgba(16, 29, 15, 0.75);
-		z-index: 10;
+		z-index: 1000;
 	}
 
 	.modal {
@@ -70,7 +70,7 @@
 		max-height: 80vh;
 		background: white;
 		border-radius: 25px;
-		z-index: 100;
+		z-index: 1001;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 		background: linear-gradient(to right, #064e3b, #0b0b1e);
 		/* overflow takaa ettei contentti valu yli modalista, display:flex; sekä Flex-direction:column mahdollistavat scrollauksen */
