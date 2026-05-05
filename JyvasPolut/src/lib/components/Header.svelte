@@ -2,6 +2,7 @@
 	import { appInfo } from '$lib/appInfo';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
+	import { mapState } from '$lib/ShowMap.svelte';
 </script>
 
 <header>
@@ -14,6 +15,14 @@
 		<a class:is-active={page.url.pathname === '/about-us'} href={resolve('/about-us')}>About Us</a>
 	</nav>
 	<!-- reititys -->
+
+	<!-- So that the button disappears after its ctivated, or when navigating out of "Etusivu" -->
+	{#if page.url.pathname === '/'}
+		{#if !mapState.showMap}
+			<button class="mapOnButton" onclick={() => (mapState.showMap = true)}>Avaa🗺️</button>
+		{/if}
+	{/if}
+	<!-- So that the button disappears after its ctivated, or when navigating out of "Etusivu" -->
 </header>
 
 <style>
