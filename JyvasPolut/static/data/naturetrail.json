@@ -9,9 +9,7 @@
 			"🚌 Linkillä 36min"
 		],
 		"difficulty": "Kevyt",
-		"publicTransport": [
-			"Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"
-		],
+		"publicTransport": ["Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -23,7 +21,9 @@
 			"/images/haapasaari/haapasaari2.png",
 			"/images/haapasaari/haapasaari3.png",
 			"/images/haapasaari/haapasaari4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Haukanniemen luontopolku",
@@ -50,7 +50,9 @@
 			"/images/haukanniemi/haukanniemi2.png",
 			"/images/haukanniemi/haukanniemi3.png",
 			"/images/haukanniemi/haukanniemi4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Jääskelän luontopolku",
@@ -62,9 +64,7 @@
 			"🚌 Linkillä 51min"
 		],
 		"difficulty": "Rasittava",
-		"publicTransport": [
-			"Linkkilinja: 38 | Pysäkki: Jääskelä E"
-		],
+		"publicTransport": ["Linkkilinja: 38 | Pysäkki: Jääskelä E"],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -76,7 +76,9 @@
 			"/images/jaaskela/jaaskela2.png",
 			"/images/jaaskela/jaaskela3.png",
 			"/images/jaaskela/jaaskela4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Kangasvuoren luontopolku",
@@ -104,7 +106,9 @@
 			"/images/kangasvuori/kangasvuori2.png",
 			"/images/kangasvuori/kangasvuori3.png",
 			"/images/kangasvuori/kangasvuori4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Laajavuoren luontopolku",
@@ -131,7 +135,9 @@
 			"/images/laajavuori/laajavuori2.png",
 			"/images/laajavuori/laajavuori3.png",
 			"/images/laajavuori/laajavuori4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Nyrölän luontopolku",
@@ -159,7 +165,9 @@
 			"/images/nyrola/nyrola2.png",
 			"/images/nyrola/nyrola3.png",
 			"/images/nyrola/nyrola4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Sippulanniemen luontopolku",
@@ -171,9 +179,7 @@
 			"🚌 Linkillä 21min"
 		],
 		"difficulty": "Rasittava",
-		"publicTransport": [
-			"Linkkilinja: S3 | Pysäkki: Kissankello 2"
-		],
+		"publicTransport": ["Linkkilinja: S3 | Pysäkki: Kissankello 2"],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -185,7 +191,9 @@
 			"/images/sippulanniemi/sippulanniemi2.png",
 			"/images/sippulanniemi/sippulanniemi3.png",
 			"/images/sippulanniemi/sippulanniemi4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Tourujoen luontopolku",
@@ -213,7 +221,9 @@
 			"/images/tourujoki/tourujoki2.png",
 			"/images/tourujoki/tourujoki3.png",
 			"/images/tourujoki/tourujoki4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	},
 	{
 		"name": "Touruvuoren luontopolku",
@@ -240,6 +250,8 @@
 			"/images/touruvuori/touruvuori2.png",
 			"/images/touruvuori/touruvuori3.png",
 			"/images/touruvuori/touruvuori4.png"
-		]
+		],
+		"favorite": false,
+		"visited": false
 	}
 ]

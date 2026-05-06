@@ -4,9 +4,11 @@
 		desc: string;
 		difficulty: string;
 		imgs: string[] | null;
+		fav: boolean;
+		visit: boolean;
 	}
 
-	let { title, desc, difficulty, imgs }: Props = $props();
+	let { title, desc, difficulty, imgs, fav, visit }: Props = $props();
 </script>
 
 <div class="card">
@@ -19,19 +21,22 @@
 	{/if}
 
 	<div class="content">
+		<input type="checkbox" bind:checked={fav} />
+		{#if visit}
+			<button onclick={() => (visit = false)}><p>Käyty ✅</p></button>
+		{:else}
+			<button onclick={() => (visit = true)}><p>Käyty ❌</p></button>
+		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
 		<div class="footer">
-
 			{#if difficulty === 'Kevyt'}
 				<p class="kevyt">{difficulty}</p>
-				{:else if difficulty === 'Rasittava'}
-					<p class="rasittava">{difficulty}</p>
-				{:else if difficulty === 'Raskas'}
-					<p class="raskas">{difficulty}</p>
-				{/if}
-		
-
+			{:else if difficulty === 'Rasittava'}
+				<p class="rasittava">{difficulty}</p>
+			{:else if difficulty === 'Raskas'}
+				<p class="raskas">{difficulty}</p>
+			{/if}
 
 			<button class="btn">Lue lisää</button>
 		</div>
@@ -75,7 +80,6 @@
 		border-radius: 40px;
 		box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
 	}
-	
 
 	h2 {
 		color: white;
@@ -88,9 +92,8 @@
 		color: #e2e8f0;
 		text-align: center;
 		margin: 0;
-	
-		font-style: italic;
 
+		font-style: italic;
 	}
 	.btn {
 		width: 5rem;
@@ -120,9 +123,9 @@
 		color: rgb(143, 189, 143);
 		font-weight: bold;
 	}
-	.rasittava{
-		color:orange;
-		font-weight:bold;
+	.rasittava {
+		color: orange;
+		font-weight: bold;
 	}
 	.raskas {
 		color: orangered;
