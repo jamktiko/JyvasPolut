@@ -152,5 +152,11 @@
 		overflow-y: auto;
 		padding-left: 2rem;
 	}
-	
+	p {
+		font-size: 1.1rem;
+	}
+	ul {
+		font-size: 1.1rem;
+		padding-left: 1.5rem;
+	}
 </style>

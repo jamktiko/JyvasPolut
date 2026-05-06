@@ -154,4 +154,10 @@
 		font-weight: 600;
 		letter-spacing: 0.02em;
 	}
+	.filter-section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	align-items: center;
+}
 </style>
