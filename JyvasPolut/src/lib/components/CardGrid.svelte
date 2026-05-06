@@ -10,6 +10,7 @@
 
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 
+	import { visitedList } from '$lib/visitedListGS.svelte';
 	// import { onMount } from 'svelte';
 
 	// trailCards has the data from naturetrail.json
@@ -66,7 +67,7 @@
 		}
 
 		let trailCards: ItrailTypes[] = await response.json();
-
+		// filterText tells which filter button was pressed and what to print
 		if (filterText) {
 			if (filterText === 'mountain') {
 				return await trailCards.filter(
@@ -89,16 +90,19 @@
 				);
 			}
 			if (filterText === 'favorite') {
-				return await favoriteList.getFavoriteList;
+				return await favoriteList.getFavoriteList.filter(
+					(f) => f.trailLength >= filterInfo.specificLength
+				);
 			}
 			if (filterText === 'visited') {
-				return await trailCards.filter(
-					(f) => f.visited === true && f.trailLength >= filterInfo.specificLength
+				return await visitedList.getVisitedList.filter(
+					(f) => f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'notVisited') {
+				const visitedIds = visitedList.getVisitedList.map((v) => v.id);
 				return await trailCards.filter(
-					(f) => f.visited === false && f.trailLength >= filterInfo.specificLength
+					(f) => !visitedIds.includes(f.id) && f.trailLength >= filterInfo.specificLength
 				);
 			}
 		}
@@ -123,7 +127,7 @@
 					difficulty={trailCard.difficulty}
 					imgs={trailCard.images}
 					fav={favoriteList.isFavorite(trailCard)}
-					visit={trailCard.visited}
+					visit={visitedList.wasVisited(trailCard)}
 				/>
 			</button>
 		{/each}

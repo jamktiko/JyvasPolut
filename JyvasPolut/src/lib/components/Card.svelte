@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
+	import { visitedList } from '$lib/visitedListGS.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
 
 	interface Props {
@@ -12,16 +13,7 @@
 		visit: boolean;
 	}
 
-	let { trailCard, title, desc, difficulty, imgs, fav, visit }: Props = $props();
-
-	// $effect(() => {
-	// 	if (fav === true) {
-	// 		favoriteList.add(trailCard);
-	// 	} else {
-	// 		favoriteList.remove(trailCard);
-	// 	}
-	// 	console.log('effectissä');
-	// });
+	let { trailCard, title, desc, difficulty, imgs, fav }: Props = $props();
 </script>
 
 <div class="card">
@@ -39,10 +31,12 @@
 			bind:checked={fav}
 			onchange={() => (fav ? favoriteList.add(trailCard) : favoriteList.remove(trailCard))}
 		/>
-		{#if visit}
-			<button onclick={() => (visit = false)}><p>Käyty ✅</p></button>
+
+		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
+		{#if visitedList.wasVisited(trailCard)}
+			<button onclick={() => visitedList.remove(trailCard)}><p>Käyty ✅</p></button>
 		{:else}
-			<button onclick={() => (visit = true)}><p>Käyty ❌</p></button>
+			<button onclick={() => visitedList.add(trailCard)}><p>Käyty ❌</p></button>
 		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
