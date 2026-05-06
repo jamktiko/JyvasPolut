@@ -122,7 +122,7 @@
 					desc={trailCard.description2}
 					difficulty={trailCard.difficulty}
 					imgs={trailCard.images}
-					fav={trailCard.favorite}
+					fav={favoriteList.isFavorite(trailCard)}
 					visit={trailCard.visited}
 				/>
 			</button>
