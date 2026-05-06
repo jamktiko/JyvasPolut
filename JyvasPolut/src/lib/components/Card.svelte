@@ -1,5 +1,9 @@
 <script lang="ts">
+	import { favoriteList } from '$lib/favoriteListGS.svelte';
+	import type { ItrailTypes } from '$lib/trailInfo';
+
 	interface Props {
+		trailCard: ItrailTypes;
 		title: string;
 		desc: string;
 		difficulty: string;
@@ -8,7 +12,16 @@
 		visit: boolean;
 	}
 
-	let { title, desc, difficulty, imgs, fav, visit }: Props = $props();
+	let { trailCard, title, desc, difficulty, imgs, fav, visit }: Props = $props();
+
+	// $effect(() => {
+	// 	if (fav === true) {
+	// 		favoriteList.add(trailCard);
+	// 	} else {
+	// 		favoriteList.remove(trailCard);
+	// 	}
+	// 	console.log('effectissä');
+	// });
 </script>
 
 <div class="card">
@@ -21,7 +34,11 @@
 	{/if}
 
 	<div class="content">
-		<input type="checkbox" bind:checked={fav} />
+		<input
+			type="checkbox"
+			bind:checked={fav}
+			onchange={() => (fav ? favoriteList.add(trailCard) : favoriteList.remove(trailCard))}
+		/>
 		{#if visit}
 			<button onclick={() => (visit = false)}><p>Käyty ✅</p></button>
 		{:else}

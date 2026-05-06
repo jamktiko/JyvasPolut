@@ -8,6 +8,8 @@
 
 	import Filter from './Filter.svelte';
 
+	import { favoriteList } from '$lib/favoriteListGS.svelte';
+
 	// import { onMount } from 'svelte';
 
 	// trailCards has the data from naturetrail.json
@@ -87,9 +89,7 @@
 				);
 			}
 			if (filterText === 'favorite') {
-				return await trailCards.filter(
-					(f) => f.favorite === true && f.trailLength >= filterInfo.specificLength
-				);
+				return await favoriteList.getFavoriteList;
 			}
 			if (filterText === 'visited') {
 				return await trailCards.filter(
@@ -102,7 +102,7 @@
 				);
 			}
 		}
-		return await trailCards;
+		return await trailCards.filter((f) => f.trailLength >= filterInfo.specificLength);
 	};
 	let printTrail = $state(getTrails());
 </script>
@@ -117,6 +117,7 @@
 		{#each responseData as trailCard (trailCard.name)}
 			<button onclick={() => open(trailCard)}>
 				<Card
+					{trailCard}
 					title={trailCard.name}
 					desc={trailCard.description2}
 					difficulty={trailCard.difficulty}
