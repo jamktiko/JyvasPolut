@@ -32,6 +32,20 @@
 		selected = null;
 	}
 
+	// onMount(async () => {
+	// 	// ECS-näppäimestä modalin sulkeminen
+	// 	window.addEventListener('keydown', handleWindowKeyDown);
+	// 	// ECS-näppäimestä modalin sulkeminen, keydown = 'escape' on painettu
+
+	// 	const response = await fetch('/data/naturetrail.json');
+
+	// 	if (!response.ok) {
+	// 		throw new Error('Cannot fetch the data');
+	// 	}
+
+	// 	trailCards = await response.json();
+	// });
+
 	// getTrails fetches the data from naturetrail.json when the function is called
 	// getTrails can also have the data filtered.
 	// when a button is pressed, it returns the filtered data
@@ -77,6 +91,16 @@
 					(f) => f.favorite === true && f.trailLength >= filterInfo.specificLength
 				);
 			}
+			if (filterText === 'visited') {
+				return await trailCards.filter(
+					(f) => f.visited === true && f.trailLength >= filterInfo.specificLength
+				);
+			}
+			if (filterText === 'notVisited') {
+				return await trailCards.filter(
+					(f) => f.visited === false && f.trailLength >= filterInfo.specificLength
+				);
+			}
 		}
 		return await trailCards;
 	};
@@ -97,7 +121,8 @@
 					desc={trailCard.description2}
 					difficulty={trailCard.difficulty}
 					imgs={trailCard.images}
-					bind:fav={trailCard.favorite}
+					fav={trailCard.favorite}
+					visit={trailCard.visited}
 				/>
 			</button>
 		{/each}

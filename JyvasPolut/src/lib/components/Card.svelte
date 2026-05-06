@@ -5,9 +5,10 @@
 		difficulty: string;
 		imgs: string[] | null;
 		fav: boolean;
+		visit: boolean;
 	}
 
-	let { title, desc, difficulty, imgs, fav = $bindable() }: Props = $props();
+	let { title, desc, difficulty, imgs, fav, visit }: Props = $props();
 </script>
 
 <div class="card">
@@ -20,7 +21,12 @@
 	{/if}
 
 	<div class="content">
-		<input type="checkbox" checked={fav} />
+		<input type="checkbox" bind:checked={fav} />
+		{#if visit}
+			<button onclick={() => (visit = false)}><p>Käyty ✅</p></button>
+		{:else}
+			<button onclick={() => (visit = true)}><p>Käyty ❌</p></button>
+		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
 		<div class="footer">
