@@ -5,8 +5,8 @@
 		"description2": "Haapasaaressa pääset tuntemaan Päijänteen raikkaan tuulahduksen.",
 		"trailLength": 2.7,
 		"centreTime": [
-			"Autolla 40min",
-			"Linkillä 36min"
+			"🚗 Autolla 40min",
+			"🚌 Linkillä 36min"
 		],
 		"difficulty": "Kevyt",
 		"publicTransport": [
@@ -18,7 +18,7 @@
 			"type": "Järvi"
 		},
 		"fireplace": "✅",
-		"images": [
+	 	"images": [
 			"/images/haapasaari/haapasaari1.png",
 			"/images/haapasaari/haapasaari2.png",
 			"/images/haapasaari/haapasaari3.png",
@@ -31,8 +31,8 @@
 		"description2": "Helppokulkuinen reitti sopii kaikille.",
 		"trailLength": 2.4,
 		"centreTime": [
-			"Autolla 16min",
-			"Linkillä 22min"
+			"🚗 Autolla 16min",
+			"🚌 Linkillä 22min"
 		],
 		"difficulty": "Kevyt",
 		"publicTransport": [
@@ -58,8 +58,8 @@
 		"description2": "Komeita avokallioita sekä reheviä lehtoja.",
 		"trailLength": 5,
 		"centreTime": [
-			"Autolla 56min",
-			"Linkillä 51min"
+			"🚗 Autolla 56min",
+			"🚌 Linkillä 51min"
 		],
 		"difficulty": "Rasittava",
 		"publicTransport": [
@@ -84,8 +84,8 @@
 		"description2": "Upea laavu pienen lammen äärellä.",
 		"trailLength": 3,
 		"centreTime": [
-			"Autolla 20min",
-			"Linkillä 19min"
+			"🚗 Autolla 20min",
+			"🚌 Linkillä 19min"
 		],
 		"difficulty": "Rasittava",
 		"publicTransport": [
@@ -112,8 +112,8 @@
 		"description2": "Virkistävää vaihtelua vieressä kulkevalle pururadalle!",
 		"trailLength": 4,
 		"centreTime": [
-			"Autolla 25min",
-			"Linkillä 22min"
+			"🚗 Autolla 25min",
+			"🚌 Linkillä 22min"
 		],
 		"difficulty": "Raskas",
 		"publicTransport": [
@@ -139,8 +139,8 @@
 		"description2": "Lossilla laavusaareen.",
 		"trailLength": 3.6,
 		"centreTime": [
-			"Autolla 28min",
-			"Linkillä 57min"
+			"🚗 Autolla 28min",
+			"🚌 Linkillä 57min"
 		],
 		"difficulty": "Rasittava",
 		"publicTransport": [
@@ -167,8 +167,8 @@
 		"description2": "Reitin varrella kuulet suuren lintulajien kirjon.",
 		"trailLength": 4,
 		"centreTime": [
-			"Autolla 33min",
-			"Linkillä 21min"
+			"🚗 Autolla 33min",
+			"🚌 Linkillä 21min"
 		],
 		"difficulty": "Rasittava",
 		"publicTransport": [
@@ -194,7 +194,7 @@
 		"trailLength": 0.7,
 		"centreTime": [
 			"Jalan 10min",
-			"Linkillä 7min"
+			"🚌 Linkillä 7min"
 		],
 		"difficulty": "Kevyt",
 		"publicTransport": [
@@ -221,8 +221,8 @@
 		"description2": "Nousu on rankempi, kuin miltä näyttää.",
 		"trailLength": 3,
 		"centreTime": [
-			"Autolla 16min",
-			"Linkillä 34min"
+			"🚗 Autolla 16min",
+			"🚌 Linkillä 34min"
 		],
 		"difficulty": "Raskas",
 		"publicTransport": [
