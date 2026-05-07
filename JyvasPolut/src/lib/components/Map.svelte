@@ -2,6 +2,8 @@
 	import { onMount, tick } from 'svelte';
 	import { PUBLIC_MAPBOX_TOKEN } from '$env/static/public';
 	import { mapState } from '$lib/ShowMap.svelte';
+	import { places } from '$lib/routeStarts';
+	import { routes } from '$lib/routeTrails';
 
 	interface Props {
 		visible: boolean;
@@ -30,57 +32,53 @@
 			center: [25.7473, 62.2426],
 			zoom: 12
 		});
+		// all the trailroutes on map
+		map.on('load', () => {
+			routes.forEach((route) => {
+				// SOURCE
+				map.addSource(route.id, {
+					type: 'geojson',
+					data: {
+						type: 'Feature',
+						properties: {},
+						geometry: {
+							type: 'LineString',
+							coordinates: route.coordinates
+						}
+					}
+				});
 
-		// zoom: 9.4
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.715217, 62.252864])
-			.setPopup(new mapboxgl.Popup().setText('Haukanniemen luontopolku 🅿️'))
-			.addTo(map);
+				// LAYER
+				map.addLayer({
+					id: `${route.id}-line`,
+					type: 'line',
+					source: route.id,
+					layout: {
+						'line-join': 'round',
+						'line-cap': 'round'
+					},
+					paint: {
+						'line-color': '#a94c15',
+						'line-width': 4,
+						'line-opacity': 0.7
+					}
+				});
+			});
+			// all the trail start points
+			places.forEach((place) => {
+				new mapboxgl.Marker({ color: 'green', scale: 1.2 })
+					.setLngLat(place.coords)
+					.setPopup(new mapboxgl.Popup().setText(place.name))
+					.addTo(map);
+			});
+		});
 
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.842459, 62.22228])
-			.setPopup(new mapboxgl.Popup().setText('Iso-Haapasaaren luontopolku 🅿️'))
-			.addTo(map);
-
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.879744, 62.18534])
-			.setPopup(new mapboxgl.Popup().setText('Jääskelän luontopolku 🅿️'))
-			.addTo(map);
-
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.80237, 62.267968])
-			.setPopup(new mapboxgl.Popup().setText('Kangasvuoren luontopolku 🅿️'))
-			.addTo(map);
-		// tarvitsee koordinaatit tästä alaspäin
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.695128, 62.257384])
-			.setPopup(new mapboxgl.Popup().setText('Laajavuoren luontopolku 🅿️'))
-			.addTo(map);
-
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.484143, 62.36291])
-			.setPopup(new mapboxgl.Popup().setText('Nyrölän luontopolku 🅿️'))
-			.addTo(map);
-
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.74918, 62.214013])
-			.setPopup(new mapboxgl.Popup().setText('Sippulanniemen luontopolku 🅿️'))
-			.addTo(map);
-
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.753065, 62.248546])
-			.setPopup(new mapboxgl.Popup().setText('Tourujoen luontopolku 🅿️'))
-			.addTo(map);
-
-		new mapboxgl.Marker({ color: 'green', scale: 1.2 })
-			.setLngLat([25.755092, 62.296168])
-			.setPopup(new mapboxgl.Popup().setText('Touruvuoren luontopolku 🅿️'))
-			.addTo(map);
 		return () => {
 			window.removeEventListener('keydown', handleKeyDown);
 		};
+
 		// return () => map.remove();
-		// tämän jälkeen karttaa ei tuhota
+		// tämän jälkeen karttaa ei tuhota, pysyy elossa niin kauan kuin F5
 	});
 	$effect(() => {
 		if (visible) {
