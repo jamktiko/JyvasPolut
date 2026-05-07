@@ -6,11 +6,7 @@
 	import Filter from './Filter.svelte';
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 	import { visitedList } from '$lib/visitedListGS.svelte';
-	import { slide } from 'svelte/transition';
-	// import { onMount } from 'svelte';
-
-	// trailCards has the data from naturetrail.json
-	// let trailCards: ItrailTypes[] = $state([]);
+	import { fade } from 'svelte/transition';
 
 	// ECS-näppäimestä modalin sulkeminen
 	function handleWindowKeyDown(event: KeyboardEvent) {
@@ -96,7 +92,7 @@
 	<div>Loading....</div>
 	<!-- This shows after the data has been successfully fetched-->
 {:then responseData}
-	<div class="grid" out:slide={{ delay: 200, duration: 1300 }}>
+	<div class="grid" out:fade={{ delay: 10, duration: 10 }}>
 		{#each responseData as trailCard (trailCard.name)}
 			<button onclick={() => open(trailCard)}>
 				<Card

@@ -2,7 +2,7 @@
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 	import { visitedList } from '$lib/visitedListGS.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
-	import { fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
 	interface Props {
 		trailCard: ItrailTypes;
@@ -57,7 +57,7 @@
 	}
 </script>
 
-<div class="card" out:fly={{ delay: 200, duration: 1300, x: 300, y: 0 }}>
+<div class="card" out:fade={{ delay: 0, duration: 0 }}>
 	<!-- If images in the naturetrail.json are not null -->
 	{#if imgs}
 		<img src={imgs[0]} alt={title} />
@@ -80,14 +80,14 @@
 				onclick={(e) => {
 					e.stopPropagation();
 					removeFromVisited(trailCard);
-				}}><p>Käyty</p></button
+				}}><p in:fade={{ delay: 1, duration: 0 }}>Käyty</p></button
 			>
 		{:else}
 			<button
 				onclick={(e) => {
 					e.stopPropagation();
 					addToVisited(trailCard);
-				}}><p>Ei käyty</p></button
+				}}><p in:fade={{ delay: 1, duration: 0 }}>Ei käyty</p></button
 			>
 		{/if}
 		<h2>{title}</h2>
