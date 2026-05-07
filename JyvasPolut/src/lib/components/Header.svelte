@@ -3,12 +3,21 @@
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { mapState } from '$lib/ShowMap.svelte';
+	import { theme, toggleTheme } from '$lib/theme.svelte';
 </script>
 
-<header>
+<header class="header{theme.mode}">
 	<span class="tree">🌲</span>
 	<h1>{appInfo.appName}</h1>
 	<span class="tree">🌲</span>
+	<!-- ---------------------------- light/dark -theme --------------------------------- -->
+	{#if theme.mode === 'ligth'}
+		<button class="darkTheme" onclick={toggleTheme}>Dark</button>
+	{:else}
+		<button class="lightTheme" onclick={toggleTheme}>Ligth</button>
+	{/if}
+	<!-- ---------------------------- light/dark -theme --------------------------------- -->
+
 	<nav>
 		<!-- reititys -->
 		<a class:is-active={page.url.pathname === '/'} href={resolve('/')}>
@@ -34,7 +43,35 @@
 </header>
 
 <style>
-	header {
+	.headerligth {
+		background: linear-gradient(
+			179.525deg,
+			rgb(92, 30, 10) 0%,
+			rgb(160, 64, 18) 35%,
+			rgb(195, 110, 30) 65%,
+			rgb(210, 150, 55) 100%
+		);
+		padding: 1rem 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		font-family: Inter, system-ui, sans-serif;
+
+		box-shadow:
+			0 4px 20px rgba(0, 0, 0, 0.4),
+			inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+		height: 120px;
+
+		position: sticky;
+		top: 0;
+		z-index: 999;
+
+		overflow: hidden;
+	}
+
+	.headerdark {
 		background: linear-gradient(177deg, #0f172a 11.59%, #113139 49.92%, #134e4a 90.43%);
 		padding: 1rem 2rem;
 		display: flex;

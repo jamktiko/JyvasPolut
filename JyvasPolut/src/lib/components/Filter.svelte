@@ -2,6 +2,7 @@
 	import { filterInfo } from '$lib/filterInfo.svelte';
 	import Button from './Button.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
+	import { theme } from '$lib/theme.svelte';
 
 	interface Props {
 		getTrails: (
@@ -9,32 +10,69 @@
 			difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
 		) => Promise<ItrailTypes[]>;
 		printTrail: Promise<ItrailTypes[]>;
+		filterPage: string;
 	}
 	// eslint-disable-next-line no-useless-assignment
-	let { getTrails, printTrail = $bindable() }: Props = $props();
+	let { getTrails, printTrail = $bindable(), filterPage }: Props = $props();
 </script>
 
 
 
-<div class="filter-section">
+<div class="filter-section{theme.mode}">
 	<!-- The onclick gives printTrail new data based on the filter button -->
 	<Button
 		text="Kaikki"
 		onclick={() => ((printTrail = getTrails()), (filterInfo.specificLength = 0.5))}
+		selectedFilter={filterPage === ''}
 	></Button>
-	<Button text="Kevyt" onclick={() => (printTrail = getTrails('difficulty', 'Kevyt'))}></Button>
-	<Button text="Rasittava" onclick={() => (printTrail = getTrails('difficulty', 'Rasittava'))}
+	<Button
+		text="Kevyt"
+		onclick={() => (printTrail = getTrails('difficulty', 'Kevyt'))}
+		selectedFilter={filterPage === 'Kevyt'}
 	></Button>
-	<Button text="Raskas" onclick={() => (printTrail = getTrails('difficulty', 'Raskas'))}></Button>
-	<Button text="Vuori" onclick={() => (printTrail = getTrails('mountain'))}></Button>
-	<Button text="Vesistö" onclick={() => (printTrail = getTrails('bodyOfWater'))}></Button>
-	<Button text="Tuli" onclick={() => (printTrail = getTrails('fireplace'))}></Button>
-	<Button text="Favorite" onclick={() => (printTrail = getTrails('favorite'))}></Button>
-	<Button text="Käyty" onclick={() => (printTrail = getTrails('visited'))}></Button>
-	<Button text="Ei Käyty" onclick={() => (printTrail = getTrails('notVisited'))}></Button>
+	<Button
+		text="Rasittava"
+		onclick={() => (printTrail = getTrails('difficulty', 'Rasittava'))}
+		selectedFilter={filterPage === 'Rasittava'}
+	></Button>
+	<Button
+		text="Raskas"
+		onclick={() => (printTrail = getTrails('difficulty', 'Raskas'))}
+		selectedFilter={filterPage === 'Raskas'}
+	></Button>
+	<Button
+		text="Vuori"
+		onclick={() => (printTrail = getTrails('mountain'))}
+		selectedFilter={filterPage === 'mountain'}
+	></Button>
+	<Button
+		text="Vesistö"
+		onclick={() => (printTrail = getTrails('bodyOfWater'))}
+		selectedFilter={filterPage === 'bodyOfWater'}
+	></Button>
+	<Button
+		text="Tuli"
+		onclick={() => (printTrail = getTrails('fireplace'))}
+		selectedFilter={filterPage === 'fireplace'}
+	></Button>
+	<Button
+		text="Favorite"
+		onclick={() => (printTrail = getTrails('favorite'))}
+		selectedFilter={filterPage === 'favorite'}
+	></Button>
+	<Button
+		text="Käyty"
+		onclick={() => (printTrail = getTrails('visited'))}
+		selectedFilter={filterPage === 'visited'}
+	></Button>
+	<Button
+		text="Ei Käyty"
+		onclick={() => (printTrail = getTrails('notVisited'))}
+		selectedFilter={filterPage === 'notVisited'}
+	></Button>
 	<h2>Reitin pituus</h2>
-	<div class="slider-container">
-		<label class="slider-label">
+	<div class="slider-container{theme.mode}">
+		<label class="slider-label{theme.mode}">
 			<input
 				class="kmFilter"
 				type="range"
@@ -60,8 +98,29 @@
 		text-align: center;
 		font-size: 1.5rem;
 	}
+	.filter-sectionligth {
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		background: linear-gradient(
+			to left,
+			rgb(92, 30, 10) 0%,
+			rgb(160, 64, 18) 35%,
+			rgb(195, 110, 30) 65%,
+			rgb(210, 150, 55) 100%
+		);
+		border-radius: 25px;
+		width: fit-content;
+		margin-left: 2rem;
+		margin-right: 2rem;
+		box-shadow:
+			0 4px 20px rgba(0, 0, 0, 0.3),
+			inset 0 1px 0 rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		position: relative;
+		overflow: hidden;
+	}
 
-	.filter-section {
+	.filter-sectiondark {
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
@@ -92,14 +151,24 @@
 		height: 1px;
 		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 	}
-
-	.slider-container {
+	.slider-containerligth {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
 	}
 
-	.slider-label {
+	.slider-containerdark {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	.slider-labelligth {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.slider-labeldark {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
@@ -121,12 +190,12 @@
 		appearance: none;
 		width: 20px;
 		height: 20px;
-		background: linear-gradient(135deg, #34d399, #10b981);
+		background: linear-gradient(135deg, #dcdcdc, #c3c3c3);
 		border-radius: 50%;
 		cursor: pointer;
 		box-shadow:
-			0 2px 8px rgba(16, 185, 129, 0.5),
-			0 0 0 3px rgba(16, 185, 129, 0.2);
+			0 2px 8px rgba(143, 143, 143, 0.5),
+			0 0 0 3px rgba(96, 96, 96, 0.2);
 		transition:
 			transform 0.15s ease,
 			box-shadow 0.15s ease;
@@ -135,8 +204,8 @@
 	.kmFilter::-webkit-slider-thumb:hover {
 		transform: scale(1.15);
 		box-shadow:
-			0 4px 12px rgba(16, 185, 129, 0.6),
-			0 0 0 4px rgba(16, 185, 129, 0.25);
+			0 4px 12px rgba(167, 168, 168, 0.6),
+			0 0 0 4px rgba(84, 84, 84, 0.25);
 	}
 
 	.kmFilter::-moz-range-thumb {
@@ -157,12 +226,19 @@
 		margin-left: 0.5rem;
 		margin-right: 0.5rem;
 	}
-	.filter-section {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.1rem;
-	align-items: center;
-	margin-top: 3rem;
-}
+	.filter-sectionligth {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.1rem;
+		align-items: center;
+		margin-top: 3rem;
+	}
 
+	.filter-sectiondark {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.1rem;
+		align-items: center;
+		margin-top: 3rem;
+	}
 </style>

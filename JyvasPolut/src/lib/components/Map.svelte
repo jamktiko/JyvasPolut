@@ -164,7 +164,7 @@
 		z-index: 99998;
 	}
 	:global(.mapboxgl-canvas) {
-		filter: brightness(65%);
+		filter: brightness(85%);
 	}
 	.mapOffButton {
 		position: fixed;
