@@ -2,6 +2,7 @@
 	import { filterInfo } from '$lib/filterInfo.svelte';
 	import Button from './Button.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
+	import { theme } from '$lib/theme.svelte';
 
 	interface Props {
 		getTrails: (
@@ -15,7 +16,9 @@
 	let { getTrails, printTrail = $bindable(), filterPage }: Props = $props();
 </script>
 
-<div class="filter-section">
+
+
+<div class="filter-section{theme.mode}">
 	<!-- The onclick gives printTrail new data based on the filter button -->
 	<Button
 		text="Kaikki"
@@ -68,8 +71,8 @@
 		selectedFilter={filterPage === 'notVisited'}
 	></Button>
 	<h2>Reitin pituus</h2>
-	<div class="slider-container">
-		<label class="slider-label">
+	<div class="slider-container{theme.mode}">
+		<label class="slider-label{theme.mode}">
 			<input
 				class="kmFilter"
 				type="range"
@@ -95,12 +98,33 @@
 		text-align: center;
 		font-size: 1.5rem;
 	}
-
-	.filter-section {
+	.filter-sectionligth {
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
-			166deg,
+			to left,
+			rgb(92, 30, 10) 0%,
+			rgb(160, 64, 18) 35%,
+			rgb(195, 110, 30) 65%,
+			rgb(210, 150, 55) 100%
+		);
+		border-radius: 25px;
+		width: fit-content;
+		margin-left: 2rem;
+		margin-right: 2rem;
+		box-shadow:
+			0 4px 20px rgba(0, 0, 0, 0.3),
+			inset 0 1px 0 rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.filter-sectiondark {
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		background: linear-gradient(
+			100deg,
 			#064e3b 4.45%,
 			#082f2d 45.54%,
 			#09272a 55.28%,
@@ -127,14 +151,24 @@
 		height: 1px;
 		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 	}
-
-	.slider-container {
+	.slider-containerligth {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
 	}
 
-	.slider-label {
+	.slider-containerdark {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	.slider-labelligth {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.slider-labeldark {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
@@ -156,12 +190,12 @@
 		appearance: none;
 		width: 20px;
 		height: 20px;
-		background: linear-gradient(135deg, #34d399, #10b981);
+		background: linear-gradient(135deg, #dcdcdc, #c3c3c3);
 		border-radius: 50%;
 		cursor: pointer;
 		box-shadow:
-			0 2px 8px rgba(16, 185, 129, 0.5),
-			0 0 0 3px rgba(16, 185, 129, 0.2);
+			0 2px 8px rgba(143, 143, 143, 0.5),
+			0 0 0 3px rgba(96, 96, 96, 0.2);
 		transition:
 			transform 0.15s ease,
 			box-shadow 0.15s ease;
@@ -170,8 +204,8 @@
 	.kmFilter::-webkit-slider-thumb:hover {
 		transform: scale(1.15);
 		box-shadow:
-			0 4px 12px rgba(16, 185, 129, 0.6),
-			0 0 0 4px rgba(16, 185, 129, 0.25);
+			0 4px 12px rgba(167, 168, 168, 0.6),
+			0 0 0 4px rgba(84, 84, 84, 0.25);
 	}
 
 	.kmFilter::-moz-range-thumb {
@@ -192,7 +226,15 @@
 		margin-left: 0.5rem;
 		margin-right: 0.5rem;
 	}
-	.filter-section {
+	.filter-sectionligth {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.1rem;
+		align-items: center;
+		margin-top: 3rem;
+	}
+
+	.filter-sectiondark {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.1rem;

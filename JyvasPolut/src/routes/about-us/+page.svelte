@@ -16,6 +16,7 @@
 		to grow and eventually cover trails across Finland if users find it valuable and there is enough
 		demand.
 	</p>
+
 	<p>Creators</p>
 	<p>Jami, Venla, Sami</p>
 </div>
@@ -24,5 +25,8 @@
 	.text {
 		max-width: 60ch;
 		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+	}
+	.text-container {
+		height: 100vh;
 	}
 </style>

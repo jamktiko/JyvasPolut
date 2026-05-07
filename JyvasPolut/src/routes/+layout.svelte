@@ -4,6 +4,11 @@
 	import Header from '$lib/components/Header.svelte';
 
 	let { children } = $props();
+	import { theme } from '$lib/theme.svelte';
+
+	$effect(() => {
+		document.body.className = theme.mode;
+	});
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
