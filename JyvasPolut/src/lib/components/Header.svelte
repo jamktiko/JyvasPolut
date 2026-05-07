@@ -7,14 +7,20 @@
 </script>
 
 <header class="header{theme.mode}">
+<div class="title-center">
 	<span class="tree">🌲</span>
 	<h1>{appInfo.appName}</h1>
 	<span class="tree">🌲</span>
+</div>
 	<!-- ---------------------------- light/dark -theme --------------------------------- -->
 	{#if theme.mode === 'ligth'}
-		<button class="darkTheme" onclick={toggleTheme}>Dark</button>
+		<button class="theme-btn" onclick={toggleTheme}>
+	<img src="/images/vektoreita/moon.svg" alt="Theme" />
+</button>
 	{:else}
-		<button class="lightTheme" onclick={toggleTheme}>Ligth</button>
+		<button class="theme-btn" onclick={toggleTheme}>
+	<img src="/images/vektoreita/moon.svg" alt="Theme" />
+</button>
 	{/if}
 	<!-- ---------------------------- light/dark -theme --------------------------------- -->
 
@@ -113,7 +119,7 @@
 		color: white;
 		font-weight: bold;
 
-		/* improved readability */
+		text-align: center;
 		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 	}
 
@@ -136,8 +142,8 @@
 		box-shadow 0.2s ease;
 	}
 	.btn-icon {
-		width: 32px;
-		height: 32px;
+		width: 40px;
+		height: 40px;
 		display: block;
 	}
 	nav {
@@ -147,5 +153,24 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+}
+.theme-btn {
+	width: 40px;
+	height: 40px;
+	margin-left: auto;
+	
+}
+.mapOnButton {
+	margin-left: 0.5rem;
+}
+.title-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
 </style>

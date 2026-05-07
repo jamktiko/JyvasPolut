@@ -128,7 +128,12 @@
 		height: 500px;
 	}
 	.carddark {
-		background: linear-gradient(to right, #064e3b, #0b0b1e);
+		background: linear-gradient(
+	to right,
+	#0f7a5a,
+	#123f48,
+	#1a1b3a
+);
 		position: relative;
 		border-radius: 50px;
 		border: 1px solid rgba(255, 255, 255, 0.2);
