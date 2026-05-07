@@ -12,25 +12,23 @@
 	<nav>
 		<!-- reititys -->
 		<a class:is-active={page.url.pathname === '/'} href={resolve('/')}>
-	<img src="/images/vektoreita/Home.svg" alt="Etusivu" class="nav-icon" />
-</a> 
+			<img src="/images/vektoreita/Home.svg" alt="Etusivu" class="nav-icon" />
+		</a>
 		<a
-	class:is-active={page.url.pathname === '/about-us'}
-	href={resolve('/about-us')}
-	title="About Us"
->
-	<img src="/images/vektoreita/Icon.svg" alt="About Us" class="nav-icon" />
-</a>
+			class:is-active={page.url.pathname === '/about-us'}
+			href={resolve('/about-us')}
+			title="About Us"
+		>
+			<img src="/images/vektoreita/Icon.svg" alt="About Us" class="nav-icon" />
+		</a>
 	</nav>
 	<!-- reititys -->
 
 	<!-- So that the button disappears after its ctivated, or when navigating out of "Etusivu" -->
 	{#if page.url.pathname === '/'}
-		{#if !mapState.showMap}
-			<button class="mapOnButton" onclick={() => (mapState.showMap = true)}>
-	<img src="/images/vektoreita/kartta.svg" alt="Avaa kartta" class="btn-icon" />
-</button>
-		{/if}
+		<button class="mapOnButton" onclick={() => (mapState.showMap = true)}>
+			<img src="/images/vektoreita/kartta.svg" alt="Avaa kartta" class="btn-icon" />
+		</button>
 	{/if}
 	<!-- So that the button disappears after its ctivated, or when navigating out of "Etusivu" -->
 </header>
@@ -82,15 +80,14 @@
 		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 	}
 
-/* size the icon */
-.nav-icon {
-	width: 32px;
-	height: 32px;
-}
-.btn-icon {
-	width: 32px;
-	height: 32px;
-	display: block;
-}
-
+	/* size the icon */
+	.nav-icon {
+		width: 32px;
+		height: 32px;
+	}
+	.btn-icon {
+		width: 32px;
+		height: 32px;
+		display: block;
+	}
 </style>

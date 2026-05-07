@@ -1,4 +1,5 @@
 export interface ItrailTypes {
+	id: number;
 	name: string;
 	description: string;
 	description2: string;

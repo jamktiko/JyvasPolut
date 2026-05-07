@@ -1,5 +1,6 @@
 [
 	{
+		"id": 1,
 		"name": "Iso-Haapasaaren luontopolku",
 		"description": "Haapasaari on runsaan kilometrin pituinen kapea saari Vaajakosken Haapaniemen kyljessä.",
 		"description2": "Haapasaaressa pääset tuntemaan Päijänteen raikkaan tuulahduksen.",
@@ -9,23 +10,26 @@
 			"🚌 Linkillä 36min"
 		],
 		"difficulty": "Kevyt",
-		"publicTransport": ["Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"],
+		"publicTransport": [
+			"Linkkilinja: S1 | Pysäkki: Haapaniemi päätepysäkki"
+		],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
 			"type": "Järvi"
 		},
 		"fireplace": "✅",
-	 	"images": [
-			"/images/haapasaari/haapasaari1.png",
-			"/images/haapasaari/haapasaari2.png",
-			"/images/haapasaari/haapasaari3.png",
-			"/images/haapasaari/haapasaari4.png"
+		"images": [
+			"/images/haapasaari/haapasaari1.jpeg",
+			"/images/haapasaari/haapasaari2.jpeg",
+			"/images/haapasaari/haapasaari3.jpg",
+			"/images/haapasaari/haapasaari4.jpg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 2,
 		"name": "Haukanniemen luontopolku",
 		"description": "Polku kulkee Haukanniemen kärjessä olevalle esteettömälle puolikodalle ja takaisin samaa reittiä.",
 		"description2": "Helppokulkuinen reitti sopii kaikille.",
@@ -46,15 +50,16 @@
 		},
 		"fireplace": "✅",
 		"images": [
-			"/images/haukanniemi/haukanniemi1.png",
-			"/images/haukanniemi/haukanniemi2.png",
-			"/images/haukanniemi/haukanniemi3.png",
-			"/images/haukanniemi/haukanniemi4.png"
+			"/images/haukanniemi/haukanniemi1.jpeg",
+			"/images/haukanniemi/haukanniemi2.jpeg",
+			"/images/haukanniemi/haukanniemi3.jpg",
+			"/images/haukanniemi/haukanniemi4.jpg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 3,
 		"name": "Jääskelän luontopolku",
 		"description": "Jääskelän luontopolku vie kulkijan maisemiin, joissa rehevät lehtoalueet vaihtelevat karujen avokallioiden ja mäntykankaiden kanssa.",
 		"description2": "Komeita avokallioita sekä reheviä lehtoja.",
@@ -64,7 +69,9 @@
 			"🚌 Linkillä 51min"
 		],
 		"difficulty": "Rasittava",
-		"publicTransport": ["Linkkilinja: 38 | Pysäkki: Jääskelä E"],
+		"publicTransport": [
+			"Linkkilinja: 38 | Pysäkki: Jääskelä E"
+		],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -72,15 +79,16 @@
 		},
 		"fireplace": "✅",
 		"images": [
-			"/images/jaaskela/jaaskela1.png",
-			"/images/jaaskela/jaaskela2.png",
-			"/images/jaaskela/jaaskela3.png",
-			"/images/jaaskela/jaaskela4.png"
+			"/images/jaaskela/jaaskela1.jpg",
+			"/images/jaaskela/jaaskela2.jpg",
+			"/images/jaaskela/jaaskela3.jpg",
+			"/images/jaaskela/jaaskela4.jpg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 4,
 		"name": "Kangasvuoren luontopolku",
 		"description": "Kangasvuoren luontopolku sijoittuu kaupungin itäisimpään laitaan Kangasvuoren ja Huhtasuon asuinalueiden tuntumaan.",
 		"description2": "Upea laavu pienen lammen äärellä.",
@@ -102,15 +110,16 @@
 		},
 		"fireplace": "✅",
 		"images": [
-			"/images/kangasvuori/kangasvuori1.png",
-			"/images/kangasvuori/kangasvuori2.png",
-			"/images/kangasvuori/kangasvuori3.png",
-			"/images/kangasvuori/kangasvuori4.png"
+			"/images/kangasvuori/kangasvuori1.jpg",
+			"/images/kangasvuori/kangasvuori2.jpg",
+			"/images/kangasvuori/kangasvuori3.jpg",
+			"/images/kangasvuori/kangasvuori4.jpeg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 5,
 		"name": "Laajavuoren luontopolku",
 		"description": "Laajavuoren luontopolku sijaitsee Laajavuoren ulkoilualueella ja kiertää vaihtelevassa metsämaastossa.",
 		"description2": "Virkistävää vaihtelua vieressä kulkevalle pururadalle!",
@@ -131,15 +140,16 @@
 		},
 		"fireplace": "✅",
 		"images": [
-			"/images/laajavuori/laajavuori1.png",
-			"/images/laajavuori/laajavuori2.png",
-			"/images/laajavuori/laajavuori3.png",
-			"/images/laajavuori/laajavuori4.png"
+			"/images/laajavuori/laajavuori1.jpg",
+			"/images/laajavuori/laajavuori2.jpg",
+			"/images/laajavuori/laajavuori3.jpg",
+			"/images/laajavuori/laajavuori4.jpg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 6,
 		"name": "Nyrölän luontopolku",
 		"description": "Nyrölän retkeilypolku kulkee vaihtelevassa metsämaastossa sekä Iso-Musta-järven rannan rämesuolla.",
 		"description2": "Lossilla laavusaareen.",
@@ -161,15 +171,16 @@
 		},
 		"fireplace": "✅",
 		"images": [
-			"/images/nyrola/nyrola1.png",
-			"/images/nyrola/nyrola2.png",
-			"/images/nyrola/nyrola3.png",
-			"/images/nyrola/nyrola4.png"
+			"/images/nyrola/nyrola1.jpg",
+			"/images/nyrola/nyrola2.jpg",
+			"/images/nyrola/nyrola3.jpg",
+			"/images/nyrola/nyrola4.jpg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 7,
 		"name": "Sippulanniemen luontopolku",
 		"description": "Jyväskylän lähellä sijaitseva helppo ja lyhyt luontoreitti, joka kulkee metsäisessä maastossa ja tarjoaa rauhallisen kaupunkiluontokokemuksen aivan asutuksen tuntumassa.",
 		"description2": "Reitin varrella kuulet suuren lintulajien kirjon.",
@@ -179,7 +190,9 @@
 			"🚌 Linkillä 21min"
 		],
 		"difficulty": "Rasittava",
-		"publicTransport": ["Linkkilinja: S3 | Pysäkki: Kissankello 2"],
+		"publicTransport": [
+			"Linkkilinja: S3 | Pysäkki: Kissankello 2"
+		],
 		"mountain": "❌",
 		"bodyOfWater": {
 			"exist": "✅",
@@ -187,15 +200,16 @@
 		},
 		"fireplace": "✅",
 		"images": [
-			"/images/sippulanniemi/sippulanniemi1.png",
-			"/images/sippulanniemi/sippulanniemi2.png",
-			"/images/sippulanniemi/sippulanniemi3.png",
-			"/images/sippulanniemi/sippulanniemi4.png"
+			"/images/sippulanniemi/sippulanniemi1.jpg",
+			"/images/sippulanniemi/sippulanniemi2.jpg",
+			"/images/sippulanniemi/sippulanniemi3.jpg",
+			"/images/sippulanniemi/sippulanniemi4.jpg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 8,
 		"name": "Tourujoen luontopolku",
 		"description": "Polku sijoittuu Tourujokilaakson luonnonsuojelualueelle.",
 		"description2": "Tarkkaile jokea, saatat nähdä Koskikaran sukeltelemassa.",
@@ -217,15 +231,16 @@
 		},
 		"fireplace": "❌",
 		"images": [
-			"/images/tourujoki/tourujoki1.png",
-			"/images/tourujoki/tourujoki2.png",
-			"/images/tourujoki/tourujoki3.png",
-			"/images/tourujoki/tourujoki4.png"
+			"/images/tourujoki/tourujoki1.jpg",
+			"/images/tourujoki/tourujoki2.jpg",
+			"/images/tourujoki/tourujoki3.jpg",
+			"/images/tourujoki/tourujoki4.jpeg"
 		],
 		"favorite": false,
 		"visited": false
 	},
 	{
+		"id": 9,
 		"name": "Touruvuoren luontopolku",
 		"description": "Luontopolku esittelee alueen metsä-, kallio- ja suoluontoa ja nousee Touruvuoren laelle, mistä avautuu upea maisema.",
 		"description2": "Nousu on rankempi, kuin miltä näyttää.",
@@ -246,10 +261,10 @@
 		},
 		"fireplace": "❌",
 		"images": [
-			"/images/touruvuori/touruvuori1.png",
-			"/images/touruvuori/touruvuori2.png",
-			"/images/touruvuori/touruvuori3.png",
-			"/images/touruvuori/touruvuori4.png"
+			"/images/touruvuori/touruvuori1.jpeg",
+			"/images/touruvuori/touruvuori2.jpeg",
+			"/images/touruvuori/touruvuori3.jpeg",
+			"/images/touruvuori/touruvuori4.jpeg"
 		],
 		"favorite": false,
 		"visited": false

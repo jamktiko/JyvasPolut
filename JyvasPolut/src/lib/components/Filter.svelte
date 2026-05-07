@@ -42,6 +42,7 @@
 				max="5"
 				step="0.1"
 				bind:value={filterInfo.specificLength}
+				onchange={() => (printTrail = getTrails())}
 			/>
 			<span class="value">{filterInfo.specificLength} km</span>
 		</label>

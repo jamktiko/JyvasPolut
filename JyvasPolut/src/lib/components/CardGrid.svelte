@@ -8,6 +8,9 @@
 
 	import Filter from './Filter.svelte';
 
+	import { favoriteList } from '$lib/favoriteListGS.svelte';
+
+	import { visitedList } from '$lib/visitedListGS.svelte';
 	// import { onMount } from 'svelte';
 
 	// trailCards has the data from naturetrail.json
@@ -32,19 +35,7 @@
 		selected = null;
 	}
 
-	// onMount(async () => {
-	// 	// ECS-näppäimestä modalin sulkeminen
-	// 	window.addEventListener('keydown', handleWindowKeyDown);
-	// 	// ECS-näppäimestä modalin sulkeminen, keydown = 'escape' on painettu
-
-	// 	const response = await fetch('/data/naturetrail.json');
-
-	// 	if (!response.ok) {
-	// 		throw new Error('Cannot fetch the data');
-	// 	}
-
-	// 	trailCards = await response.json();
-	// });
+	let filterPage = $state('');
 
 	// getTrails fetches the data from naturetrail.json when the function is called
 	// getTrails can also have the data filtered.
@@ -64,7 +55,7 @@
 		}
 
 		let trailCards: ItrailTypes[] = await response.json();
-
+		// filterText tells which filter button was pressed and what to print
 		if (filterText) {
 			if (filterText === 'mountain') {
 				return await trailCards.filter(
@@ -87,22 +78,27 @@
 				);
 			}
 			if (filterText === 'favorite') {
-				return await trailCards.filter(
-					(f) => f.favorite === true && f.trailLength >= filterInfo.specificLength
+				filterPage = 'favorite';
+				return await favoriteList.getFavoriteList.filter(
+					(f) => f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'visited') {
-				return await trailCards.filter(
-					(f) => f.visited === true && f.trailLength >= filterInfo.specificLength
+				filterPage = 'visited';
+				return await visitedList.getVisitedList.filter(
+					(f) => f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'notVisited') {
+				filterPage = 'notVisited';
+				const visitedIds = visitedList.getVisitedList.map((v) => v.id);
 				return await trailCards.filter(
-					(f) => f.visited === false && f.trailLength >= filterInfo.specificLength
+					(f) => !visitedIds.includes(f.id) && f.trailLength >= filterInfo.specificLength
 				);
 			}
 		}
-		return await trailCards;
+		filterPage = '';
+		return await trailCards.filter((f) => f.trailLength >= filterInfo.specificLength);
 	};
 	let printTrail = $state(getTrails());
 </script>
@@ -117,12 +113,16 @@
 		{#each responseData as trailCard (trailCard.name)}
 			<button onclick={() => open(trailCard)}>
 				<Card
+					{trailCard}
 					title={trailCard.name}
 					desc={trailCard.description2}
 					difficulty={trailCard.difficulty}
 					imgs={trailCard.images}
-					fav={trailCard.favorite}
-					visit={trailCard.visited}
+					fav={favoriteList.isFavorite(trailCard)}
+					visit={visitedList.wasVisited(trailCard)}
+					{filterPage}
+					{getTrails}
+					bind:printTrail
 				/>
 			</button>
 		{/each}

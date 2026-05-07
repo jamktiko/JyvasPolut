@@ -1,14 +1,53 @@
 <script lang="ts">
+	import { favoriteList } from '$lib/favoriteListGS.svelte';
+	import { visitedList } from '$lib/visitedListGS.svelte';
+	import type { ItrailTypes } from '$lib/trailInfo';
+
 	interface Props {
+		trailCard: ItrailTypes;
 		title: string;
 		desc: string;
 		difficulty: string;
 		imgs: string[] | null;
 		fav: boolean;
 		visit: boolean;
+		filterPage: string;
+		getTrails: (
+			filterText?: string,
+			difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
+		) => Promise<ItrailTypes[]>;
+		printTrail: Promise<ItrailTypes[]>;
 	}
 
-	let { title, desc, difficulty, imgs, fav, visit }: Props = $props();
+	let {
+		trailCard,
+		title,
+		desc,
+		difficulty,
+		imgs,
+		fav,
+		filterPage,
+		getTrails,
+		// eslint-disable-next-line no-useless-assignment
+		printTrail = $bindable()
+	}: Props = $props();
+
+	function addToVisited(t: ItrailTypes) {
+		visitedList.add(t);
+		printTrail = getTrails(filterPage);
+	}
+	function removeFromVisited(t: ItrailTypes) {
+		visitedList.remove(t);
+		printTrail = getTrails(filterPage);
+	}
+	function favAddorRemove(t: ItrailTypes) {
+		if (fav) {
+			favoriteList.add(t);
+		} else {
+			favoriteList.remove(t);
+		}
+		printTrail = getTrails(filterPage);
+	}
 </script>
 
 <div class="card">
@@ -21,11 +60,13 @@
 	{/if}
 
 	<div class="content">
-		<input type="checkbox" bind:checked={fav} />
-		{#if visit}
-			<button onclick={() => (visit = false)}><p>Käyty ✅</p></button>
+		<input type="checkbox" bind:checked={fav} onchange={() => favAddorRemove(trailCard)} />
+
+		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
+		{#if visitedList.wasVisited(trailCard)}
+			<button onclick={() => removeFromVisited(trailCard)}><p>Käyty ✅</p></button>
 		{:else}
-			<button onclick={() => (visit = true)}><p>Käyty ❌</p></button>
+			<button onclick={() => addToVisited(trailCard)}><p>Käyty ❌</p></button>
 		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
