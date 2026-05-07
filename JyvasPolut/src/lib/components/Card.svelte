@@ -33,18 +33,22 @@
 		printTrail = $bindable()
 	}: Props = $props();
 
+	// these functions add or remove from their lists
+	// and check if the filter page is open and then reloading the cards
 	function addToVisited(t: ItrailTypes) {
 		visitedList.add(t);
 		if (filterPage === 'notVisited') {
 			printTrail = getTrails(filterPage);
 		}
 	}
+
 	function removeFromVisited(t: ItrailTypes) {
 		visitedList.remove(t);
 		if (filterPage === 'visited') {
 			printTrail = getTrails(filterPage);
 		}
 	}
+
 	function favAddorRemove(t: ItrailTypes) {
 		if (fav) {
 			favoriteList.add(t);
@@ -67,6 +71,7 @@
 	{/if}
 
 	<div class="content">
+		<!-- e.stopPropagation stops the modal from opening -->
 		<input
 			type="checkbox"
 			bind:checked={fav}

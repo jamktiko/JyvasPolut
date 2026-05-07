@@ -48,6 +48,7 @@
 
 		let trailCards: ItrailTypes[] = await response.json();
 		// filterText tells which filter button was pressed and what to print
+		// filterPage tells which filter page is open
 		if (filterText) {
 			filterInfo.specificLength = 0.5;
 			if (filterText === 'mountain') {
@@ -76,6 +77,8 @@
 			}
 			if (filterText === 'notVisited') {
 				filterPage = filterText;
+				// visitedIds checks all the visited lists ids
+				// then we get the trails that are not in the visited list
 				const visitedIds = visitedList.getVisitedList.map((v) => v.id);
 				return await trailCards.filter((f) => !visitedIds.includes(f.id));
 			}
@@ -92,6 +95,7 @@
 	<div>Loading....</div>
 	<!-- This shows after the data has been successfully fetched-->
 {:then responseData}
+	<!-- The transition here is in charge of the card load in -->
 	<div class="grid" out:fade={{ delay: 10, duration: 10 }}>
 		{#each responseData as trailCard (trailCard.name)}
 			<button onclick={() => open(trailCard)}>
