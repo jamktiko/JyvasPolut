@@ -65,7 +65,7 @@
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
-			166deg,
+			100deg,
 			#064e3b 4.45%,
 			#082f2d 45.54%,
 			#09272a 55.28%,
