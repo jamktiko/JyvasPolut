@@ -34,11 +34,15 @@
 
 	function addToVisited(t: ItrailTypes) {
 		visitedList.add(t);
-		printTrail = getTrails(filterPage);
+		if (filterPage === 'notVisited') {
+			printTrail = getTrails(filterPage);
+		}
 	}
 	function removeFromVisited(t: ItrailTypes) {
 		visitedList.remove(t);
-		printTrail = getTrails(filterPage);
+		if (filterPage === 'visited') {
+			printTrail = getTrails(filterPage);
+		}
 	}
 	function favAddorRemove(t: ItrailTypes) {
 		if (fav) {
@@ -46,7 +50,9 @@
 		} else {
 			favoriteList.remove(t);
 		}
-		printTrail = getTrails(filterPage);
+		if (filterPage === 'favorite') {
+			printTrail = getTrails(filterPage);
+		}
 	}
 </script>
 

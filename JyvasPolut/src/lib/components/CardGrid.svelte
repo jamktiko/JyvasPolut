@@ -58,39 +58,43 @@
 		// filterText tells which filter button was pressed and what to print
 		if (filterText) {
 			if (filterText === 'mountain') {
+				filterPage = filterText;
 				return await trailCards.filter(
 					(f) => f.mountain === '✅' && f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'bodyOfWater') {
+				filterPage = filterText;
 				return await trailCards.filter(
 					(f) => f.bodyOfWater.exist === '✅' && f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'fireplace') {
+				filterPage = filterText;
 				return await trailCards.filter(
 					(f) => f.fireplace === '✅' && f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'difficulty') {
+				filterPage = filterText;
 				return await trailCards.filter(
 					(f) => f.difficulty === difficulty && f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'favorite') {
-				filterPage = 'favorite';
+				filterPage = filterText;
 				return await favoriteList.getFavoriteList.filter(
 					(f) => f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'visited') {
-				filterPage = 'visited';
+				filterPage = filterText;
 				return await visitedList.getVisitedList.filter(
 					(f) => f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'notVisited') {
-				filterPage = 'notVisited';
+				filterPage = filterText;
 				const visitedIds = visitedList.getVisitedList.map((v) => v.id);
 				return await trailCards.filter(
 					(f) => !visitedIds.includes(f.id) && f.trailLength >= filterInfo.specificLength
