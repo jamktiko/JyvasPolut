@@ -108,7 +108,7 @@
 			{/each}
 
 			<p>Linkki:</p>
-			<ul>
+			<ul class="list">
 				{#each publicTransport as pubTrans (pubTrans)}
 					<li>{pubTrans}</li>
 				{/each}
@@ -134,9 +134,9 @@
 		border-radius: 20px;
 	}
 	.image img {
-	display: block;
-	border-radius: 20px;
-}
+		display: block;
+		border-radius: 20px;
+	}
 	/* @@@@@@ Nämä vaikuttavat Korttien kuvien kokoon / asetteluun @@@@@@ */
 	h1 {
 		font-size: 3rem;
@@ -161,5 +161,8 @@
 		font-size: 1.1rem;
 		padding-left: 1.5rem;
 		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+	}
+	.list {
+		padding-bottom: 40px;
 	}
 </style>

@@ -2,6 +2,7 @@
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 	import { visitedList } from '$lib/visitedListGS.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
+	import { theme } from '$lib/theme.svelte';
 
 	interface Props {
 		trailCard: ItrailTypes;
@@ -50,7 +51,7 @@
 	}
 </script>
 
-<div class="card">
+<div class="card{theme.mode}">
 	<!-- If images in the naturetrail.json are not null -->
 	{#if imgs}
 		<img src={imgs[0]} alt={title} />
@@ -79,13 +80,26 @@
 				<p class="raskas">{difficulty}</p>
 			{/if}
 
-			<button class="btn">Lue lisää</button>
+			<button class="btn{theme.mode}">Lue lisää</button>
 		</div>
 	</div>
 </div>
 
 <style>
-	.card {
+	.cardligth {
+		background: linear-gradient(-38deg, #7c2d12 4%, #1c0a04 92%);
+		position: relative;
+		border-radius: 50px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.25);
+		padding: 10px;
+		padding-bottom: 2rem;
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
+		height: 500px;
+	}
+	.carddark {
 		background: linear-gradient(to right, #064e3b, #0b0b1e);
 		position: relative;
 		border-radius: 50px;
@@ -114,7 +128,14 @@
 		transform: scale(1.03);
 		box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.35);
 	}
-	.card img {
+	.cardligth img {
+		width: 100%;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 40px;
+		box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+	}
+	.carddark img {
 		width: 100%;
 		height: 150px;
 		object-fit: cover;
@@ -136,7 +157,29 @@
 
 		font-style: italic;
 	}
-	.btn {
+
+	.btnligth {
+		width: 5rem;
+		height: 2.5rem;
+		padding: 0 0.875rem;
+		background-color: rgb(136, 65, 18);
+		border-radius: 50px;
+		border: 1.4px solid rgba(0, 0, 0, 0.459);
+		color: #f1f5f9;
+		font-size: 0.7rem;
+		font-weight: bold;
+		font-family: Inter, sans-serif;
+
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+
+		cursor: pointer;
+		transition: background 0.2s ease;
+	}
+
+	.btndark {
 		width: 5rem;
 		height: 2.5rem;
 		padding: 0 0.875rem;
@@ -157,7 +200,12 @@
 		transition: background 0.2s ease;
 	}
 
-	.btn:hover {
+	.btnligth:hover {
+		background-color: rgb(164, 79, 22);
+		transform: translateY(-2px);
+	}
+
+	.btndark:hover {
 		background-color: #082f2d;
 	}
 	.kevyt {
@@ -181,6 +229,4 @@
 		font-weight: bold;
 		transition: 0.2s ease;
 	}
-
 </style>
-
