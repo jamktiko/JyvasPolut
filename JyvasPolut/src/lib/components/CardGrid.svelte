@@ -35,19 +35,7 @@
 		selected = null;
 	}
 
-	// onMount(async () => {
-	// 	// ECS-näppäimestä modalin sulkeminen
-	// 	window.addEventListener('keydown', handleWindowKeyDown);
-	// 	// ECS-näppäimestä modalin sulkeminen, keydown = 'escape' on painettu
-
-	// 	const response = await fetch('/data/naturetrail.json');
-
-	// 	if (!response.ok) {
-	// 		throw new Error('Cannot fetch the data');
-	// 	}
-
-	// 	trailCards = await response.json();
-	// });
+	let filterPage = $state('');
 
 	// getTrails fetches the data from naturetrail.json when the function is called
 	// getTrails can also have the data filtered.
@@ -90,22 +78,26 @@
 				);
 			}
 			if (filterText === 'favorite') {
+				filterPage = 'favorite';
 				return await favoriteList.getFavoriteList.filter(
 					(f) => f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'visited') {
+				filterPage = 'visited';
 				return await visitedList.getVisitedList.filter(
 					(f) => f.trailLength >= filterInfo.specificLength
 				);
 			}
 			if (filterText === 'notVisited') {
+				filterPage = 'notVisited';
 				const visitedIds = visitedList.getVisitedList.map((v) => v.id);
 				return await trailCards.filter(
 					(f) => !visitedIds.includes(f.id) && f.trailLength >= filterInfo.specificLength
 				);
 			}
 		}
+		filterPage = '';
 		return await trailCards.filter((f) => f.trailLength >= filterInfo.specificLength);
 	};
 	let printTrail = $state(getTrails());
@@ -128,6 +120,9 @@
 					imgs={trailCard.images}
 					fav={favoriteList.isFavorite(trailCard)}
 					visit={visitedList.wasVisited(trailCard)}
+					{filterPage}
+					{getTrails}
+					bind:printTrail
 				/>
 			</button>
 		{/each}
