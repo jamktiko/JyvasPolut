@@ -98,11 +98,11 @@
 		border: 1px solid rgba(255, 255, 255, 0.2);
 		box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.25);
 		padding: 10px;
-		padding-bottom: 4rem;
+		padding-bottom: 2rem;
 		transition:
 			transform 0.2s ease,
 			box-shadow 0.2s ease;
-		height: 425px;
+		height: 500px;
 	}
 	.footer {
 		position: absolute;
@@ -178,4 +178,15 @@
 		color: orangered;
 		font-weight: bold;
 	}
+	button {
+		border: none;
+		border-radius: 4px;
+		padding: 0.5rem 1rem;
+		background-color: transparent;
+		cursor: pointer;
+		font-weight: bold;
+		transition: 0.2s ease;
+	}
+
 </style>
+

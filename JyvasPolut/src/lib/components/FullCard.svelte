@@ -147,6 +147,7 @@
 	h2 {
 		font-weight: bold;
 		font-size: 1.5rem;
+		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 	}
 	.moreinfo {
 		overflow-y: auto;
@@ -154,9 +155,11 @@
 	}
 	p {
 		font-size: 1.1rem;
+		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 	}
 	ul {
 		font-size: 1.1rem;
 		padding-left: 1.5rem;
+		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 	}
 </style>

@@ -65,15 +65,16 @@
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
-			323deg,
+			222deg,
 			#064e3b 4.45%,
 			#082f2d 45.54%,
 			#09272a 55.28%,
 			#0b0b1e 92.57%
 		);
-		border-radius: 12px;
+		border-radius: 25px;
 		width: fit-content;
 		margin-left: 2rem;
+		margin-right: 2rem;
 		box-shadow:
 			0 4px 20px rgba(0, 0, 0, 0.3),
 			inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -157,7 +158,7 @@
 	.filter-section {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.75rem;
+	gap: 0.15rem;
 	align-items: center;
 }
 </style>
