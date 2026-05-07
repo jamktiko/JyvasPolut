@@ -3,7 +3,7 @@
 @plugin '@tailwindcss/typography';
 
 body { 
-    background: linear-gradient(to left, #0F172A, #022C22);
+    background: linear-gradient(to right, #0F172A, #022C22);
 }
 body.light {
     background: linear-gradient(

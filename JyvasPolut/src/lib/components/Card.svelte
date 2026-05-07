@@ -64,9 +64,9 @@
 
 		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
 		{#if visitedList.wasVisited(trailCard)}
-			<button onclick={() => removeFromVisited(trailCard)}><p>Käyty ✅</p></button>
+			<button onclick={() => removeFromVisited(trailCard)}><p>Käyty </p></button>
 		{:else}
-			<button onclick={() => addToVisited(trailCard)}><p>Käyty ❌</p></button>
+			<button onclick={() => addToVisited(trailCard)}><p>Käyty </p></button>
 		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
@@ -181,6 +181,22 @@
 		font-weight: bold;
 		transition: 0.2s ease;
 	}
+	input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	border-radius: 6px;
+	outline-color: black;
+
+	color: #10b981;
+
+	transform: scale(1.1);
+	transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+	transform: scale(1.2);
+}
 
 </style>
 

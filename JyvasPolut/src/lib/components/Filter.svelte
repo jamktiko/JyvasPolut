@@ -14,7 +14,7 @@
 	let { getTrails, printTrail = $bindable() }: Props = $props();
 </script>
 
-<p class="px-4 py-2">Suodata polkuja:</p>
+
 
 <div class="filter-section">
 	<!-- The onclick gives printTrail new data based on the filter button -->
@@ -65,7 +65,7 @@
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
-			222deg,
+			166deg,
 			#064e3b 4.45%,
 			#082f2d 45.54%,
 			#09272a 55.28%,
@@ -154,11 +154,15 @@
 		margin-bottom: 1.25rem;
 		font-weight: 600;
 		letter-spacing: 0.02em;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 	}
 	.filter-section {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.15rem;
+	gap: 0.1rem;
 	align-items: center;
+	margin-top: 3rem;
 }
+
 </style>
