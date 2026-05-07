@@ -1,13 +1,13 @@
 export const theme = $state({
-  mode: 'ligth'
+  mode: 'dark'
 });
 
 
 
 export function toggleTheme() {
-  if (theme.mode === 'ligth') {
-    theme.mode = 'dark'
-  } else {
+  if (theme.mode === 'dark') {
     theme.mode = 'ligth'
+  } else {
+    theme.mode = 'dark'
   }
 }

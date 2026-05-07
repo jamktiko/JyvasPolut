@@ -2,13 +2,8 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-<<<<<<< HEAD
 body.dark { 
     background: linear-gradient(to left, #0F172A, #022C22);
-=======
-body { 
-    background: linear-gradient(to right, #0F172A, #022C22);
->>>>>>> main
 }
 body.ligth {
     background: linear-gradient(
