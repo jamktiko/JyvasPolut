@@ -1,15 +1,10 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
-
 	import { filterInfo } from '$lib/filterInfo.svelte';
-
 	import FullCard from '$lib/components/FullCard.svelte';
-
 	import Filter from './Filter.svelte';
-
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
-
 	import { visitedList } from '$lib/visitedListGS.svelte';
 	// import { onMount } from 'svelte';
 
@@ -70,8 +65,8 @@
 				filterPage = filterText;
 				return await trailCards.filter((f) => f.fireplace === '✅');
 			}
-			if (filterText === 'difficulty') {
-				filterPage = filterText;
+			if (filterText === 'difficulty' && difficulty) {
+				filterPage = difficulty;
 				return await trailCards.filter((f) => f.difficulty === difficulty);
 			}
 			if (filterText === 'favorite') {
@@ -94,7 +89,7 @@
 	let printTrail = $state(getTrails());
 </script>
 
-<Filter {getTrails} bind:printTrail />
+<Filter {getTrails} bind:printTrail {filterPage} />
 <!-- This shows before the data has been successfully fetched-->
 {#await printTrail}
 	<div>Loading....</div>

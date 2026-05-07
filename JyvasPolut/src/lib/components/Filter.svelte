@@ -9,9 +9,10 @@
 			difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
 		) => Promise<ItrailTypes[]>;
 		printTrail: Promise<ItrailTypes[]>;
+		filterPage: string;
 	}
 	// eslint-disable-next-line no-useless-assignment
-	let { getTrails, printTrail = $bindable() }: Props = $props();
+	let { getTrails, printTrail = $bindable(), filterPage }: Props = $props();
 </script>
 
 <p class="px-4 py-2">Suodata polkuja:</p>
@@ -21,17 +22,53 @@
 	<Button
 		text="Kaikki"
 		onclick={() => ((printTrail = getTrails()), (filterInfo.specificLength = 0.5))}
+		selectedFilter={filterPage === ''}
 	></Button>
-	<Button text="Kevyt" onclick={() => (printTrail = getTrails('difficulty', 'Kevyt'))}></Button>
-	<Button text="Rasittava" onclick={() => (printTrail = getTrails('difficulty', 'Rasittava'))}
+	<Button
+		text="Kevyt"
+		onclick={() => (printTrail = getTrails('difficulty', 'Kevyt'))}
+		selectedFilter={filterPage === 'Kevyt'}
 	></Button>
-	<Button text="Raskas" onclick={() => (printTrail = getTrails('difficulty', 'Raskas'))}></Button>
-	<Button text="Vuori" onclick={() => (printTrail = getTrails('mountain'))}></Button>
-	<Button text="Vesistö" onclick={() => (printTrail = getTrails('bodyOfWater'))}></Button>
-	<Button text="Tuli" onclick={() => (printTrail = getTrails('fireplace'))}></Button>
-	<Button text="Favorite" onclick={() => (printTrail = getTrails('favorite'))}></Button>
-	<Button text="Käyty" onclick={() => (printTrail = getTrails('visited'))}></Button>
-	<Button text="Ei Käyty" onclick={() => (printTrail = getTrails('notVisited'))}></Button>
+	<Button
+		text="Rasittava"
+		onclick={() => (printTrail = getTrails('difficulty', 'Rasittava'))}
+		selectedFilter={filterPage === 'Rasittava'}
+	></Button>
+	<Button
+		text="Raskas"
+		onclick={() => (printTrail = getTrails('difficulty', 'Raskas'))}
+		selectedFilter={filterPage === 'Raskas'}
+	></Button>
+	<Button
+		text="Vuori"
+		onclick={() => (printTrail = getTrails('mountain'))}
+		selectedFilter={filterPage === 'mountain'}
+	></Button>
+	<Button
+		text="Vesistö"
+		onclick={() => (printTrail = getTrails('bodyOfWater'))}
+		selectedFilter={filterPage === 'bodyOfWater'}
+	></Button>
+	<Button
+		text="Tuli"
+		onclick={() => (printTrail = getTrails('fireplace'))}
+		selectedFilter={filterPage === 'fireplace'}
+	></Button>
+	<Button
+		text="Favorite"
+		onclick={() => (printTrail = getTrails('favorite'))}
+		selectedFilter={filterPage === 'favorite'}
+	></Button>
+	<Button
+		text="Käyty"
+		onclick={() => (printTrail = getTrails('visited'))}
+		selectedFilter={filterPage === 'visited'}
+	></Button>
+	<Button
+		text="Ei Käyty"
+		onclick={() => (printTrail = getTrails('notVisited'))}
+		selectedFilter={filterPage === 'notVisited'}
+	></Button>
 	<h2>Reitin pituus</h2>
 	<div class="slider-container">
 		<label class="slider-label">
@@ -156,9 +193,9 @@
 		letter-spacing: 0.02em;
 	}
 	.filter-section {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.15rem;
-	align-items: center;
-}
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.15rem;
+		align-items: center;
+	}
 </style>
