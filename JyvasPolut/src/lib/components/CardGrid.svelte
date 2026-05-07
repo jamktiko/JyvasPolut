@@ -57,44 +57,35 @@
 		let trailCards: ItrailTypes[] = await response.json();
 		// filterText tells which filter button was pressed and what to print
 		if (filterText) {
+			filterInfo.specificLength = 0.5;
 			if (filterText === 'mountain') {
-				return await trailCards.filter(
-					(f) => f.mountain === '✅' && f.trailLength >= filterInfo.specificLength
-				);
+				filterPage = filterText;
+				return await trailCards.filter((f) => f.mountain === '✅');
 			}
 			if (filterText === 'bodyOfWater') {
-				return await trailCards.filter(
-					(f) => f.bodyOfWater.exist === '✅' && f.trailLength >= filterInfo.specificLength
-				);
+				filterPage = filterText;
+				return await trailCards.filter((f) => f.bodyOfWater.exist === '✅');
 			}
 			if (filterText === 'fireplace') {
-				return await trailCards.filter(
-					(f) => f.fireplace === '✅' && f.trailLength >= filterInfo.specificLength
-				);
+				filterPage = filterText;
+				return await trailCards.filter((f) => f.fireplace === '✅');
 			}
 			if (filterText === 'difficulty') {
-				return await trailCards.filter(
-					(f) => f.difficulty === difficulty && f.trailLength >= filterInfo.specificLength
-				);
+				filterPage = filterText;
+				return await trailCards.filter((f) => f.difficulty === difficulty);
 			}
 			if (filterText === 'favorite') {
-				filterPage = 'favorite';
-				return await favoriteList.getFavoriteList.filter(
-					(f) => f.trailLength >= filterInfo.specificLength
-				);
+				filterPage = filterText;
+				return await favoriteList.getFavoriteList;
 			}
 			if (filterText === 'visited') {
-				filterPage = 'visited';
-				return await visitedList.getVisitedList.filter(
-					(f) => f.trailLength >= filterInfo.specificLength
-				);
+				filterPage = filterText;
+				return await visitedList.getVisitedList;
 			}
 			if (filterText === 'notVisited') {
-				filterPage = 'notVisited';
+				filterPage = filterText;
 				const visitedIds = visitedList.getVisitedList.map((v) => v.id);
-				return await trailCards.filter(
-					(f) => !visitedIds.includes(f.id) && f.trailLength >= filterInfo.specificLength
-				);
+				return await trailCards.filter((f) => !visitedIds.includes(f.id));
 			}
 		}
 		filterPage = '';
