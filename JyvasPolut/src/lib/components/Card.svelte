@@ -2,6 +2,7 @@
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 	import { visitedList } from '$lib/visitedListGS.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
+	import { fade } from 'svelte/transition';
 	import { theme } from '$lib/theme.svelte';
 
 	interface Props {
@@ -33,18 +34,22 @@
 		printTrail = $bindable()
 	}: Props = $props();
 
+	// these functions add or remove from their lists
+	// and check if the filter page is open and then reloading the cards
 	function addToVisited(t: ItrailTypes) {
 		visitedList.add(t);
 		if (filterPage === 'notVisited') {
 			printTrail = getTrails(filterPage);
 		}
 	}
+
 	function removeFromVisited(t: ItrailTypes) {
 		visitedList.remove(t);
 		if (filterPage === 'visited') {
 			printTrail = getTrails(filterPage);
 		}
 	}
+
 	function favAddorRemove(t: ItrailTypes) {
 		if (fav) {
 			favoriteList.add(t);
@@ -57,7 +62,8 @@
 	}
 </script>
 
-<div class="card{theme.mode}">
+<!-- This transition gets the card out quickly and smoothly -->
+<div class="card{theme.mode}" out:fade={{ delay: 0, duration: 0 }}>
 	<!-- If images in the naturetrail.json are not null -->
 	{#if imgs}
 		<img src={imgs[0]} alt={title} />
@@ -67,13 +73,29 @@
 	{/if}
 
 	<div class="content">
-		<input type="checkbox" bind:checked={fav} onchange={() => favAddorRemove(trailCard)} />
+		<!-- e.stopPropagation stops the modal from opening -->
+		<input
+			type="checkbox"
+			bind:checked={fav}
+			onclick={(e) => e.stopPropagation()}
+			onchange={() => favAddorRemove(trailCard)}
+		/>
 
 		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
 		{#if visitedList.wasVisited(trailCard)}
-			<button onclick={() => removeFromVisited(trailCard)}><p>Käyty</p></button>
+			<button
+				onclick={(e) => {
+					e.stopPropagation();
+					removeFromVisited(trailCard);
+				}}><p in:fade={{ delay: 1, duration: 0 }}>Käyty</p></button
+			>
 		{:else}
-			<button onclick={() => addToVisited(trailCard)}><p>Ei käyty</p></button>
+			<button
+				onclick={(e) => {
+					e.stopPropagation();
+					addToVisited(trailCard);
+				}}><p in:fade={{ delay: 1, duration: 0 }}>Ei käyty</p></button
+			>
 		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
