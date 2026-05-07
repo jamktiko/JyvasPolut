@@ -124,12 +124,12 @@
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
-			100deg,
-			#064e3b 4.45%,
-			#082f2d 45.54%,
-			#09272a 55.28%,
-			#0b0b1e 92.57%
-		);
+	200deg,
+	#0b6b4f 4.45%,
+	#0f4a40 45.54%,
+	#12363d 55.28%,
+	#101a2e 90.57%
+);
 		border-radius: 25px;
 		width: fit-content;
 		margin-left: 2rem;

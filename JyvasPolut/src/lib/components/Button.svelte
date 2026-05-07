@@ -24,6 +24,6 @@
 
 <style>
 	.selectedFilter {
-		background-color: aqua;
+		background-color: rgb(40, 34, 34);
 	}
 </style>
