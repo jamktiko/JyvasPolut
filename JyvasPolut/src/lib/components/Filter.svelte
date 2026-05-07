@@ -10,29 +10,66 @@
 			difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
 		) => Promise<ItrailTypes[]>;
 		printTrail: Promise<ItrailTypes[]>;
+		filterPage: string;
 	}
 	// eslint-disable-next-line no-useless-assignment
-	let { getTrails, printTrail = $bindable() }: Props = $props();
+	let { getTrails, printTrail = $bindable(), filterPage }: Props = $props();
 </script>
 
-<p class="px-4 py-2">Suodata polkuja:</p>
+
 
 <div class="filter-section{theme.mode}">
 	<!-- The onclick gives printTrail new data based on the filter button -->
 	<Button
 		text="Kaikki"
 		onclick={() => ((printTrail = getTrails()), (filterInfo.specificLength = 0.5))}
+		selectedFilter={filterPage === ''}
 	></Button>
-	<Button text="Kevyt" onclick={() => (printTrail = getTrails('difficulty', 'Kevyt'))}></Button>
-	<Button text="Rasittava" onclick={() => (printTrail = getTrails('difficulty', 'Rasittava'))}
+	<Button
+		text="Kevyt"
+		onclick={() => (printTrail = getTrails('difficulty', 'Kevyt'))}
+		selectedFilter={filterPage === 'Kevyt'}
 	></Button>
-	<Button text="Raskas" onclick={() => (printTrail = getTrails('difficulty', 'Raskas'))}></Button>
-	<Button text="Vuori" onclick={() => (printTrail = getTrails('mountain'))}></Button>
-	<Button text="Vesistö" onclick={() => (printTrail = getTrails('bodyOfWater'))}></Button>
-	<Button text="Tuli" onclick={() => (printTrail = getTrails('fireplace'))}></Button>
-	<Button text="Favorite" onclick={() => (printTrail = getTrails('favorite'))}></Button>
-	<Button text="Käyty" onclick={() => (printTrail = getTrails('visited'))}></Button>
-	<Button text="Ei Käyty" onclick={() => (printTrail = getTrails('notVisited'))}></Button>
+	<Button
+		text="Rasittava"
+		onclick={() => (printTrail = getTrails('difficulty', 'Rasittava'))}
+		selectedFilter={filterPage === 'Rasittava'}
+	></Button>
+	<Button
+		text="Raskas"
+		onclick={() => (printTrail = getTrails('difficulty', 'Raskas'))}
+		selectedFilter={filterPage === 'Raskas'}
+	></Button>
+	<Button
+		text="Vuori"
+		onclick={() => (printTrail = getTrails('mountain'))}
+		selectedFilter={filterPage === 'mountain'}
+	></Button>
+	<Button
+		text="Vesistö"
+		onclick={() => (printTrail = getTrails('bodyOfWater'))}
+		selectedFilter={filterPage === 'bodyOfWater'}
+	></Button>
+	<Button
+		text="Tuli"
+		onclick={() => (printTrail = getTrails('fireplace'))}
+		selectedFilter={filterPage === 'fireplace'}
+	></Button>
+	<Button
+		text="Favorite"
+		onclick={() => (printTrail = getTrails('favorite'))}
+		selectedFilter={filterPage === 'favorite'}
+	></Button>
+	<Button
+		text="Käyty"
+		onclick={() => (printTrail = getTrails('visited'))}
+		selectedFilter={filterPage === 'visited'}
+	></Button>
+	<Button
+		text="Ei Käyty"
+		onclick={() => (printTrail = getTrails('notVisited'))}
+		selectedFilter={filterPage === 'notVisited'}
+	></Button>
 	<h2>Reitin pituus</h2>
 	<div class="slider-container{theme.mode}">
 		<label class="slider-label{theme.mode}">
@@ -87,7 +124,7 @@
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
-			222deg,
+			166deg,
 			#064e3b 4.45%,
 			#082f2d 45.54%,
 			#09272a 55.28%,
@@ -186,18 +223,22 @@
 		margin-bottom: 1.25rem;
 		font-weight: 600;
 		letter-spacing: 0.02em;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 	}
 	.filter-sectionligth {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.15rem;
+		gap: 0.1rem;
 		align-items: center;
+		margin-top: 3rem;
 	}
 
 	.filter-sectiondark {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.15rem;
+		gap: 0.1rem;
 		align-items: center;
+		margin-top: 3rem;
 	}
 </style>

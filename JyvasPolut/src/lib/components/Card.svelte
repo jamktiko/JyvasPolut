@@ -35,11 +35,15 @@
 
 	function addToVisited(t: ItrailTypes) {
 		visitedList.add(t);
-		printTrail = getTrails(filterPage);
+		if (filterPage === 'notVisited') {
+			printTrail = getTrails(filterPage);
+		}
 	}
 	function removeFromVisited(t: ItrailTypes) {
 		visitedList.remove(t);
-		printTrail = getTrails(filterPage);
+		if (filterPage === 'visited') {
+			printTrail = getTrails(filterPage);
+		}
 	}
 	function favAddorRemove(t: ItrailTypes) {
 		if (fav) {
@@ -47,7 +51,9 @@
 		} else {
 			favoriteList.remove(t);
 		}
-		printTrail = getTrails(filterPage);
+		if (filterPage === 'favorite') {
+			printTrail = getTrails(filterPage);
+		}
 	}
 </script>
 
@@ -65,9 +71,9 @@
 
 		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
 		{#if visitedList.wasVisited(trailCard)}
-			<button onclick={() => removeFromVisited(trailCard)}><p>Käyty ✅</p></button>
+			<button onclick={() => removeFromVisited(trailCard)}><p>Käyty</p></button>
 		{:else}
-			<button onclick={() => addToVisited(trailCard)}><p>Käyty ❌</p></button>
+			<button onclick={() => addToVisited(trailCard)}><p>Ei käyty</p></button>
 		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
@@ -228,5 +234,21 @@
 		cursor: pointer;
 		font-weight: bold;
 		transition: 0.2s ease;
+	}
+	input[type='checkbox'] {
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+		border-radius: 6px;
+		outline-color: black;
+
+		color: #10b981;
+
+		transform: scale(1.1);
+		transition: transform 0.2s ease;
+	}
+
+	input[type='checkbox']:hover {
+		transform: scale(1.2);
 	}
 </style>

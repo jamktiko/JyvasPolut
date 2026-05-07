@@ -5,6 +5,7 @@
 		text: string;
 		onclick: () => void;
 		disabled?: boolean;
+		selectedFilter?: boolean;
 	}
 
 	let { text, onclick, disabled = false }: Props = $props();
@@ -16,5 +17,11 @@
 </script>
 
 <div class="flex gap-4 pl-4">
-	<button {onclick} {disabled} class={theme.mode === 'dark' ? dark : ligth}>{text} </button>
+	<button {onclick} {disabled} class={theme.mode === 'dark' ? dark : ligth}>{text} class:selectedFilter </button>
 </div>
+
+<style>
+	.selectedFilter {
+		background-color: aqua;
+	}
+</style>

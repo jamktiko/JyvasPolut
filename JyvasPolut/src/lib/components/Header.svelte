@@ -117,14 +117,35 @@
 		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 	}
 
-	/* size the icon */
 	.nav-icon {
-		width: 32px;
-		height: 32px;
+		width: 50px;
+		height: 50px;
+			padding: 0.4rem;
+	border-radius: 12px;
+
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(6px);
+
+	box-shadow:
+		0 4px 12px rgba(0, 0, 0, 0.35),
+		inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+	transition:
+		transform 0.2s ease,
+		background 0.2s ease,
+		box-shadow 0.2s ease;
 	}
 	.btn-icon {
 		width: 32px;
 		height: 32px;
 		display: block;
 	}
+	nav {
+	position: absolute;
+	left: 2rem;
+
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
 </style>
