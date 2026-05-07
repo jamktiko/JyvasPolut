@@ -2,6 +2,7 @@
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 	import { visitedList } from '$lib/visitedListGS.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
+	import { fly } from 'svelte/transition';
 
 	interface Props {
 		trailCard: ItrailTypes;
@@ -56,7 +57,7 @@
 	}
 </script>
 
-<div class="card">
+<div class="card" out:fly={{ delay: 200, duration: 1300, x: 300, y: 0 }}>
 	<!-- If images in the naturetrail.json are not null -->
 	{#if imgs}
 		<img src={imgs[0]} alt={title} />
@@ -66,13 +67,28 @@
 	{/if}
 
 	<div class="content">
-		<input type="checkbox" bind:checked={fav} onchange={() => favAddorRemove(trailCard)} />
+		<input
+			type="checkbox"
+			bind:checked={fav}
+			onclick={(e) => e.stopPropagation()}
+			onchange={() => favAddorRemove(trailCard)}
+		/>
 
 		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
 		{#if visitedList.wasVisited(trailCard)}
-			<button onclick={() => removeFromVisited(trailCard)}><p>Käyty</p></button>
+			<button
+				onclick={(e) => {
+					e.stopPropagation();
+					removeFromVisited(trailCard);
+				}}><p>Käyty</p></button
+			>
 		{:else}
-			<button onclick={() => addToVisited(trailCard)}><p>Ei käyty</p></button>
+			<button
+				onclick={(e) => {
+					e.stopPropagation();
+					addToVisited(trailCard);
+				}}><p>Ei käyty</p></button
+			>
 		{/if}
 		<h2>{title}</h2>
 		<p>{desc}</p>
