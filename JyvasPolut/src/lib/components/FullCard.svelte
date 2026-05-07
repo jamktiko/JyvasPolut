@@ -40,7 +40,7 @@
 
 	// i tells the current index the image is at
 	let i = $state(0);
-	// nykyinenKuva equals the current image
+	// currentImg equals the current image
 	// or if naturetrail.json doesn't have images, it sets it at null
 	let currentImg: string | null = $derived(images ? images[i] : null);
 
@@ -59,6 +59,10 @@
 			i = i > 0 ? i - 1 : images.length - 1;
 		}
 	}
+
+	let commenter = $state('');
+	let commentTitle = $state('');
+	let commentText = $state('');
 </script>
 
 <!-- This gives Modal.svelte "hideProduct" props as "close" -->
@@ -114,6 +118,47 @@
 				{/each}
 			</ul>
 		</div>
+		<div class="comment-container">
+			<div class="comment-section">
+				<div>
+					<label>
+						Kommentoija:
+						<input type="text" bind:value={commenter} />
+					</label>
+				</div>
+				<div>
+					<label>
+						Otsikko:
+						<input type="text" bind:value={commentTitle} />
+					</label>
+				</div>
+				<div>
+					<label>
+						*Viesti:
+						<textarea bind:value={commentText}></textarea>
+					</label>
+				</div>
+				<div>
+					<button>Lähetä</button>
+				</div>
+				<hr />
+				<div class="comment">
+					<p>{commenter}</p>
+					<h2>{commentTitle}</h2>
+					<p>{commentText}</p>
+				</div>
+				<div class="comment">
+					<p>{commenter}</p>
+					<h2>{commentTitle}</h2>
+					<p>{commentText}</p>
+				</div>
+				<div class="comment">
+					<p>{commenter}</p>
+					<h2>{commentTitle}</h2>
+					<p>{commentText}</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	{#snippet footer()}
@@ -122,6 +167,21 @@
 </Modal>
 
 <style>
+	.comment-container {
+		background-color: aliceblue;
+		padding: 20px;
+		margin: 20px;
+	}
+	.comment-section {
+		background-color: rgb(221, 221, 221);
+		padding: 50px;
+	}
+	.comment {
+		background-color: white;
+		border: 1px solid black;
+		margin: 10px;
+	}
+
 	/* @@@@@@ Nämä vaikuttavat Korttien kuvien kokoon / asetteluun @@@@@@ */
 	.scrollImg {
 		width: 40px;
