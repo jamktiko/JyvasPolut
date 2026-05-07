@@ -23,5 +23,6 @@
 <style>
 	.text {
 		max-width: 60ch;
+		text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 	}
 </style>
