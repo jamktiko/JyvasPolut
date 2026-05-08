@@ -7,26 +7,26 @@
 </script>
 
 <header class="header{theme.mode}">
-<div class="title-center">
-	<span class="tree">🌲</span>
-	<h1>{appInfo.appName}</h1>
-	<span class="tree">🌲</span>
-</div>
+	<div class="title-center">
+		<span class="tree">🌲</span>
+		<h1>{appInfo.appName}</h1>
+		<span class="tree">🌲</span>
+	</div>
 	<!-- ---------------------------- light/dark -theme --------------------------------- -->
 	{#if theme.mode === 'ligth'}
-		<button class="theme-btn" onclick={toggleTheme}>
-	<img src="/images/vektoreita/moon.svg" alt="Theme" />
-</button>
+		<button class="theme-btn" onclick={toggleTheme} title="Tumma teema">
+			<img src="/images/vektoreita/moon.svg" alt="Theme" />
+		</button>
 	{:else}
-		<button class="theme-btn" onclick={toggleTheme}>
-	<img src="/images/vektoreita/moon.svg" alt="Theme" />
-</button>
+		<button class="theme-btn" onclick={toggleTheme} title="Vaalea teema">
+			<img src="/images/vektoreita/moon.svg" alt="Theme" />
+		</button>
 	{/if}
 	<!-- ---------------------------- light/dark -theme --------------------------------- -->
 
 	<nav>
 		<!-- reititys -->
-		<a class:is-active={page.url.pathname === '/'} href={resolve('/')}>
+		<a class:is-active={page.url.pathname === '/'} href={resolve('/')} title="Etusivu">
 			<img src="/images/vektoreita/Home.svg" alt="Etusivu" class="nav-icon" />
 		</a>
 		<a
@@ -41,7 +41,7 @@
 
 	<!-- So that the button disappears after its ctivated, or when navigating out of "Etusivu" -->
 	{#if page.url.pathname === '/'}
-		<button class="mapOnButton" onclick={() => (mapState.showMap = true)}>
+		<button class="mapOnButton" onclick={() => (mapState.showMap = true)} title="Kartta">
 			<img src="/images/vektoreita/kartta.svg" alt="Avaa kartta" class="btn-icon" />
 		</button>
 	{/if}
@@ -126,20 +126,20 @@
 	.nav-icon {
 		width: 50px;
 		height: 50px;
-			padding: 0.4rem;
-	border-radius: 12px;
+		padding: 0.4rem;
+		border-radius: 12px;
 
-	background: rgba(255, 255, 255, 0.08);
-	backdrop-filter: blur(6px);
+		background: rgba(255, 255, 255, 0.08);
+		backdrop-filter: blur(6px);
 
-	box-shadow:
-		0 4px 12px rgba(0, 0, 0, 0.35),
-		inset 0 1px 0 rgba(255, 255, 255, 0.12);
+		box-shadow:
+			0 4px 12px rgba(0, 0, 0, 0.35),
+			inset 0 1px 0 rgba(255, 255, 255, 0.12);
 
-	transition:
-		transform 0.2s ease,
-		background 0.2s ease,
-		box-shadow 0.2s ease;
+		transition:
+			transform 0.2s ease,
+			background 0.2s ease,
+			box-shadow 0.2s ease;
 	}
 	.btn-icon {
 		width: 40px;
@@ -147,30 +147,29 @@
 		display: block;
 	}
 	nav {
-	position: absolute;
-	left: 2rem;
+		position: absolute;
+		left: 2rem;
 
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-}
-.theme-btn {
-	width: 40px;
-	height: 40px;
-	margin-left: auto;
-	
-}
-.mapOnButton {
-	margin-left: 0.5rem;
-}
-.title-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	.theme-btn {
+		width: 40px;
+		height: 40px;
+		margin-left: auto;
+	}
+	.mapOnButton {
+		margin-left: 0.5rem;
+	}
+	.title-center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
 
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-}
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 </style>

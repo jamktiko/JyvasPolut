@@ -27,6 +27,16 @@
 		selected = null;
 	}
 
+	// min max values for the slider-filter
+	let minTrailLength: number = $state(0);
+	let maxTrailLength: number = $state(0);
+	// $effect(() => {
+	// 	if (filterInfo.specificLength === 0) {
+	// 		filterInfo.specificLength = minTrailLength;
+	// 	}
+	// });
+	// min max values for the slider-filter
+
 	let filterPage = $state('');
 
 	// getTrails fetches the data from naturetrail.json when the function is called
@@ -49,8 +59,18 @@
 		let trailCards: ItrailTypes[] = await response.json();
 		// filterText tells which filter button was pressed and what to print
 		// filterPage tells which filter page is open
+
+		// min max values for the slider-filter
+		const lengths = trailCards.map((trail) => trail.trailLength);
+		minTrailLength = Math.min(...lengths);
+		maxTrailLength = Math.max(...lengths);
+		if (filterInfo.specificLength === 0) {
+			filterInfo.specificLength = minTrailLength;
+		}
+		// min max values for the slider-filter
+
 		if (filterText) {
-			filterInfo.specificLength = 0.5;
+			filterInfo.specificLength = minTrailLength;
 			if (filterText === 'mountain') {
 				filterPage = filterText;
 				return await trailCards.filter((f) => f.mountain === '✅');
@@ -89,7 +109,7 @@
 	let printTrail = $state(getTrails());
 </script>
 
-<Filter {getTrails} bind:printTrail {filterPage} />
+<Filter {getTrails} bind:printTrail {filterPage} {minTrailLength} {maxTrailLength} />
 <!-- This shows before the data has been successfully fetched-->
 {#await printTrail}
 	<div>Loading....</div>

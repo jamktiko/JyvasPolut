@@ -5,6 +5,8 @@
 	import { theme } from '$lib/theme.svelte';
 
 	interface Props {
+		minTrailLength: number;
+		maxTrailLength: number;
 		getTrails: (
 			filterText?: string,
 			difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
@@ -12,17 +14,22 @@
 		printTrail: Promise<ItrailTypes[]>;
 		filterPage: string;
 	}
-	// eslint-disable-next-line no-useless-assignment
-	let { getTrails, printTrail = $bindable(), filterPage }: Props = $props();
+
+	let {
+		getTrails,
+		// eslint-disable-next-line no-useless-assignment
+		printTrail = $bindable(),
+		filterPage,
+		minTrailLength,
+		maxTrailLength
+	}: Props = $props();
 </script>
-
-
 
 <div class="filter-section{theme.mode}">
 	<!-- The onclick gives printTrail new data based on the filter button -->
 	<Button
 		text="Kaikki"
-		onclick={() => ((printTrail = getTrails()), (filterInfo.specificLength = 0.5))}
+		onclick={() => ((printTrail = getTrails()), (filterInfo.specificLength = minTrailLength))}
 		selectedFilter={filterPage === ''}
 	></Button>
 	<Button
@@ -76,8 +83,8 @@
 			<input
 				class="kmFilter"
 				type="range"
-				min="0.5"
-				max="5"
+				min={minTrailLength}
+				max={maxTrailLength}
 				step="0.1"
 				bind:value={filterInfo.specificLength}
 				onchange={() => (printTrail = getTrails())}
@@ -115,7 +122,7 @@
 		box-shadow:
 			0 4px 20px rgba(0, 0, 0, 0.3),
 			inset 0 1px 0 rgba(255, 255, 255, 0.08);
-		border: 1px solid rgba(255, 255, 255, 0.05);
+
 		position: relative;
 		overflow: hidden;
 	}
@@ -137,7 +144,7 @@
 		box-shadow:
 			0 4px 20px rgba(0, 0, 0, 0.3),
 			inset 0 1px 0 rgba(255, 255, 255, 0.08);
-		border: 1px solid rgba(255, 255, 255, 0.05);
+
 		position: relative;
 		overflow: hidden;
 	}

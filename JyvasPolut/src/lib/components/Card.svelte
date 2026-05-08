@@ -159,7 +159,12 @@
 		gap: 1rem;
 	}
 
-	.card:hover {
+	.cardligth:hover {
+		transform: scale(1.03);
+		box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.35);
+	}
+
+	.carddark:hover {
 		transform: scale(1.03);
 		box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.35);
 	}
