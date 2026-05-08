@@ -84,6 +84,7 @@
 		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
 		{#if visitedList.wasVisited(trailCard)}
 			<button
+			class="visited"
 				onclick={(e) => {
 					e.stopPropagation();
 					removeFromVisited(trailCard);
@@ -91,6 +92,7 @@
 			>
 		{:else}
 			<button
+			class= "visited"
 				onclick={(e) => {
 					e.stopPropagation();
 					addToVisited(trailCard);
@@ -258,15 +260,30 @@
 		color: orangered;
 		font-weight: bold;
 	}
-	button {
+	button.visited {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		border: none;
-		border-radius: 4px;
-		padding: 0.5rem 1rem;
 		background-color: transparent;
+		border:2px solid black;
+		border-radius: 999px;
 		cursor: pointer;
 		font-weight: bold;
 		transition: 0.2s ease;
+		margin-top: 0.8rem;
+
 	}
+	button.visited p {
+	margin: 0;
+	font-style: normal;
+	color: white;
+
+	font-size: 0.65rem;
+	line-height: 1;
+}
+	
+
 	input[type='checkbox'] {
 		width: 25px;
 		height: 25px;
@@ -283,4 +300,48 @@
 	input[type='checkbox']:hover {
 		transform: scale(1.2);
 	}
+	input[type='checkbox'] {
+	appearance: none;
+	-webkit-appearance: none;
+
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+
+	background-color: #f0f0f1;
+
+	clip-path: path(
+		'M14 25 C-5 12 3 0 14 8 C25 0 33 12 14 25 Z'
+	);
+
+	transition:
+		transform 0.2s ease,
+		background-color 0.2s ease;
+
+	transform: scale(1);
+}
+
+/* checked */
+input[type='checkbox']:checked {
+	background-color: #ef4444;
+	transform: scale(1.15);
+}
+
+/* hover */
+input[type='checkbox']:hover {
+	transform: scale(1.2);
+}
+.cardligth,
+.carddark {
+	position: relative;
+}
+input[type='checkbox'] {
+	position: absolute;
+
+	top: 20px;
+	right: 20px;
+
+	z-index: 10;
+}
+
 </style>

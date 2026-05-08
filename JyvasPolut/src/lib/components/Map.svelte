@@ -30,7 +30,7 @@
 			container: mapContainer,
 			style: 'mapbox://styles/mapbox/outdoors-v12',
 			center: [25.7473, 62.2426],
-			zoom: 12
+			zoom: 9.1
 		});
 		// all the trailroutes on map
 		map.on('load', () => {
@@ -120,6 +120,7 @@
 <style>
 	/* Tyylittelyt MapBoxin omille "default asetuksille! */
 	/* Tyylittelyt MapBoxin omille "default asetuksille! */
+
 	:global(.mapboxgl-popup-content) {
 		font-size: 18px;
 		border-radius: 15px;
@@ -149,7 +150,7 @@
 		position: fixed;
 		top: 23%;
 		left: 26%;
-		border-radius: 20%;
+		border-radius: 10%;
 		border: 2px dashed rgba(0, 0, 0, 0.6);
 
 		box-shadow: 40px 40px 20px #023b0b6b;
