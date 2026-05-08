@@ -63,7 +63,7 @@
 		selectedFilter={filterPage === 'fireplace'}
 	></Button>
 	<Button
-		text="Favorite"
+		text="Suosikit"
 		onclick={() => (printTrail = getTrails('favorite'))}
 		selectedFilter={filterPage === 'favorite'}
 	></Button>
@@ -131,12 +131,12 @@
 		margin-bottom: 2rem;
 		padding: 1.5rem;
 		background: linear-gradient(
-	200deg,
-	#0b6b4f 4.45%,
-	#0f4a40 45.54%,
-	#12363d 55.28%,
-	#101a2e 90.57%
-);
+			200deg,
+			#0b6b4f 4.45%,
+			#0f4a40 45.54%,
+			#12363d 55.28%,
+			#101a2e 90.57%
+		);
 		border-radius: 25px;
 		width: fit-content;
 		margin-left: 2rem;
