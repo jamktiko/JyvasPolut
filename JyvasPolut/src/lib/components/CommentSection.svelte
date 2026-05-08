@@ -12,6 +12,12 @@
 	let commenterInput = $state('');
 	let commentTitleInput = $state('');
 	let commentTextInput = $state('');
+	// svelte-ignore state_referenced_locally
+	let list = $state(commentsList);
+
+	function addToComments(inputComment: Comment) {
+		list.push(inputComment);
+	}
 </script>
 
 <div class="comment-container">
@@ -35,10 +41,17 @@
 			</label>
 		</div>
 		<div>
-			<button>Lähetä</button>
+			<button
+				onclick={() =>
+					addToComments({
+						commenter: commenterInput,
+						commentTitle: commentTitleInput,
+						commentText: commentTextInput
+					})}>Lähetä</button
+			>
 		</div>
 		<hr />
-		{#each commentsList as comment (comment)}
+		{#each list as comment (comment)}
 			<div class="comment">
 				<p>{comment.commenter}</p>
 				<hr />
