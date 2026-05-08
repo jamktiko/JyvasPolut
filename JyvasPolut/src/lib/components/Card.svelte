@@ -81,10 +81,12 @@
 			onchange={() => favAddorRemove(trailCard)}
 		/>
 
+		<h2>{title}</h2>
+		<p>{desc}</p>
 		<!-- Checks if trailCard is in the visited list and chancges the text based on that -->
 		{#if visitedList.wasVisited(trailCard)}
 			<button
-			class="visited"
+				class="visited"
 				onclick={(e) => {
 					e.stopPropagation();
 					removeFromVisited(trailCard);
@@ -92,15 +94,13 @@
 			>
 		{:else}
 			<button
-			class= "visited"
+				class="visited"
 				onclick={(e) => {
 					e.stopPropagation();
 					addToVisited(trailCard);
 				}}><p in:fade={{ delay: 1, duration: 0 }}>Ei käyty</p></button
 			>
 		{/if}
-		<h2>{title}</h2>
-		<p>{desc}</p>
 		<div class="footer">
 			{#if difficulty === 'Kevyt'}
 				<p class="kevyt">{difficulty}</p>
@@ -130,12 +130,7 @@
 		height: 500px;
 	}
 	.carddark {
-		background: linear-gradient(
-	to right,
-	#0f7a5a,
-	#123f48,
-	#1a1b3a
-);
+		background: linear-gradient(to right, #0f7a5a, #123f48, #1a1b3a);
 		position: relative;
 		border-radius: 50px;
 		border: 1px solid rgba(255, 255, 255, 0.2);
@@ -266,23 +261,21 @@
 		justify-content: center;
 		border: none;
 		background-color: transparent;
-		border:2px solid black;
+		border: 2px solid black;
 		border-radius: 999px;
 		cursor: pointer;
 		font-weight: bold;
 		transition: 0.2s ease;
 		margin-top: 0.8rem;
-
 	}
 	button.visited p {
-	margin: 0;
-	font-style: normal;
-	color: white;
+		margin: 0;
+		font-style: normal;
+		color: white;
 
-	font-size: 0.65rem;
-	line-height: 1;
-}
-	
+		font-size: 0.65rem;
+		line-height: 1;
+	}
 
 	input[type='checkbox'] {
 		width: 25px;
@@ -301,47 +294,44 @@
 		transform: scale(1.2);
 	}
 	input[type='checkbox'] {
-	appearance: none;
-	-webkit-appearance: none;
+		appearance: none;
+		-webkit-appearance: none;
 
-	width: 32px;
-	height: 32px;
-	cursor: pointer;
+		width: 32px;
+		height: 32px;
+		cursor: pointer;
 
-	background-color: #f0f0f1;
+		background-color: #f0f0f1;
 
-	clip-path: path(
-		'M14 25 C-5 12 3 0 14 8 C25 0 33 12 14 25 Z'
-	);
+		clip-path: path('M14 25 C-5 12 3 0 14 8 C25 0 33 12 14 25 Z');
 
-	transition:
-		transform 0.2s ease,
-		background-color 0.2s ease;
+		transition:
+			transform 0.2s ease,
+			background-color 0.2s ease;
 
-	transform: scale(1);
-}
+		transform: scale(1);
+	}
 
-/* checked */
-input[type='checkbox']:checked {
-	background-color: #ef4444;
-	transform: scale(1.15);
-}
+	/* checked */
+	input[type='checkbox']:checked {
+		background-color: #ef4444;
+		transform: scale(1.15);
+	}
 
-/* hover */
-input[type='checkbox']:hover {
-	transform: scale(1.2);
-}
-.cardligth,
-.carddark {
-	position: relative;
-}
-input[type='checkbox'] {
-	position: absolute;
+	/* hover */
+	input[type='checkbox']:hover {
+		transform: scale(1.2);
+	}
+	.cardligth,
+	.carddark {
+		position: relative;
+	}
+	input[type='checkbox'] {
+		position: absolute;
 
-	top: 20px;
-	right: 20px;
+		top: 20px;
+		right: 20px;
 
-	z-index: 10;
-}
-
+		z-index: 10;
+	}
 </style>
