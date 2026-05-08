@@ -1,6 +1,6 @@
 <script lang="ts">
 	interface Props {
-		commentsList: Comment[];
+		commentsListJson: Comment[];
 	}
 	interface Comment {
 		commenter: string;
@@ -8,15 +8,23 @@
 		commentText: string;
 	}
 
-	let { commentsList }: Props = $props();
+	let { commentsListJson }: Props = $props();
 	let commenterInput = $state('');
 	let commentTitleInput = $state('');
 	let commentTextInput = $state('');
+	let commentTextInputVisited = $state(false);
 	// svelte-ignore state_referenced_locally
-	let list = $state(commentsList);
+	let commentsList = $state(commentsListJson);
+
+	const validText = (text: string) => text.trim().length > 0;
+	let validComment = $derived.by(() => validText(commentTextInput));
 
 	function addToComments(inputComment: Comment) {
-		list.push(inputComment);
+		commentsList.push(inputComment);
+		commentTextInput = '';
+		commentTitleInput = '';
+		commenterInput = '';
+		commentTextInputVisited = false;
 	}
 </script>
 
@@ -37,7 +45,14 @@
 		<div>
 			<label>
 				*Viesti:
-				<textarea bind:value={commentTextInput}></textarea>
+				<textarea
+					bind:value={commentTextInput}
+					class:empty={!validComment && commentTextInputVisited}
+					onblur={() => (commentTextInputVisited = !commentTextInputVisited)}
+				></textarea>
+				{#if !validComment && commentTextInputVisited}
+					<p class="error">Kommentissa pitää olla viesti!</p>
+				{/if}
 			</label>
 		</div>
 		<div>
@@ -47,15 +62,29 @@
 						commenter: commenterInput,
 						commentTitle: commentTitleInput,
 						commentText: commentTextInput
-					})}>Lähetä</button
+					})}
+				disabled={!validComment}>Lähetä</button
 			>
 		</div>
 		<hr />
-		{#each list as comment (comment)}
+		{#each commentsList as comment (comment)}
 			<div class="comment">
-				<p>{comment.commenter}</p>
+				{#if comment.commenter === ''}
+					<p>Vieras</p>
+				{:else}
+					<p>{comment.commenter}</p>
+				{/if}
 				<hr />
-				<h2>{comment.commentTitle}</h2>
+				{#if comment.commentTitle === ''}
+					<!-- This checks if theres space at the end of the shortened string -->
+					{#if /\s$/.test(comment.commentText.slice(0, 20))}
+						<h2>{comment.commentText.slice(0, 19)}...</h2>
+					{:else}
+						<h2>{comment.commentText.slice(0, 20)}...</h2>
+					{/if}
+				{:else}
+					<h2>{comment.commentTitle}</h2>
+				{/if}
 				<p>{comment.commentText}</p>
 			</div>
 		{/each}
@@ -81,5 +110,14 @@
 	}
 	p {
 		color: black;
+	}
+
+	.error {
+		color: red;
+		margin: 0.5rem 0;
+	}
+
+	.empty {
+		border: 1px solid red;
 	}
 </style>

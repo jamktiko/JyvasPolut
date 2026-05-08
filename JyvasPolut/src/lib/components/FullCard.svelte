@@ -123,7 +123,7 @@
 				{/each}
 			</ul>
 		</div>
-		<CommentSection {commentsList}></CommentSection>
+		<CommentSection commentsListJson={commentsList}></CommentSection>
 	</div>
 
 	{#snippet footer()}
