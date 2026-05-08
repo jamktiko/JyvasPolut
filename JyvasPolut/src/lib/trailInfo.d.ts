@@ -13,9 +13,16 @@ export interface ItrailTypes {
 	images: string[] | null;
 	favorite: boolean;
 	visited: boolean;
+	comments: Comment[];
 }
 
 export interface BodyOfWater {
 	exist: '✅' | '❌';
 	type?: string;
+}
+
+export interface Comment {
+	commenter: string;
+	commentTitle: string;
+	commentText: string;
 }

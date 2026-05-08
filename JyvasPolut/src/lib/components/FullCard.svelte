@@ -2,6 +2,7 @@
 	import Modal from '$lib/components/Modal.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import ScrollButton from './ScrollButton.svelte';
+	import CommentSection from './CommentSection.svelte';
 
 	interface Props {
 		name: string;
@@ -15,14 +16,19 @@
 		bodyOfWater: BodyOfWater;
 		fireplace: '✅' | '❌';
 		images: string[] | null;
+		comments: Comment[];
 		hideProduct: () => void;
 	}
 
-	export interface BodyOfWater {
+	interface BodyOfWater {
 		exist: '✅' | '❌';
 		type?: string;
 	}
-
+	interface Comment {
+		commenter: string;
+		commentTitle: string;
+		commentText: string;
+	}
 	let {
 		name,
 		description,
@@ -35,12 +41,13 @@
 		bodyOfWater,
 		fireplace,
 		images,
+		comments,
 		hideProduct
 	}: Props = $props();
 
 	// i tells the current index the image is at
 	let i = $state(0);
-	// nykyinenKuva equals the current image
+	// currentImg equals the current image
 	// or if naturetrail.json doesn't have images, it sets it at null
 	let currentImg: string | null = $derived(images ? images[i] : null);
 
@@ -59,6 +66,8 @@
 			i = i > 0 ? i - 1 : images.length - 1;
 		}
 	}
+
+	let commentsList = $derived([...comments]);
 </script>
 
 <!-- This gives Modal.svelte "hideProduct" props as "close" -->
@@ -114,6 +123,7 @@
 				{/each}
 			</ul>
 		</div>
+		<CommentSection {commentsList}></CommentSection>
 	</div>
 
 	{#snippet footer()}
