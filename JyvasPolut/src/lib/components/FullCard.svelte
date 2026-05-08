@@ -100,16 +100,20 @@
 			<p>{description}</p>
 			<h2>Ominaisuudet</h2>
 			<hr />
-			<p>Haastavuustaso: {difficulty}</p>
-			<p>Pituus: {trailLength}km</p>
-			<p>Vuori: {mountain}</p>
-			<p>Vesistö: {bodyOfWater.exist}</p>
-			{#if bodyOfWater.exist === '✅'}
-				<p>Vesistötyyppi: {bodyOfWater.type}</p>
-			{/if}
-			<p>Tulenteko paikka: {fireplace}</p>
-
+			<div class="ominaisuus">
+				<p>Haastavuustaso: {difficulty}</p>
+				<p>Pituus: {trailLength}km</p>
+				<p>Vuori: {mountain}</p>
+			</div>
+			<div class="ominaisuus">
+				<p>Vesistö: {bodyOfWater.exist}</p>
+				{#if bodyOfWater.exist === '✅'}
+					<p>Vesistötyyppi: {bodyOfWater.type}</p>
+				{/if}
+				<p>Tulenteko paikka: {fireplace}</p>
+			</div>
 			<h2>Etäisyys ja kulku keskustasta</h2>
+
 			<hr />
 
 			{#each centreTime as time (time)}
@@ -132,6 +136,10 @@
 </Modal>
 
 <style>
+	.ominaisuus {
+		display: flex;
+	}
+
 	/* @@@@@@ Nämä vaikuttavat Korttien kuvien kokoon / asetteluun @@@@@@ */
 	.scrollImg {
 		width: 40px;

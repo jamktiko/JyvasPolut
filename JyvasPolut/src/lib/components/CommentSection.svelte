@@ -20,7 +20,7 @@
 	let validComment = $derived.by(() => validText(commentTextInput));
 
 	function addToComments(inputComment: Comment) {
-		commentsList.push(inputComment);
+		commentsList.unshift(inputComment);
 		commentTextInput = '';
 		commentTitleInput = '';
 		commenterInput = '';
