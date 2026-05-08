@@ -1,7 +1,7 @@
 <script lang="ts">
+	import type { ItrailTypes } from '$lib/trailInfo';
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 	import { visitedList } from '$lib/visitedListGS.svelte';
-	import type { ItrailTypes } from '$lib/trailInfo';
 	import { fade } from 'svelte/transition';
 	import { theme } from '$lib/theme.svelte';
 

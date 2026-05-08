@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Card from '$lib/components/Card.svelte';
 	import type { ItrailTypes } from '$lib/trailInfo';
-	import { filterInfo } from '$lib/filterInfo.svelte';
+	import Card from '$lib/components/Card.svelte';
 	import FullCard from '$lib/components/FullCard.svelte';
 	import Filter from './Filter.svelte';
+	import { filterInfo } from '$lib/filterInfo.svelte';
 	import { favoriteList } from '$lib/favoriteListGS.svelte';
 	import { visitedList } from '$lib/visitedListGS.svelte';
 	import { fade } from 'svelte/transition';
@@ -30,11 +30,6 @@
 	// min max values for the slider-filter
 	let minTrailLength: number = $state(0);
 	let maxTrailLength: number = $state(0);
-	// $effect(() => {
-	// 	if (filterInfo.specificLength === 0) {
-	// 		filterInfo.specificLength = minTrailLength;
-	// 	}
-	// });
 	// min max values for the slider-filter
 
 	let filterPage = $state('');
@@ -68,7 +63,7 @@
 			filterInfo.specificLength = minTrailLength;
 		}
 		// min max values for the slider-filter
-
+		// await new Promise((resolve) => setTimeout(resolve, 3000));
 		if (filterText) {
 			filterInfo.specificLength = minTrailLength;
 			if (filterText === 'mountain') {
@@ -112,7 +107,7 @@
 <Filter {getTrails} bind:printTrail {filterPage} {minTrailLength} {maxTrailLength} />
 <!-- This shows before the data has been successfully fetched-->
 {#await printTrail}
-	<div>Loading....</div>
+	<!-- <div>Loading....</div> -->
 	<!-- This shows after the data has been successfully fetched-->
 {:then responseData}
 	<!-- The transition here is in charge of the card load in -->
