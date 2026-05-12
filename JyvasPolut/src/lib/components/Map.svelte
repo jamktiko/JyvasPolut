@@ -14,8 +14,13 @@
 
 	mapboxgl.accessToken = PUBLIC_MAPBOX_TOKEN;
 	let map: mapboxgl.Map;
-	let mapContainer: HTMLDivElement;
+
+	// let mapContainer: HTMLDivElement;
+	let mapContainer: HTMLDivElement | undefined = $state();
+
 	//tyyppi importattu ylempänä
+
+	let mapFailed: boolean = $state(false);
 
 	function handleKeyDown(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
@@ -27,11 +32,16 @@
 	onMount(() => {
 		window.addEventListener('keydown', handleKeyDown);
 		map = new mapboxgl.Map({
-			container: mapContainer,
+			container: mapContainer as HTMLDivElement,
 			style: 'mapbox://styles/mapbox/outdoors-v12',
 			center: [25.7473, 62.2426],
 			zoom: 9.1
 		});
+		map.on('error', (e) => {
+			console.log('Mapbox virhe:', e);
+			mapFailed = true;
+		});
+
 		// all the trailroutes on map
 		map.on('load', () => {
 			routes.forEach((route) => {
@@ -109,12 +119,18 @@
 	</div>
 {/if}
 
-<div
-	bind:this={mapContainer}
-	id="map"
-	class:hidden={!visible}
-	style="width: 800px; height: 600px;"
-></div>
+{#if mapFailed}
+	<div id="mapError" class:hidden={!visible} style="width: 800px; height: 600px;">
+		<h1 class="errorH1">Kartta ei saatavilla 🗺️</h1>
+	</div>
+{:else}
+	<div
+		bind:this={mapContainer}
+		id="map"
+		class:hidden={!visible}
+		style="width: 800px; height: 600px;"
+	></div>
+{/if}
 
 <!-- style="width: 800px; height: 600px;" -->
 <style>
@@ -155,6 +171,27 @@
 
 		box-shadow: 40px 40px 20px #023b0b6b;
 		z-index: 99999;
+	}
+
+	#mapError {
+		position: fixed;
+		top: 23%;
+		left: 26%;
+		border-radius: 10%;
+		border: 2px dashed rgba(0, 0, 0, 0.6);
+		background-color: rgb(195, 192, 192);
+
+		box-shadow: 40px 40px 20px #023b0b6b;
+		z-index: 99999;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.errorH1 {
+		color: black;
+		font-size: 26px;
 	}
 	.backdrop {
 		position: fixed;
