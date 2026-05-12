@@ -20,6 +20,7 @@
 			"/images/haapasaari/haapasaari3.jpg",
 			"/images/haapasaari/haapasaari4.jpg"
 		],
+		"location": "Haapasaarentie 14, 40820 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": [
@@ -64,6 +65,7 @@
 			"/images/haukanniemi/haukanniemi3.jpg",
 			"/images/haukanniemi/haukanniemi4.jpg"
 		],
+		"location": "Lyhdekatu, 40740 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": [
@@ -100,6 +102,7 @@
 			"/images/jaaskela/jaaskela3.jpg",
 			"/images/jaaskela/jaaskela4.jpg"
 		],
+		"location": "Jääskeläntie 169, 40800 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": []
@@ -129,6 +132,7 @@
 			"/images/kangasvuori/kangasvuori3.jpg",
 			"/images/kangasvuori/kangasvuori4.jpg"
 		],
+		"location": "Suluntie 18, 40340 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": [
@@ -163,6 +167,7 @@
 			"/images/laajavuori/laajavuori3.jpg",
 			"/images/laajavuori/laajavuori4.jpg"
 		],
+		"location": "Laajavuorentie 19, 40740 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": []
@@ -192,6 +197,7 @@
 			"/images/nyrola/nyrola3.jpg",
 			"/images/nyrola/nyrola4.jpg"
 		],
+		"location": "Sikomäentie 706, 41140 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": [
@@ -223,6 +229,7 @@
 			"/images/sippulanniemi/sippulanniemi3.jpg",
 			"/images/sippulanniemi/sippulanniemi4.jpg"
 		],
+		"location": "Nurmilaukka 16, 40520 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": [
@@ -258,6 +265,7 @@
 			"/images/tourujoki/tourujoki3.jpg",
 			"/images/tourujoki/tourujoki4.jpg"
 		],
+		"location": "Tourukatu 30, 40100 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": [
@@ -292,6 +300,7 @@
 			"/images/touruvuori/touruvuori3.jpg",
 			"/images/touruvuori/touruvuori4.jpg"
 		],
+		"location": "Raivaajantie 110, 40250 Jyväskylä",
 		"favorite": false,
 		"visited": false,
 		"comments": []

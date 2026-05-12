@@ -11,6 +11,7 @@ export interface ItrailTypes {
 	bodyOfWater: BodyOfWater;
 	fireplace: '✅' | '❌';
 	images: string[] | null;
+	location: string;
 	favorite: boolean;
 	visited: boolean;
 	comments: Comment[];

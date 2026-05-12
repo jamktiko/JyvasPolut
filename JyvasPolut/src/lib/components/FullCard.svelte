@@ -16,6 +16,7 @@
 		bodyOfWater: BodyOfWater;
 		fireplace: '✅' | '❌';
 		images: string[] | null;
+		location: string;
 		comments: Comment[];
 		hideProduct: () => void;
 	}
@@ -32,7 +33,6 @@
 	let {
 		name,
 		description,
-
 		trailLength,
 		centreTime,
 		difficulty,
@@ -41,6 +41,7 @@
 		bodyOfWater,
 		fireplace,
 		images,
+		location,
 		comments,
 		hideProduct
 	}: Props = $props();
@@ -98,6 +99,7 @@
 		<div class="details">
 			<!-- These are all the details naturetrail has -->
 			<p>{description}</p>
+			<p>{location}</p>
 			<h2>Ominaisuudet</h2>
 			<hr />
 			<div class="ominaisuus">
