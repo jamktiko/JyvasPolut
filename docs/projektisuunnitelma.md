@@ -49,8 +49,9 @@ _Toimiva ja helppokäyttöinen ohjelmisto, joka tekee sen mitä haluttiin alunpe
 | ---------------- | ---------- | ---------------------------------------- |
 | Projekti alkaa   | 20.04.2026 | Ohjelmistoprojekti 1 alkaa               |
 | Idean valinta    | 22.04.2026 | Idea valittu |
-| ............     | pvm        | Kaikki muut tapahtumat listattuna        |
-| Projekti päättyy | 16.05.2025 | Ohjelmistoprojekti 1 päättyy             |
+| Varsinaisen projektin pohja valmis     | 30.4.2026        | Komponentit, Datalähde, Sivuston pohja       |
+| Projekti saatettu loppuun     | 08.05.2026        | Kaikki halutut ominaisuudet tuotu projektiin        |
+| Projekti päättyy | 15.05.2025 | Ohjelmistoprojekti 1 päättyy             |
 
 ## Raportointi, kommunikointi ja dokumentointi
 
