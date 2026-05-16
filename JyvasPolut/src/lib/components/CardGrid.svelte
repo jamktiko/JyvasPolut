@@ -8,14 +8,6 @@
 	import { visitedList } from '$lib/visitedListGS.svelte';
 	import { fade } from 'svelte/transition';
 
-	// ECS-näppäimestä modalin sulkeminen
-	function handleWindowKeyDown(event: KeyboardEvent) {
-		if (event.key === 'Escape') {
-			close();
-		}
-	}
-	// ECS-näppäimestä modalin sulkeminen
-
 	// selected is the current selected natureTrail
 	let selected = $state<ItrailTypes | null>(null);
 
@@ -41,10 +33,6 @@
 		filterText?: string,
 		difficulty?: 'Kevyt' | 'Rasittava' | 'Raskas'
 	): Promise<ItrailTypes[]> => {
-		// ECS-näppäimestä modalin sulkeminen
-		window.addEventListener('keydown', handleWindowKeyDown);
-		// ECS-näppäimestä modalin sulkeminen, keydown = 'escape' on painettu
-
 		const response = await fetch('/data/naturetrail.json');
 
 		if (!response.ok) {

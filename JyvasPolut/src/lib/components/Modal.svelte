@@ -15,12 +15,24 @@
 
 	// Scrollaus vain modaliin, ei taustaan
 	onMount(() => {
+		// ECS-closes modal
+		function handleWindowKeyDown(event: KeyboardEvent) {
+			if (event.key === 'Escape') {
+				close?.();
+			}
+		}
+		// ECS-closes modal
+
 		const original = document.body.style.overflow;
 
+		// ECS-closes modal
+		window.addEventListener('keydown', handleWindowKeyDown);
+		// ECS-closes modal
 		document.body.style.overflow = 'hidden';
 
 		return () => {
 			document.body.style.overflow = original;
+			window.removeEventListener('keydown', handleWindowKeyDown);
 		};
 	});
 	// Scrollaus vain modaliin ei taustaan
